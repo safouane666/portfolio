@@ -1,0 +1,98 @@
+/* Complete CSS for Hero component with smooth transitions */
+
+/* Import hero.css */
+
+/* Define smooth transition for all changes */
+* {
+  transition: all 0.5s ease;
+}
+
+/* Hero container styles */
+.Hero_Container {
+  padding: 2rem;
+  justify-content: center;
+  padding-left: 15%;
+  padding-right: 15%;
+  flex-direction: row;
+  height: 80vh;
+  @media (max-width: 975px) {
+    flex-direction: column;
+    align-items: center;
+    padding-left: 0;
+    padding-right: 0;
+    gap: 30px;
+  }
+}
+
+/* Text container styles */
+.Hero_Container .Text_Container {
+  width: 70%;
+  justify-content: center;
+  @media (max-width: 975px) {
+    justify-items: center;
+    align-items: center;
+    width: 100%;
+  }
+}
+
+/* Image container styles */
+.Hero_Container .image_Container {
+  width: 30%;
+  padding-right: 10px;
+  align-items: center;
+  @media (max-width: 975px) {
+    justify-items: center;
+    justify-content: center;
+    align-content: center;
+    width: 100%;
+    padding-right: 0px;
+  }
+}
+
+/* Name styles */
+.Hero_Container .Name {
+  font-size: 70px;
+  font-weight: 900;
+  padding-left: 20px;
+  @media (max-width: 1334px) {
+    font-size: rem(50px);
+  }
+  @media (max-width: 975px) {
+    justify-items: center;
+  }
+  @media (max-width: 460px) {
+    font-size: rem(35px);
+  }
+}
+
+/* Greeting styles */
+.Hero_Container .greating {
+  font-size: 50px;
+  font-weight: 700;
+  @media (max-width: 1334px) {
+    font-size: rem(40px);
+  }
+  @media (max-width: 460px) {
+    font-size: rem(35px);
+  }
+}
+
+/* TypeWrite styles */
+.Hero_Container .typeWrite {
+  font-size: 30px;
+  font-weight: 500;
+  margin-top: 20px;
+  @media (max-width: 460px) {
+    font-size: rem(25px);
+    margin-top: 10px;
+  }
+}
+
+/* Image styles */
+.Hero_Container .image {
+  height: 500px;
+  width: auto;
+  @media (max-width: 1334px) {
+    height: 400px;
+  }
+}

@@ -54,6 +54,9 @@ export function HeaderMegaMenu() {
             <a href="#" className={classes.link}>
               Web Projects
             </a>
+            <a href="#" className={classes.link}>
+              Contact
+            </a>
           </Group>
           <Group justify="flex-end" h="100%">
             <LightDarkModeSwitch />
@@ -87,6 +90,9 @@ export function HeaderMegaMenu() {
           </a>
           <a href="#" className={classes.link}>
             Web Projects
+          </a>
+          <a href="#" className={classes.link}>
+            Contact
           </a>
 
           <Divider my="sm" />

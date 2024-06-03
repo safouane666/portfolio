@@ -5,9 +5,9 @@ import { useEffect, useState } from 'react';
 export default function LightDarkModeSwitch() {
   const theme = useMantineTheme();
   const { setColorScheme } = useMantineColorScheme();
-  const [themeColor, setTheme] = useState('light');
+  const [themeColor, setTheme] = useState('dark');
   useEffect(() => {
-    setColorScheme('light');
+    setColorScheme('dark');
   }, []);
   const themeHandler = () => {
     if (themeColor == 'light') {

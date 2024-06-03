@@ -21,10 +21,13 @@
   "dependencies": {
     "@mantine/core": "7.10.0",
     "@mantine/hooks": "7.10.0",
+    "@mantinex/dev-icons": "^1.0.2",
     "@tabler/icons-react": "^3.5.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.22.3"
+    "react-router-dom": "^6.22.3",
+    "react-simple-typewriter": "^5.0.1",
+    "yarn": "^1.22.22"
   },
   "devDependencies": {
     "@storybook/addon-essentials": "^8.1.3",
