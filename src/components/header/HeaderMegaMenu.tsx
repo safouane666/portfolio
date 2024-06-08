@@ -37,7 +37,7 @@ export function HeaderMegaMenu() {
   const theme = useMantineTheme();
 
   return (
-    <Box pb={20}>
+    <Box pb={20} style={{ position: 'sticky', top: '0' }}>
       <header className={classes.header}>
         <Group justify="center" h="100%">
           <Group h="100%" gap={0} visibleFrom="sm">

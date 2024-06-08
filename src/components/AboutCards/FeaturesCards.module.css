@@ -1,0 +1,24 @@
+.card {
+  border: rem(1px) solid light-dark(var(--mantine-color-gray-1), var(--mantine-color-dark-5));
+}
+.card:hover {
+  background: linear-gradient(to bottom, rgba(0, 83, 238, 0.363), transparent);
+}
+.cardTitle {
+  &::after {
+    content: '';
+    display: block;
+    background-color: var(--mantine-color-blue-filled);
+    width: rem(45px);
+    height: rem(2px);
+    margin-top: var(--mantine-spacing-sm);
+  }
+}
+.control {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
+  align-items: center;
+  align-content: center;
+}

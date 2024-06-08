@@ -3,6 +3,8 @@ import './hero.css';
 import { Cursor, useTypewriter } from 'react-simple-typewriter';
 import { Flex, Group, Image, Text } from '@mantine/core';
 
+import SocialIcons from '../Social/SocialIcons';
+
 export default function Hero() {
   const [text, helper] = useTypewriter({
     words: [
@@ -36,7 +38,11 @@ export default function Hero() {
             <Cursor cursorColor="cyan" />
           </span>
         </Text>
+        <Flex style={{ marginTop: '3rem' }}>
+          <SocialIcons />
+        </Flex>
       </Flex>
+
       <Flex className="image_Container">
         <Image
           className="image"
