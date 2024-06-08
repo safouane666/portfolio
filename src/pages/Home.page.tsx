@@ -1,7 +1,7 @@
 import { Loader, Text } from '@mantine/core';
 
 import About from './About/About';
-import Hero from '@/components/Hero/Hero.tsx';
+import Hero from '@/components/Hero/Hero';
 import { HeroTitle } from '@/components/Hero/HeroTitle';
 
 export function HomePage() {
