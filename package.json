@@ -1,4 +1,5 @@
 {
+  "homepage": "http://safouane666.github.io/portfolio",
   "name": "mantine-vite-template",
   "private": true,
   "version": "0.0.0",
@@ -16,7 +17,9 @@
     "vitest:watch": "vitest",
     "test": "npm run typecheck && npm run prettier && npm run lint && npm run vitest && npm run build",
     "storybook": "storybook dev -p 6006",
-    "storybook:build": "storybook build"
+    "storybook:build": "storybook build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "@mantine/core": "7.10.0",
