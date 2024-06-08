@@ -11,8 +11,12 @@ function App() {
   return (
     <body>
       <div>
-        <HeaderMegaMenu />
-        <Outlet />
+        <div style={{ zIndex: '99', position: 'sticky', top: '0' }}>
+          <HeaderMegaMenu />
+        </div>
+        <div style={{ zIndex: '1' }}>
+          <Outlet />
+        </div>
       </div>
     </body>
   );

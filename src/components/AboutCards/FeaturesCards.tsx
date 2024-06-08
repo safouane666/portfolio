@@ -98,7 +98,14 @@ export function FeaturesCards() {
   const [opened, { toggle }] = useDisclosure(false);
   const theme = useMantineTheme();
   const features = mockdata.map((feature) => (
-    <Card key={feature.title} shadow="md" radius="md" className={classes.card} padding="xl">
+    <Card
+      key={feature.title}
+      shadow="md"
+      radius="md"
+      className={classes.card}
+      padding="xl"
+      style={{ zIndex: '1' }}
+    >
       <feature.icon
         style={{ width: rem(50), height: rem(50) }}
         stroke={2}
