@@ -1,12 +1,12 @@
 {
-  "homepage": "http://safouane666.github.io/portfolio",
+  "homepage": "https://safouane666.github.io/portfolio",
   "name": "mantine-vite-template",
   "private": true,
   "version": "0.0.0",
   "scripts": {
     "dev": "vite",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build",
+    "deploy": "gh-pages -d dist",
     "build": "tsc && vite build",
     "preview": "vite preview",
     "typecheck": "tsc --noEmit",

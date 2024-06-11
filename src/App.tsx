@@ -26,7 +26,7 @@ function AppRouter() {
     <MantineProvider theme={theme}>
       <Router>
         <Routes>
-          <Route path="/" element={<App />}>
+          <Route path="/portfolio" element={<App />}>
             <Route path="" element={<HomePage />} />
 
             <Route path="*" element={<div>not found</div>} />

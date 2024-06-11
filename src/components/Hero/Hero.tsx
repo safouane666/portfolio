@@ -3,6 +3,7 @@ import './hero.css';
 import { Cursor, useTypewriter } from 'react-simple-typewriter';
 import { Flex, Group, Image, Text } from '@mantine/core';
 
+import ProfileImg from '@/imgs/profile.png';
 import SocialIcons from '../Social/SocialIcons';
 
 export default function Hero() {
@@ -44,12 +45,7 @@ export default function Hero() {
       </Flex>
 
       <Flex className="image_Container">
-        <Image
-          className="image"
-          radius={200}
-          fit="contain"
-          src="https://cdn.discordapp.com/attachments/742346232944525313/1247320682019291257/Untitled_design-removebg_1.png?ex=665f9968&is=665e47e8&hm=5fa8e244ac3e2bd985970b977790bf54025e0593408897b145a9c7f1b2004e96&"
-        />
+        <Image className="image" radius={200} fit="contain" src={ProfileImg} />
       </Flex>
     </Flex>
   );
