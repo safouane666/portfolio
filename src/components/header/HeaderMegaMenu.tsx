@@ -1,19 +1,11 @@
 import {
-  Anchor,
   Box,
   Burger,
-  Button,
-  Center,
-  Collapse,
   Divider,
   Drawer,
   Group,
-  HoverCard,
+  Image,
   ScrollArea,
-  SimpleGrid,
-  Text,
-  ThemeIcon,
-  UnstyledButton,
   rem,
   useMantineTheme,
 } from '@mantine/core';
@@ -28,6 +20,7 @@ import {
 } from '@tabler/icons-react';
 
 import LightDarkModeSwitch from '../switch/LightDarkModeSwitch';
+import LogoImg from '@/imgs/logo.png';
 import classes from './HeaderMegaMenu.module.css';
 import { useDisclosure } from '@mantine/hooks';
 
@@ -39,7 +32,10 @@ export function HeaderMegaMenu() {
   return (
     <Box pb={20} style={{ position: 'sticky', top: '0' }}>
       <header className={classes.header}>
-        <Group justify="center" h="100%">
+        <Group w={100}>
+          <Image className="image" radius={200} h={50} w={50} fit="contain" src={LogoImg} />
+        </Group>
+        <Group w="100%" className={classes.links_Group}>
           <Group h="100%" gap={0} visibleFrom="sm">
             <a href="#" className={classes.link}>
               Home
@@ -48,7 +44,7 @@ export function HeaderMegaMenu() {
             <a href="#" className={classes.link}>
               About
             </a>
-            <a href="#" className={classes.link}>
+            {/* <a href="#" className={classes.link}>
               Electrical Projects
             </a>
             <a href="#" className={classes.link}>
@@ -56,7 +52,7 @@ export function HeaderMegaMenu() {
             </a>
             <a href="#" className={classes.link}>
               Contact
-            </a>
+            </a> */}
           </Group>
           <Group justify="flex-end" h="100%">
             <LightDarkModeSwitch />
@@ -85,7 +81,7 @@ export function HeaderMegaMenu() {
           <a href="#" className={classes.link}>
             About
           </a>
-          <a href="#" className={classes.link}>
+          {/* <a href="#" className={classes.link}>
             Electrical Projects
           </a>
           <a href="#" className={classes.link}>
@@ -93,7 +89,7 @@ export function HeaderMegaMenu() {
           </a>
           <a href="#" className={classes.link}>
             Contact
-          </a>
+          </a> */}
 
           <Divider my="sm" />
         </ScrollArea>

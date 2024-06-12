@@ -28,7 +28,9 @@
 .Hero_Container .Text_Container {
   width: 70%;
   justify-content: center;
+
   @media (max-width: 975px) {
+    margin-top: 7rem;
     justify-items: center;
     align-items: center;
     width: 100%;
@@ -46,6 +48,7 @@
     align-content: center;
     width: 100%;
     padding-right: 0px;
+    margin-top: 1.5rem;
   }
 }
 
@@ -94,5 +97,8 @@
   width: auto;
   @media (max-width: 1334px) {
     height: 400px;
+  }
+  @media (max-width: 400px) {
+    height: 300px;
   }
 }

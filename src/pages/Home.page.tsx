@@ -1,10 +1,11 @@
 import { Loader, Text } from '@mantine/core';
+import React, { useRef } from 'react';
 
 import About from './About/About';
 import Hero from '@/components/Hero/Hero';
-import { HeroTitle } from '@/components/Hero/HeroTitle';
 
 export function HomePage() {
+  const aboutRef = useRef(null);
   return (
     <>
       <Hero />
