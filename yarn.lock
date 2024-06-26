@@ -8191,6 +8191,7 @@ __metadata:
     gh-pages: "npm:^6.1.1"
     identity-obj-proxy: "npm:^3.0.0"
     jsdom: "npm:^24.0.0"
+    node: "npm:^20.14.0"
     postcss: "npm:^8.4.35"
     postcss-preset-mantine: "npm:1.15.0"
     postcss-simple-vars: "npm:^7.0.1"
@@ -8547,6 +8548,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"node-bin-setup@npm:^1.0.0":
+  version: 1.1.3
+  resolution: "node-bin-setup@npm:1.1.3"
+  checksum: 10c0/7de7d17aff7baa4e424f2b94ba14626b177620998d7bbe5bb28841a4e078d9c198a96edefb88f00e80a724f3d56907cdfb4be8af1c45e46b0f1476c26d828910
+  languageName: node
+  linkType: hard
+
 "node-dir@npm:^0.1.17":
   version: 0.1.17
   resolution: "node-dir@npm:0.1.17"
@@ -8601,6 +8609,17 @@ __metadata:
   version: 2.0.14
   resolution: "node-releases@npm:2.0.14"
   checksum: 10c0/199fc93773ae70ec9969bc6d5ac5b2bbd6eb986ed1907d751f411fef3ede0e4bfdb45ceb43711f8078bea237b6036db8b1bf208f6ff2b70c7d615afd157f3ab9
+  languageName: node
+  linkType: hard
+
+"node@npm:^20.14.0":
+  version: 20.14.0
+  resolution: "node@npm:20.14.0"
+  dependencies:
+    node-bin-setup: "npm:^1.0.0"
+  bin:
+    node: bin/node
+  checksum: 10c0/85264fd1900adb8028cc6f5fc1bb7e483306306ec9252dce90a3956b2a8d11fd2a64108a3559e1fa9120942df8c822b9450050433325f7d0ec9abfa45f0365a0
   languageName: node
   linkType: hard
 

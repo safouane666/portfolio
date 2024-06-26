@@ -5,7 +5,7 @@ import { Center, Flex, Text } from '@mantine/core';
 import { FeaturesCards } from '@/components/AboutCards/FeaturesCards';
 import React from 'react';
 
-export default function About() {
+const About = React.forwardRef((props, ref) => {
   return (
     <Flex className="About_Container" direction={'column'}>
       <Flex className="AboutMe_Container">
@@ -36,4 +36,5 @@ export default function About() {
       </Flex>
     </Flex>
   );
-}
+});
+export default About;

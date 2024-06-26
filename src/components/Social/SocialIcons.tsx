@@ -1,4 +1,5 @@
-import { Flex } from '@mantine/core';
+import { Button, Flex, Popover, Text } from '@mantine/core';
+
 import React from 'react';
 
 export default function SocialIcons() {
@@ -31,6 +32,19 @@ export default function SocialIcons() {
           height={40}
         />{' '}
       </a>
+      <Popover width={200} position="bottom" withArrow shadow="md">
+        <Popover.Target>
+          <img
+            src="https://cdn-icons-png.flaticon.com/128/732/732200.png"
+            alt="mail"
+            height={40}
+            style={{ cursor: 'pointer' }}
+          />
+        </Popover.Target>
+        <Popover.Dropdown>
+          <Text size="xs">safouaneregaieg8@gmail.com</Text>
+        </Popover.Dropdown>
+      </Popover>
     </Flex>
   );
 }
