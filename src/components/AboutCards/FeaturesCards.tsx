@@ -18,7 +18,9 @@ import {
   IconLayoutBoardSplit,
 } from '@tabler/icons-react';
 
+import QT from '@/imgs/ct.png';
 import classes from './FeaturesCards.module.css';
+import texas from '@/imgs/texas.png';
 import { useDisclosure } from '@mantine/hooks';
 
 const mockdata = [
@@ -78,7 +80,7 @@ const mockdata = [
       'https://cdn-icons-png.flaticon.com/128/3665/3665923.png',
       'https://cdn-icons-png.flaticon.com/128/6132/6132222.png',
       'https://cdn-icons-png.flaticon.com/128/5968/5968350.png',
-      'https://cdn.discordapp.com/attachments/742346232944525313/1247696084906672320/crop.png?ex=6660f707&is=665fa587&hm=64a43ee6cf48dcce8cdc02fb54eaf23fe403a4062c99c590ffe0c8737d5994db&',
+      texas,
     ],
   },
   {
@@ -87,7 +89,7 @@ const mockdata = [
       'I am experienced in developing software applications using QT, LabVIEW, and Delphi 7. My proficiency in these tools allows me to design and implement robust, user-friendly software solutions tailored to meet specific project requirements. ',
     icon: IconAppWindow,
     Tools: [
-      'https://cdn.discordapp.com/attachments/742346232944525313/1247698036197429258/cr.png?ex=6660f8d8&is=665fa758&hm=67ad1a279a5745f0fe8edef419e3fb0520d866cd26e770e1bf1c21f1906f4948&',
+      QT,
       'https://cdn.worldvectorlogo.com/logos/national-instruments-labview.svg',
       'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTg4rYzV6G1CATBX12xcq2TXROgA2Uk9eVCyg&s',
     ],

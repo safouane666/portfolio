@@ -3,7 +3,7 @@ import './hero.css';
 import { Cursor, useTypewriter } from 'react-simple-typewriter';
 import { Flex, Group, Image, Text } from '@mantine/core';
 
-import ProfileImg from '@/imgs/profile.png';
+import ProfileImg from '@/imgs/profile.webp';
 import SocialIcons from '../Social/SocialIcons';
 
 export default function Hero() {

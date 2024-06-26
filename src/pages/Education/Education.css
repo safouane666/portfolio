@@ -1,0 +1,34 @@
+.Education_Container {
+  padding: 1rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  margin-top: 2rem;
+
+  @media screen and (max-width: 1220px) {
+    flex-direction: column;
+    font-size: 20px;
+    padding-left: 2rem;
+    padding-right: rem;
+    padding: 0rem;
+  }
+}
+
+.Education_Container .EducationMe_Container {
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  align-content: center;
+  padding: 2rem;
+}
+
+.Education_Container .EducationMe {
+  font-size: 50px;
+  font-weight: 900;
+  margin-bottom: 2rem;
+}
+
+.Education_Container .pro_exp {
+  font-size: 43px;
+  font-weight: 900;
+  margin-bottom: 2rem;
+}
