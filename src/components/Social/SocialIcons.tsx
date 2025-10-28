@@ -25,13 +25,13 @@ export default function SocialIcons() {
         />
       </a>
 
-      <a href="https://www.fiverr.com/safouane_rg" target="_blank">
+      {/* <a href="https://www.fiverr.com/safouane_rg" target="_blank">
         <img
           src="https://user-images.githubusercontent.com/45782139/77510964-c99c5300-6e91-11ea-9a6d-f1f33b56c846.png"
           alt="Fiverr"
           height={40}
         />{' '}
-      </a>
+      </a> */}
       <Popover width={200} position="bottom" withArrow shadow="md">
         <Popover.Target>
           <img

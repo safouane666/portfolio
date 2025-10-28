@@ -16,13 +16,13 @@ export default function Education() {
         >
           Education
         </Text>
-        <Timeline active={2} bulletSize={25}>
+        <Timeline active={3} bulletSize={25}>
           <Timeline.Item title="TECHNICAL BACCALAUREATE">
             <Text c="dimmed" size="sm">
               High school : 2 Mars ,Ksar Hellal
             </Text>
             <Text size="xs" mt={4}>
-              2020 Monastir, Tunisie
+              2020 Monastir, Tunisia
             </Text>
           </Timeline.Item>
           <Timeline.Item title="PREPARATORY CYCLE">
@@ -30,7 +30,7 @@ export default function Education() {
               Preparatory Institute for Engineering Studies of Monastir
             </Text>
             <Text size="xs" mt={4}>
-              09/2020 – 06/2023 Monastir, Tunisie
+              09/2020 – 06/2023 Monastir, Tunisia
             </Text>
           </Timeline.Item>
           <Timeline.Item title="ENGINEERING UNIVERSITY">
@@ -38,7 +38,7 @@ export default function Education() {
               National School of Engineering of Monastir
             </Text>
             <Text size="xs" mt={4}>
-              09/2022 –IN PROGRESS Monastir, Tunisie
+              09/2022 – 09/2025, Tunisia
             </Text>
           </Timeline.Item>
 
@@ -47,7 +47,7 @@ export default function Education() {
               Electrical Engineering Degree
             </Text>
             <Text size="xs" mt={4}>
-              1 year left
+              13/09/2025 Monastir, Tunisia
             </Text>
           </Timeline.Item>
         </Timeline>
@@ -61,39 +61,41 @@ export default function Education() {
         >
           Professional Experience
         </Text>
-        <Timeline active={1} bulletSize={25} align="right" color="grape">
-          <Timeline.Item title="Freelancer On Fiverr ">
-            <Text c="dimmed" size="sm">
-              Full stack Web Developer
-            </Text>
-            <Text size="xs" mt={4}>
-              IN PROGRESS
-            </Text>
-          </Timeline.Item>
-          <Timeline.Item title="Food4Future Internship">
-            <Text c="dimmed" size="sm">
-              Project Spiraw
-            </Text>
-            <Text size="xs" mt={4}>
-              IN PROGRESS
-            </Text>
-          </Timeline.Item>
-          <Timeline.Item title="ACTIVE MEMBER OF THE ROBOTICS CLUB">
-            <Text c="dimmed" size="sm">
-              Participation and preparation of robotics competitions at the national level. <br />
-              Construction and production of robots
-            </Text>
-            <Text size="xs" mt={4}>
-              2023-2024
-            </Text>
-          </Timeline.Item>
+        <Timeline active={2} bulletSize={25} align="right" color="grape">
           <Timeline.Item title="WS TUNISIA Internship (WIRE SYSTEM TUNISIA) ">
-            <Text c="dimmed" size="sm">
+            <Text c="dimmed" size="sm" ta="left">
               Design and implementation of a production monitoring system, <br /> including the
               counting of parts with visual feedback and an audible alarm.
             </Text>
             <Text size="xs" mt={4}>
               04/07/2023 – 04/08/2023 Monastir, Tunisie
+            </Text>
+          </Timeline.Item>
+
+          <Timeline.Item title="FOOD4FUTURE Internship by ACTIA Engineering Services">
+            <Text c="dimmed" size="sm" ta="left">
+              Designed and developed a smart Spirulina cultivation machine.
+              <br />
+              – Implemented real-time task scheduling and communication protocols.
+              <br />
+              – Built a TouchGFX UI on STM32H7BI-DK for monitoring and control.
+              <br />– Enabled real-time control and mobile app connectivity using FreeRTOS.
+            </Text>
+            <Text size="xs" mt={4}>
+              01/06/2024 – 01/08/2024 Tunis, Tunisia
+            </Text>
+          </Timeline.Item>
+          <Timeline.Item title="Xpert-Meca PFE – Robotic Sorting Cell ">
+            <Text c="dimmed" size="sm" ta="left">
+              Design and development of an automated sorting cell for industrial applications.
+              <br />
+              – Mechanical design and component selection for the full system.
+              <br />
+              – PLC programming for control, sequencing and safety logic.
+              <br />– 3D simulation and validation of the complete workstation using Blender.
+            </Text>
+            <Text size="xs" mt={4}>
+              01/02/2023 – 01/08/2023 Sousse, Tunisia
             </Text>
           </Timeline.Item>
         </Timeline>

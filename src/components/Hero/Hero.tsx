@@ -9,12 +9,10 @@ import SocialIcons from '../Social/SocialIcons';
 export default function Hero() {
   const [text, helper] = useTypewriter({
     words: [
-      'an Elecrical Engineer Student',
-      'a Frontend Developer',
-      'a Backend Developer',
-      'a Programmer',
+      'an Elecrical Engineer',
+      'a Web Developer',
       'an Embedded Developer',
-      'a Freelancer',
+      'a Game Developer',
     ],
     loop: true,
     delaySpeed: 80,

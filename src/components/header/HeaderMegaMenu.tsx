@@ -20,6 +20,7 @@ import {
 } from '@tabler/icons-react';
 
 import LightDarkModeSwitch from '../switch/LightDarkModeSwitch';
+import { Link } from 'react-router-dom';
 import LogoImg from '@/imgs/logo.png';
 import classes from './HeaderMegaMenu.module.css';
 import { useDisclosure } from '@mantine/hooks';
@@ -37,22 +38,18 @@ export function HeaderMegaMenu() {
         </Group>
         <Group w="100%" className={classes.links_Group}>
           <Group h="100%" gap={0} visibleFrom="sm">
-            <a href="#" className={classes.link}>
+            <Link to="/portfolio" className={classes.link}>
               Home
-            </a>
-
-            <a href="#" className={classes.link}>
-              About
-            </a>
-            {/* <a href="#" className={classes.link}>
-              Electrical Projects
-            </a>
-            <a href="#" className={classes.link}>
-              Web Projects
-            </a>
-            <a href="#" className={classes.link}>
+            </Link>
+            <Link to="#" className={classes.link}>
+              Engineering
+            </Link>
+            <Link to="#" className={classes.link}>
+              Web Development
+            </Link>
+            <Link to="/portfolio/Contact" className={classes.link}>
               Contact
-            </a> */}
+            </Link>
           </Group>
           <Group justify="flex-end" h="100%">
             <LightDarkModeSwitch />
@@ -79,17 +76,14 @@ export function HeaderMegaMenu() {
           </a>
 
           <a href="#" className={classes.link}>
-            About
-          </a>
-          {/* <a href="#" className={classes.link}>
-            Electrical Projects
+            Engineering
           </a>
           <a href="#" className={classes.link}>
-            Web Projects
+            Web Development
           </a>
-          <a href="#" className={classes.link}>
+          <a href="/Contact" className={classes.link}>
             Contact
-          </a> */}
+          </a>
 
           <Divider my="sm" />
         </ScrollArea>
