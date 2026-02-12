@@ -1,12 +1,12 @@
 import { Button, Container, Group, Image, List, Text, ThemeIcon, Title } from '@mantine/core';
 
 import { IconCheck } from '@tabler/icons-react';
-import WebDevHeroBg from './img/WebDevHeroBg.png';
+import WebDevHeroBg from './img/WebDevHeroBg.webp';
 import classes from './HeroBullets.module.css';
 
 export function HeroBullets() {
   return (
-    <Container>
+    <Container size="xl">
       <div className={classes.inner}>
         <div className={classes.content}>
           <Title className={classes.title}>

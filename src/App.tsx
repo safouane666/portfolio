@@ -27,11 +27,11 @@ function AppRouter() {
     <MantineProvider theme={theme}>
       <Router>
         <Routes>
-          <Route path="/portfolio" element={<AppLayout />}>
-            <Route index element={<HomePage />} /> {/* /portfolio */}
-            <Route path="Contact" element={<ContactPage />} /> {/* /portfolio/Contact */}
-            <Route path="WebDev" element={<WebDevPage />} /> {/* /portfolio/WebDev */}
-            <Route path="*" element={<div>Not Found</div>} /> {/* fallback */}
+          <Route path="/" element={<AppLayout />}>
+            <Route index element={<HomePage />} />
+            <Route path="Contact" element={<ContactPage />} />
+            <Route path="WebDev" element={<WebDevPage />} />
+            <Route path="*" element={<div>Not Found</div>} />
           </Route>
         </Routes>
       </Router>

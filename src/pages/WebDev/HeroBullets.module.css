@@ -17,8 +17,8 @@
 }
 
 .content {
-  max-width: 1000px;
-  flex: 1;
+  max-width: 1000px !important;
+  flex: 1; 
   animation: fadeInUp 0.8s ease-out;
 
   @media (max-width: $mantine-breakpoint-md) {

@@ -16,12 +16,12 @@ import {
 } from '@mantine/core';
 
 import ambratoScreenShot from './img/AmbratoScreenShot.webp';
-import ambratoThumb from './img/AmbratoThumb.png';
+import ambratoThumb from './img/AmbratoThumb.webp';
 import couscousGrilladeScreenShot from './img/CouscousGrilladeScreenShot.webp';
-import couscousGrilladeThumb from './img/CouscousGrilladeThumb.png';
+import couscousGrilladeThumb from './img/CouscousGrilladeThumb.webp';
 import gastleylawScreenShot from './img/GastleyLawScreenShot.webp';
-import gastleylawThumb from './img/GastleyLaw.png';
-import joyaThumb from './img/joyaThumb.png';
+import gastleylawThumb from './img/GastleyLaw.webp';
+import joyaThumb from './img/joyaThumb.webp';
 import joyaScreenShot from './img/joyaScreenShot.webp';
 import { useState } from 'react';
 

@@ -38,16 +38,16 @@ export function HeaderMegaMenu() {
         </Group>
         <Group w="100%" className={classes.links_Group}>
           <Group h="100%" gap={0} visibleFrom="sm">
-            <Link to="/portfolio" className={classes.link}>
+            <Link to="/" className={classes.link}>
               Home
             </Link>
             <Link to="#" className={classes.link}>
               Engineering
             </Link>
-            <Link to="/portfolio/WebDev" className={classes.link}>
+            <Link to="/WebDev" className={classes.link}>
               Web Development
             </Link>
-            <Link to="/portfolio/Contact" className={classes.link}>
+            <Link to="/Contact" className={classes.link}>
               Contact
             </Link>
           </Group>
@@ -70,16 +70,16 @@ export function HeaderMegaMenu() {
       >
         <ScrollArea h={`calc(100vh - ${rem(80)})`} mx="-md">
           <Divider my="sm" />
-          <Link to="/portfolio" className={classes.link}>
+          <Link to="/" className={classes.link}>
             Home
           </Link>
           <Link to="#" className={classes.link}>
             Engineering
           </Link>
-          <Link to="/portfolio/WebDev" className={classes.link}>
+          <Link to="/WebDev" className={classes.link}>
             Web Development
           </Link>
-          <Link to="/portfolio/Contact" className={classes.link}>
+          <Link to="/Contact" className={classes.link}>
             Contact
           </Link>
 

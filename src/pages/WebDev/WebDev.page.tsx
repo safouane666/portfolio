@@ -21,13 +21,13 @@ import {
   IconWorldWww,
 } from '@tabler/icons-react';
 
-import BusinessLandingImg from './img/BusinessLanding.png';
-import CompetitionWebsiteImg from './img/CompetitionWebsite.png';
-import FormsWebsiteImg from './img/FormsWebsite.png';
+import BusinessLandingImg from './img/BusinessLanding.webp';
+import CompetitionWebsiteImg from './img/CompetitionWebsite.webp';
+import FormsWebsiteImg from './img/FormsWebsite.webp';
 import { HeroBullets } from './HeroBullets';
 import { Link } from 'react-router-dom';
-import OnlineStoreImg from './img/OnlineStore.png';
-import PortfolioImg from './img/PortfolioWebsite.png';
+import OnlineStoreImg from './img/OnlineStore.webp';
+import PortfolioImg from './img/PortfolioWebsite.webp';
 import ProjectsSection from './ProjectsSection';
 import classes from './WebDevPage.module.css';
 
@@ -253,7 +253,7 @@ export default function WebDevPage() {
         </Text>
         <Button 
           component={Link} 
-          to="/portfolio/Contact" 
+          to="/Contact" 
           className={classes.ctaButton}
           size="lg"
         >

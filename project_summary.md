@@ -38,8 +38,23 @@ This project is a React and TypeScript application, built with Vite. It serves a
 
 ## Build and Deployment:
 
-*   The `build` script compiles the TypeScript code and bundles the application using Vite.
-*   The `predeploy` and `deploy` scripts are configured to deploy the built application to GitHub Pages.
+### Build:
+*   The `build` script compiles the TypeScript code and bundles the application using Vite: `npm run build`
+
+### Deployment Options:
+
+#### Option 1: GitHub Pages (Original Method)
+*   Run `npm run deploy` which executes:
+    1. `predeploy`: Builds the application (`npm run build`)
+    2. `deploy`: Deploys the `dist` folder to the `gh-pages` branch using `gh-pages` package
+*   The site will be available at: `https://safouane666.github.io/portfolio`
+*   **Note**: Requires `base: '/portfolio/'` in `vite.config.mjs` and routes configured for `/portfolio` path
+
+#### Option 2: Vercel (Current Setup)
+*   Automatic deployment on push to main branch
+*   Configured via `vercel.json` with `npm ci` install command
+*   The site is served from root path (`/`) - no `/portfolio` prefix needed
+*   Routes are configured for root paths: `/`, `/Contact`, `/WebDev`
 
 ## Next Steps (based on previous interaction):
 
