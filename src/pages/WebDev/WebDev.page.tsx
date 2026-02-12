@@ -14,6 +14,7 @@ import {
 } from '@mantine/core';
 import {
   IconApi,
+  IconCloudUpload,
   IconCode,
   IconDeviceDesktop,
   IconLayoutGrid,
@@ -58,6 +59,11 @@ export default function WebDevPage() {
       title: 'Performance & SEO Optimization',
       desc: 'Make your website lightning-fast, secure, and discoverable with optimized code, analytics setup, and smart SEO techniques.',
       icon: <IconWorldWww size={40} color="cyan" />,
+    },
+    {
+      title: 'Deployment & Hosting',
+      desc: 'I handle the complete deployment process, setting up hosting on platforms like Vercel, GitHub Pages, or custom servers, configuring domains, SSL certificates, and ensuring your site goes live smoothly.',
+      icon: <IconCloudUpload size={40} color="cyan" />,
     },
   ];
 

@@ -25,7 +25,7 @@ function AppLayout() {
 function AppRouter() {
   return (
     <MantineProvider theme={theme}>
-      <Router>
+      <Router basename="/portfolio">
         <Routes>
           <Route path="/" element={<AppLayout />}>
             <Route index element={<HomePage />} />
