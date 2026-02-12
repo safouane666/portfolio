@@ -38,6 +38,10 @@ export function HeroBullets() {
               smooth performance.
             </List.Item>
             <List.Item>
+              <b>Deployment & Hosting</b> – I handle the complete deployment process, setting up hosting,
+              configuring domains, and ensuring your site goes live smoothly.
+            </List.Item>
+            <List.Item>
               <b>Full Project Setup</b> – from idea to deployment, I handle development,
               optimization, and maintenance.
             </List.Item>

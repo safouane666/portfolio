@@ -28,7 +28,6 @@
     "@mantine/hooks": "7.10.0",
     "@mantinex/dev-icons": "^1.0.2",
     "@tabler/icons-react": "^3.5.0",
-    "node": "^20.14.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.22.3",
