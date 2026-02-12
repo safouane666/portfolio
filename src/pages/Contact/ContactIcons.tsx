@@ -38,7 +38,7 @@ function ContactIcon({ icon: Icon, title, description, onCopy, ...others }: Cont
 
   return (
     <div className={classes.wrapper} {...others}>
-      <Box mr="md">
+      <Box mr="md" className={classes.icon}>
         <Icon size={24} />
       </Box>
 
@@ -46,7 +46,9 @@ function ContactIcon({ icon: Icon, title, description, onCopy, ...others }: Cont
         <Text size="xs" className={classes.title}>
           {title}
         </Text>
-        <Text className={classes.description}>{description}</Text>
+        <Text className={classes.description} size="sm">
+          {description}
+        </Text>
       </div>
 
       {(title === 'Email' || title === 'Phone') && (
@@ -54,8 +56,11 @@ function ContactIcon({ icon: Icon, title, description, onCopy, ...others }: Cont
           <ActionIcon
             onClick={handleCopy}
             variant="subtle"
-            color={copied ? 'teal' : 'gray'}
+            color={copied ? 'teal' : 'white'}
             size="sm"
+            style={{
+              color: copied ? 'var(--mantine-color-teal-4)' : 'rgba(255, 255, 255, 0.8)',
+            }}
           >
             {copied ? <IconCheck size={16} /> : <IconCopy size={16} />}
           </ActionIcon>

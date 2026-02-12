@@ -1,6 +1,7 @@
 import {
   ActionIcon,
   Button,
+  Container,
   Group,
   Notification,
   Paper,
@@ -9,6 +10,7 @@ import {
   TextInput,
   Textarea,
   rem,
+  useMantineColorScheme,
 } from '@mantine/core';
 import {
   IconBrandInstagram,
@@ -25,6 +27,7 @@ import { useForm } from '@mantine/form';
 import { useState } from 'react';
 
 export function ContactPage() {
+  const { colorScheme } = useMantineColorScheme();
   const [loading, setLoading] = useState(false);
   const [notification, setNotification] = useState<{
     show: boolean;
@@ -98,7 +101,7 @@ export function ContactPage() {
   const checkIcon = <IconCheck style={{ width: rem(20), height: rem(20) }} />;
 
   return (
-    <div style={{ padding: '50px' }}>
+    <Container size="lg" py="xl" px="md">
       {notification.show && (
         <Notification
           icon={notification.type === 'success' ? checkIcon : xIcon}
@@ -116,24 +119,26 @@ export function ContactPage() {
         </Notification>
       )}
 
-      <Paper shadow="md" radius="lg">
+      <Paper shadow="lg" radius="lg" withBorder>
         <div className={classes.wrapper}>
-          <div
-            className={classes.contacts}
-            style={{
-              backgroundImage: `url(https://ui.mantine.dev/_next/static/media/bg.daf91204.svg)`,
-            }}
-          >
-            <Text fz="lg" fw={700} className={classes.title} c="#fff">
-              Contact information
-            </Text>
+          <div className={classes.contacts}>
+            <div>
+              <Text 
+                fz="xl" 
+                fw={700} 
+                className={classes.title}
+                c={colorScheme === 'dark' ? 'gray.0' : 'white'}
+                mb="xl"
+              >
+                Contact information
+              </Text>
 
-            <ContactIconsList />
-            {/* <Group mt="xl">{icons}</Group> */}
+              <ContactIconsList />
+            </div>
           </div>
 
           <form className={classes.form} onSubmit={form.onSubmit(handleSubmit)}>
-            <Text fz="lg" fw={700} className={classes.title}>
+            <Text fz="xl" fw={700} className={classes.title} mb="xl">
               Get in touch
             </Text>
 
@@ -170,12 +175,14 @@ export function ContactPage() {
                 {...form.getInputProps('message')}
               />
 
-              <Group justify="flex-end" mt="md">
+              <Group justify="flex-end" mt="xl">
                 <Button
                   type="submit"
                   className={classes.control}
                   loading={loading}
                   disabled={loading}
+                  size="md"
+                  variant="filled"
                 >
                   Send message
                 </Button>
@@ -184,6 +191,6 @@ export function ContactPage() {
           </form>
         </div>
       </Paper>
-    </div>
+    </Container>
   );
 }

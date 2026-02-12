@@ -44,7 +44,7 @@ export function HeaderMegaMenu() {
             <Link to="#" className={classes.link}>
               Engineering
             </Link>
-            <Link to="#" className={classes.link}>
+            <Link to="/portfolio/WebDev" className={classes.link}>
               Web Development
             </Link>
             <Link to="/portfolio/Contact" className={classes.link}>
@@ -70,20 +70,18 @@ export function HeaderMegaMenu() {
       >
         <ScrollArea h={`calc(100vh - ${rem(80)})`} mx="-md">
           <Divider my="sm" />
-
-          <a href="#" className={classes.link}>
+          <Link to="/portfolio" className={classes.link}>
             Home
-          </a>
-
-          <a href="#" className={classes.link}>
+          </Link>
+          <Link to="#" className={classes.link}>
             Engineering
-          </a>
-          <a href="#" className={classes.link}>
+          </Link>
+          <Link to="/portfolio/WebDev" className={classes.link}>
             Web Development
-          </a>
-          <a href="/Contact" className={classes.link}>
+          </Link>
+          <Link to="/portfolio/Contact" className={classes.link}>
             Contact
-          </a>
+          </Link>
 
           <Divider my="sm" />
         </ScrollArea>
