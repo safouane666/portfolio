@@ -21,11 +21,99 @@ import couscousGrilladeScreenShot from './img/CouscousGrilladeScreenShot.webp';
 import couscousGrilladeThumb from './img/CouscousGrilladeThumb.png';
 import gastleylawScreenShot from './img/GastleyLawScreenShot.webp';
 import gastleylawThumb from './img/GastleyLaw.png';
+import joyaThumb from './img/joyaThumb.png';
+import joyaScreenShot from './img/joyaScreenShot.webp';
 import { useState } from 'react';
 
 // Example icons for tech stack (replace with your logos)
 
 const projects = [
+  {
+    id: 4, 
+    title: 'Joya Energy Solar Solutions Landing Page',
+    shortDescription: `The Joya Energy project delivered a high-conversion, professional landing page designed to streamline solar energy adoption for homeowners through interactive energy simulators and multi-functional calculators. My work focused on Design by utilizing a clean, trust-focused visual identity that highlights cost savings and environmental benefits; Development by creating a fast-loading experience featuring custom-coded calculators for ROI and energy savings; and Value by providing a scalable digital asset optimized for paid advertising and high-quality lead generation.`,
+    image: joyaThumb, // PLACEHOLDER: Replace with your thumbnail import
+    websiteUrl: 'https://joya-energy.com/',
+    screenshot: joyaScreenShot, // PLACEHOLDER: Replace with your full-page screenshot import
+    techStack: [
+        {
+            name: 'Node.js',
+            src: 'https://cdn-icons-png.flaticon.com/128/5968/5968322.png',
+        },
+        {
+            name: 'Anfgular',
+            src: 'https://cdn-icons-png.flaticon.com/128/15484/15484402.png',
+
+        },
+        {
+            name: 'TypeScript',
+            src: 'https://cdn-icons-png.flaticon.com/128/5968/5968381.png',
+        },
+        {
+            name: 'MongoDB',
+            src: 'https://images.seeklogo.com/logo-png/48/2/mongodb-logo-png_seeklogo-481256.png',
+        },
+        {
+            name: 'Express.js',
+            src: 'https://cdn-icons-png.flaticon.com/128/5968/5968322.png',
+        },
+        {
+            name: 'REST API',
+            src: 'https://cdn-icons-png.flaticon.com/128/4166/4166099.png',
+        },
+     
+        {
+            name: 'GitHub',
+            src: 'https://cdn-icons-png.flaticon.com/128/3291/3291695.png',
+        },
+        {
+            name: 'Vercel',
+            src: 'https://static.wikia.nocookie.net/logopedia/images/a/a7/Vercel_favicon.svg',
+        },
+       
+        {
+            name: 'Docker',
+            src: 'https://cdn-icons-png.flaticon.com/128/919/919853.png',
+        },
+  
+        {
+            name: 'Railway',
+            src: 'https://railway.com/brand/logo-light.png',
+        },
+    ],
+    fullDescription: `The Joya Energy landing page was developed as a specialized lead generation tool for the renewable energy market, featuring interactive simulations to educate users on the financial impact of transitioning to solar power.
+
+## Content Overview and Page Structure
+The layout is designed to move visitors through an educational funnel using data-driven tools and clear information hierarchy.
+
+- Hero Section: Immediate focus on 40 percent energy savings with a direct entry point to the energy audit simulators.
+- Interactive Simulators: Multiple tools allowing users to input their current bill data to visualize potential savings and system size requirements.
+- ROI & Financial Calculators: Dedicated modules that calculate the long-term return on investment and government subsidy eligibility in real-time.
+- Environmental Impact Tracker: A visual simulator that translates energy savings into CO2 reduction and trees planted, appealing to eco-conscious consumers.
+- Lead Capture Form: A multi-step form that utilizes data from the simulators to provide the client with pre-qualified, data-rich leads.
+
+## ✨ Design & User Experience (UI/UX)
+The design prioritizes clarity and interactive engagement to build immediate credibility in the technical energy market.
+
+- Trust-Oriented Palette: A crisp combination of white, sky blue, and eco-green is used to evoke feelings of reliability and sustainability.
+- Data Visualization: Complex energy data is presented through easy-to-read charts and dynamic counters within the calculation tools.
+- Responsive Interaction: All calculators and simulators are engineered to be fully responsive, ensuring a smooth interactive experience on both mobile and desktop.
+
+## 💻 Development & Technical Execution
+The development phase focused on the mathematical accuracy and performance of the integrated calculation engines.
+
+- Custom Simulator Logic: Built complex front-end calculation engines using JavaScript to process user inputs for savings, ROI, and environmental impact without page reloads.
+- Performance Tuning: Optimized the interactive scripts to ensure that the inclusion of multiple simulators did not negatively impact page load speeds or Core Web Vitals.
+- Form Logic Integration: Developed custom lead capture forms that carry over user data from the simulators, providing the sales team with a complete profile of the prospect's needs.
+
+## 💰 Strategic Value for the Client
+This landing page serves as an automated sales assistant, qualifying leads through interactive engagement.
+
+- Increased User Retention: The presence of multiple calculators keeps users on the site longer, significantly increasing the likelihood of conversion.
+- Pre-Qualified Leads: Because prospects must interact with the savings simulators, the leads generated are higher quality and contain more actionable data than standard contact forms.
+- Reduced Sales Cycle: By providing users with ROI and savings data upfront, the website handles the initial education phase, allowing the sales team to focus on closing cases.`,
+    clientPrompt: `The client, a provider of residential solar energy solutions, needed a high-performance landing page to drive lead generation; the primary requirements were to integrate multiple interactive calculators and simulators to visualize 40 percent bill reductions and ROI, create a professional user journey that demystifies solar financing, and implement a robust lead capture system that utilizes simulator data to provide the sales team with highly qualified prospects.`,
+},
   {
     id: 1,
     title: 'Gastley Law Website',
@@ -184,6 +272,7 @@ The project delivered a fundamental digital identity focused entirely on convert
 - Reservation Funnel: The page's entire design flow culminates in the contact section, maximizing the chance of converting interested visitors into confirmed reservations.`,
     clientPrompt: `The client required a visually appealing, one-page WordPress landing page demo for "Couscous Grillade" to showcase the restaurant's authentic North African cuisine; the main requirements were to use high-quality imagery to immediately convey the food's authenticity, clearly present the signature menu items (couscous and grillades), and provide prominent, easy-to-access contact information and a location map to effectively drive in-person reservations and local foot traffic.`,
   },
+  
 ];
 
 export default function ProjectsSection() {

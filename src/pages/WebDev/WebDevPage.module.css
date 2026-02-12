@@ -1,11 +1,161 @@
 .card {
   transition:
-    transform 200ms ease,
-    box-shadow 200ms ease;
+    transform 300ms cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 300ms cubic-bezier(0.4, 0, 0.2, 1);
   cursor: pointer;
+  height: 100%;
+  overflow: hidden;
+  border: 1px solid light-dark(var(--mantine-color-gray-3), var(--mantine-color-dark-5));
 }
 
 .card:hover {
-  transform: translateY(-5px) scale(1.02);
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  transform: translateY(-8px);
+  box-shadow: 0 12px 30px light-dark(
+    rgba(0, 0, 0, 0.15),
+    rgba(0, 200, 255, 0.2)
+  );
+  border-color: light-dark(var(--mantine-color-cyan-4), var(--mantine-color-cyan-6));
+}
+
+.sectionTitle {
+  font-size: 48px;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: var(--mantine-spacing-md);
+  background: linear-gradient(135deg, var(--mantine-color-blue-6) 0%, var(--mantine-color-cyan-6) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  
+  @media (max-width: $mantine-breakpoint-sm) {
+    font-size: 36px;
+  }
+}
+
+.sectionDescription {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto;
+  font-size: 16px;
+}
+
+.sectionContainer {
+  padding: calc(var(--mantine-spacing-xl) * 2) 0;
+  
+  @media (max-width: $mantine-breakpoint-sm) {
+    padding: var(--mantine-spacing-xl) 0;
+  }
+}
+
+.serviceCard {
+  height: 100%;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid light-dark(var(--mantine-color-gray-2), var(--mantine-color-dark-5));
+  background: light-dark(
+    var(--mantine-color-white),
+    var(--mantine-color-dark-7)
+  );
+}
+
+.serviceCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 40px light-dark(
+    rgba(0, 200, 255, 0.15),
+    rgba(0, 200, 255, 0.25)
+  );
+  border-color: var(--mantine-color-cyan-6);
+}
+
+.techStackContainer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--mantine-spacing-xl);
+  justify-content: center;
+  padding: var(--mantine-spacing-xl);
+  background: light-dark(
+    var(--mantine-color-gray-0),
+    var(--mantine-color-dark-8)
+  );
+  border-radius: var(--mantine-radius-lg);
+  border: 1px solid light-dark(var(--mantine-color-gray-2), var(--mantine-color-dark-6));
+}
+
+.techIcon {
+  transition: all 0.3s ease;
+  padding: var(--mantine-spacing-md);
+  border-radius: var(--mantine-radius-md);
+  background: light-dark(
+    var(--mantine-color-white),
+    var(--mantine-color-dark-7)
+  );
+  border: 1px solid light-dark(var(--mantine-color-gray-2), var(--mantine-color-dark-5));
+  
+  @mixin hover {
+    transform: translateY(-5px) scale(1.1);
+    box-shadow: 0 8px 20px rgba(0, 200, 255, 0.2);
+    border-color: var(--mantine-color-cyan-6);
+  }
+}
+
+.ctaSection {
+  padding: calc(var(--mantine-spacing-xl) * 3) var(--mantine-spacing-xl);
+  margin: calc(var(--mantine-spacing-xl) * 2) 0;
+  border-radius: var(--mantine-radius-xl);
+  background: linear-gradient(135deg, var(--mantine-color-blue-6) 0%, var(--mantine-color-cyan-6) 100%);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.ctaSection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 30% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.ctaTitle {
+  color: white;
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: var(--mantine-spacing-md);
+  position: relative;
+  z-index: 1;
+  
+  @media (max-width: $mantine-breakpoint-sm) {
+    font-size: 28px;
+  }
+}
+
+.ctaDescription {
+  color: rgba(255, 255, 255, 0.95);
+  font-size: 18px;
+  max-width: 600px;
+  margin: 0 auto var(--mantine-spacing-lg);
+  position: relative;
+  z-index: 1;
+  
+  @media (max-width: $mantine-breakpoint-sm) {
+    font-size: 16px;
+  }
+}
+
+.ctaButton {
+  position: relative;
+  z-index: 1;
+  background: white;
+  color: var(--mantine-color-blue-7);
+  font-weight: 600;
+  padding: 12px 32px;
+  transition: all 0.3s ease;
+  
+  @mixin hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    background: var(--mantine-color-gray-0);
+  }
 }

@@ -10,7 +10,7 @@ export function HeroBullets() {
       <div className={classes.inner}>
         <div className={classes.content}>
           <Title className={classes.title}>
-            I build <span className={classes.highlight}>modern</span> & scalable <br /> web
+            I build modern & scalable <br /> web
             experiences
           </Title>
 
@@ -43,11 +43,23 @@ export function HeroBullets() {
             </List.Item>
           </List>
 
-          <Group mt={30}>
-            <Button radius="xl" size="md" className={classes.control} color="cyan">
+          <Group mt={30} gap="md">
+            <Button radius="xl" size="md" className={classes.control} color="cyan" variant="filled">
               Let’s Work Together
             </Button>
-            <Button variant="default" radius="xl" size="md" className={classes.control}>
+            <Button 
+              variant="outline" 
+              radius="xl" 
+              size="md" 
+              className={classes.control} 
+              color="cyan"
+              onClick={() => {
+                const projectsSection = document.getElementById('projects');
+                if (projectsSection) {
+                  projectsSection.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+              }}
+            >
               View Projects
             </Button>
           </Group>

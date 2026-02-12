@@ -67,8 +67,20 @@ export default function WebDevPage() {
       src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg',
     },
     {
+      name: 'Angular',
+      src: 'https://cdn-icons-png.flaticon.com/128/15484/15484402.png',
+    },
+    {
+      name: 'TypeScript',
+      src: 'https://cdn-icons-png.flaticon.com/128/5968/5968381.png',
+    },
+    {
       name: 'Node.js',
       src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg',
+    },
+    {
+      name: 'FastAPI',
+      src: 'https://cdn.worldvectorlogo.com/logos/fastapi.svg',
     },
     {
       name: 'JavaScript',
@@ -77,6 +89,27 @@ export default function WebDevPage() {
     {
       name: 'MongoDB',
       src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg',
+    },
+    {
+      name: 'Vercel',
+      src: 'https://static.wikia.nocookie.net/logopedia/images/a/a7/Vercel_favicon.svg',
+  },
+ 
+  {
+      name: 'Docker',
+      src: 'https://cdn-icons-png.flaticon.com/128/919/919853.png',
+  },
+  {
+      name: 'AWS',
+      src: 'https://logos-world.net/wp-content/uploads/2021/08/Amazon-Web-Services-AWS-Logo.png',
+  },
+  {
+      name: 'Railway',
+      src: 'https://railway.com/brand/logo-light.png',
+  },
+    {
+      name: 'Postgres',
+      src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Postgresql_elephant.svg/960px-Postgresql_elephant.svg.png',
     },
     { name: 'Git', src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg' },
     {
@@ -118,169 +151,115 @@ export default function WebDevPage() {
   ];
 
   return (
-    <Container>
+    <Container size="xl">
       {/* HERO */}
       <HeroBullets />
 
       {/* What i Create */}
-      <section style={{ padding: '100px 0' }}>
-        <Text
-          size="xl"
-          variant="gradient"
-          gradient={{ from: 'blue', to: 'cyan', deg: 90 }}
-          style={{
-            fontSize: '50px',
-            fontWeight: 900,
-            justifyContent: 'center',
-            display: 'flex',
-            marginBottom: '20px',
-          }}
-        >
-          {' '}
-          What I Create
-        </Text>
-
-        <Text ta="center" c="dimmed" mb={40}>
+      <section className={classes.sectionContainer}>
+        <Title className={classes.sectionTitle}>What I Create</Title>
+        <Text className={classes.sectionDescription} c="dimmed" mb="xl">
           From sleek portfolios to powerful e-commerce platforms — I design and build digital
           experiences that match your goals and brand identity.
         </Text>
 
-        <SimpleGrid cols={4} spacing="lg" mt="xl" maw={1100} mx="auto">
+        <SimpleGrid cols={{ base: 1, sm: 2, md: 4 }} spacing="lg" mt="xl">
           {Creation.map((project, index) => (
-            <Card key={index} shadow="md" radius="md" className={classes.card}>
+            <Card key={index} shadow="md" radius="lg" className={classes.card} withBorder>
               <Card.Section>
-                <Image src={project.image} alt={project.title} />
+                <Image src={project.image} alt={project.title} height={200} fit="cover" />
               </Card.Section>
 
-              <Group justify="space-between" mt="md" mb="xs">
-                <Text fw={600}>{project.title}</Text>
-              </Group>
-
-              <Text size="sm" c="dimmed">
-                {project.description}
-              </Text>
+              <Stack gap="xs" p="md">
+                <Text fw={600} size="lg">
+                  {project.title}
+                </Text>
+                <Text size="sm" c="dimmed" lineClamp={3}>
+                  {project.description}
+                </Text>
+              </Stack>
             </Card>
           ))}
         </SimpleGrid>
       </section>
+
       {/* SERVICES */}
-      <Stack mb={80}>
-        <Text
-          size="xl"
-          variant="gradient"
-          gradient={{ from: 'blue', to: 'cyan', deg: 90 }}
-          style={{
-            fontSize: '50px',
-            fontWeight: 900,
-            justifyContent: 'center',
-            display: 'flex',
-            marginBottom: '20px',
-          }}
-        >
-          {' '}
-          My Services
+      <section className={classes.sectionContainer}>
+        <Title className={classes.sectionTitle}>My Services</Title>
+        <Text className={classes.sectionDescription} c="dimmed" mb="xl">
+          Comprehensive web development solutions tailored to your business needs
         </Text>
 
-        <Grid>
+        <Grid gutter="lg">
           {services.map((s, i) => (
             <Grid.Col key={i} span={{ base: 12, sm: 6, md: 4 }}>
-              <Card
-                shadow="md"
-                radius="lg"
-                p="lg"
-                withBorder
-                style={{
-                  textAlign: 'center',
-                  transition: 'transform 0.25s ease, box-shadow 0.25s ease',
-                }}
-                onMouseEnter={(e) => {
-                  e.currentTarget.style.transform = 'translateY(-8px)';
-                  e.currentTarget.style.boxShadow = '0 10px 25px rgba(0, 255, 255, 0.15)';
-                }}
-                onMouseLeave={(e) => {
-                  e.currentTarget.style.transform = 'translateY(0)';
-                  e.currentTarget.style.boxShadow = 'none';
-                }}
-              >
-                <Group justify="center" mb="sm">
-                  {s.icon}
-                </Group>
-                <Text fw={600} size="lg" mb={8}>
-                  {s.title}
-                </Text>
-                <Text size="sm" c="dimmed">
-                  {s.desc}
-                </Text>
+              <Card shadow="md" radius="lg" p="xl" className={classes.serviceCard}>
+                <Stack align="center" gap="md">
+                  <div style={{ 
+                    padding: '16px', 
+                    borderRadius: '12px',
+                    background: 'linear-gradient(135deg, rgba(0, 200, 255, 0.1) 0%, rgba(0, 150, 255, 0.1) 100%)'
+                  }}>
+                    {s.icon}
+                  </div>
+                  <Text fw={700} size="lg" ta="center">
+                    {s.title}
+                  </Text>
+                  <Text size="sm" c="dimmed" ta="center" lineClamp={4}>
+                    {s.desc}
+                  </Text>
+                </Stack>
               </Card>
             </Grid.Col>
           ))}
         </Grid>
-      </Stack>
+      </section>
 
       {/* TECH STACK */}
-      <Stack align="center" mb={80}>
-        <Text
-          size="xl"
-          variant="gradient"
-          gradient={{ from: 'blue', to: 'cyan', deg: 90 }}
-          style={{
-            fontSize: '50px',
-            fontWeight: 900,
-            justifyContent: 'center',
-            display: 'flex',
-            marginBottom: '20px',
-          }}
-        >
-          {' '}
-          Tech Stack
+      <section className={classes.sectionContainer}>
+        <Title className={classes.sectionTitle}>Tech Stack</Title>
+        <Text className={classes.sectionDescription} c="dimmed" mb="xl">
+          Technologies and tools I use to bring your ideas to life
         </Text>
 
-        <Group gap="xl" mt="md" justify="center">
+        <div className={classes.techStackContainer}>
           {stack.map((tech, i) => (
-            <Tooltip key={i} label={tech.name} withArrow transitionProps={{ duration: 150 }}>
-              <Image
-                src={tech.src}
-                w={50}
-                h={50}
-                fit="contain"
-                style={{ cursor: 'pointer', transition: 'transform 0.2s ease' }}
-                onMouseEnter={(e) => (e.currentTarget.style.transform = 'scale(1.2)')}
-                onMouseLeave={(e) => (e.currentTarget.style.transform = 'scale(1)')}
-              />
+            <Tooltip key={i} label={tech.name} withArrow transitionProps={{ duration: 200 }}>
+              <div className={classes.techIcon}>
+                <Image src={tech.src} w={48} h={48} fit="contain" alt={tech.name} />
+              </div>
             </Tooltip>
           ))}
-        </Group>
-      </Stack>
+        </div>
+      </section>
+
       {/* Projects */}
-      <Text
-        size="xl"
-        variant="gradient"
-        gradient={{ from: 'blue', to: 'cyan', deg: 90 }}
-        style={{
-          fontSize: '50px',
-          fontWeight: 900,
-          justifyContent: 'center',
-          display: 'flex',
-          marginBottom: '20px',
-        }}
-      >
-        {' '}
-        My Projects
-      </Text>
-      <ProjectsSection />
+      <section id="projects" className={classes.sectionContainer}>
+        <Title className={classes.sectionTitle}>My Projects</Title>
+        <Text className={classes.sectionDescription} c="dimmed" mb="xl">
+          Explore some of my recent work and see how I've helped businesses achieve their goals
+        </Text>
+        <ProjectsSection />
+      </section>
+
       {/* CTA */}
-      <Flex direction="column" align="center" mb={100}>
-        <Title order={2} ta="center">
+      <div className={classes.ctaSection}>
+        <Title order={2} className={classes.ctaTitle}>
           Ready to Launch Your Next Project?
         </Title>
-        <Text ta="center" maw={600} mb="md">
+        <Text className={classes.ctaDescription}>
           Whether you need a modern portfolio, a business website, or a full-stack app — I can make
-          it happen.
+          it happen. Let's discuss how we can bring your vision to life.
         </Text>
-        <Button component={Link} to="/portfolio/Contact" color="cyan" size="md">
+        <Button 
+          component={Link} 
+          to="/portfolio/Contact" 
+          className={classes.ctaButton}
+          size="lg"
+        >
           Get in Touch
         </Button>
-      </Flex>
+      </div>
     </Container>
   );
 }

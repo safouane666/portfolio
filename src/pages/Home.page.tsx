@@ -12,10 +12,10 @@ export function HomePage() {
       <Hero />
       <About></About>
       <Education />
-      <div style={{ display: 'flex', gap: '15px ', paddingLeft: '12rem', paddingBottom: '4rem' }}>
+      {/* <div style={{ display: 'flex', gap: '15px ', paddingLeft: '12rem', paddingBottom: '4rem' }}>
         <Loader color="blue" />
         <Text fz={20}> Still in progress :3</Text>
-      </div>
+      </div> */}
     </>
   );
 }
