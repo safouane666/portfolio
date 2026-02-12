@@ -32,3 +32,10 @@
   font-weight: 900;
   margin-bottom: 2rem;
 }
+
+.accentLine {
+  height: 2px;
+  background: linear-gradient(90deg, var(--mantine-color-cyan-6), transparent);
+  margin: 1.5rem 0;
+  max-width: 100%;
+}

@@ -3,6 +3,8 @@ import '@mantine/core/styles.css';
 import { Outlet, Route, BrowserRouter as Router, Routes } from 'react-router-dom';
 
 import { ContactPage } from './pages/Contact/Contact.Page';
+import Engineering from './pages/Engineering/Engineering';
+import { Footer } from './components/Footer/Footer';
 import { HeaderMegaMenu } from './components/header/HeaderMegaMenu';
 import { HomePage } from './pages/Home.page';
 import { MantineProvider } from '@mantine/core';
@@ -11,13 +13,14 @@ import { theme } from './theme';
 
 function AppLayout() {
   return (
-    <div>
+    <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
       <div style={{ zIndex: 99, position: 'sticky', top: 0 }}>
         <HeaderMegaMenu />
       </div>
-      <div style={{ zIndex: 1 }}>
+      <div style={{ zIndex: 1, flex: 1 }}>
         <Outlet />
       </div>
+      <Footer />
     </div>
   );
 }
@@ -31,6 +34,7 @@ function AppRouter() {
             <Route index element={<HomePage />} />
             <Route path="Contact" element={<ContactPage />} />
             <Route path="WebDev" element={<WebDevPage />} />
+            <Route path="Engineering" element={<Engineering />} />
             <Route path="*" element={<div>Not Found</div>} />
           </Route>
         </Routes>

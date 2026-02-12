@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import {
   ActionIcon,
   Button,
@@ -102,6 +103,20 @@ export function ContactPage() {
 
   return (
     <Container size="lg" py="xl" px="md">
+      <motion.div
+        initial={{ opacity: 0, y: 24 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
+        style={{ marginBottom: 24 }}
+      >
+        <div
+          style={{
+            height: 2,
+            background: 'linear-gradient(90deg, var(--mantine-color-cyan-6), transparent)',
+            marginBottom: 24,
+          }}
+        />
+      </motion.div>
       {notification.show && (
         <Notification
           icon={notification.type === 'success' ? checkIcon : xIcon}
@@ -119,6 +134,11 @@ export function ContactPage() {
         </Notification>
       )}
 
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, delay: 0.15, ease: [0.25, 0.46, 0.45, 0.94] }}
+      >
       <Paper shadow="lg" radius="lg" withBorder>
         <div className={classes.wrapper}>
           <div className={classes.contacts}>
@@ -191,6 +211,7 @@ export function ContactPage() {
           </form>
         </div>
       </Paper>
+      </motion.div>
     </Container>
   );
 }

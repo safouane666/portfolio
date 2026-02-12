@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import {
   Button,
   Card,
@@ -156,13 +157,39 @@ export default function WebDevPage() {
     },
   ];
 
+  const sectionVariants = {
+    hidden: { opacity: 0, y: 24 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] },
+    },
+  };
+
+  const cardVariants = {
+    hidden: { opacity: 0, y: 20 },
+    visible: (i: number) => ({
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.5, delay: i * 0.08, ease: [0.25, 0.46, 0.45, 0.94] },
+    }),
+  };
+
   return (
     <Container size="xl">
       {/* HERO */}
       <HeroBullets />
 
+      <div className={classes.accentLine} style={{ margin: '0 auto' }} />
+
       {/* What i Create */}
-      <section className={classes.sectionContainer}>
+      <motion.section
+        className={classes.sectionContainer}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: '-60px' }}
+        variants={sectionVariants}
+      >
         <Title className={classes.sectionTitle}>What I Create</Title>
         <Text className={classes.sectionDescription} c="dimmed" mb="xl">
           From sleek portfolios to powerful e-commerce platforms — I design and build digital
@@ -171,7 +198,8 @@ export default function WebDevPage() {
 
         <SimpleGrid cols={{ base: 1, sm: 2, md: 4 }} spacing="lg" mt="xl">
           {Creation.map((project, index) => (
-            <Card key={index} shadow="md" radius="lg" className={classes.card} withBorder>
+            <motion.div key={index} variants={cardVariants} initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-20px' }} custom={index}>
+            <Card shadow="md" radius="lg" className={classes.card} withBorder>
               <Card.Section>
                 <Image src={project.image} alt={project.title} height={200} fit="cover" />
               </Card.Section>
@@ -185,12 +213,21 @@ export default function WebDevPage() {
                 </Text>
               </Stack>
             </Card>
+            </motion.div>
           ))}
         </SimpleGrid>
-      </section>
+      </motion.section>
+
+      <div className={classes.accentLine} style={{ margin: '0 auto' }} />
 
       {/* SERVICES */}
-      <section className={classes.sectionContainer}>
+      <motion.section
+        className={classes.sectionContainer}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: '-60px' }}
+        variants={sectionVariants}
+      >
         <Title className={classes.sectionTitle}>My Services</Title>
         <Text className={classes.sectionDescription} c="dimmed" mb="xl">
           Comprehensive web development solutions tailored to your business needs
@@ -199,6 +236,7 @@ export default function WebDevPage() {
         <Grid gutter="lg">
           {services.map((s, i) => (
             <Grid.Col key={i} span={{ base: 12, sm: 6, md: 4 }}>
+              <motion.div variants={cardVariants} initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-20px' }} custom={i}>
               <Card shadow="md" radius="lg" p="xl" className={classes.serviceCard}>
                 <Stack align="center" gap="md">
                   <div style={{ 
@@ -216,13 +254,22 @@ export default function WebDevPage() {
                   </Text>
                 </Stack>
               </Card>
+              </motion.div>
             </Grid.Col>
           ))}
         </Grid>
-      </section>
+      </motion.section>
+
+      <div className={classes.accentLine} style={{ margin: '0 auto' }} />
 
       {/* TECH STACK */}
-      <section className={classes.sectionContainer}>
+      <motion.section
+        className={classes.sectionContainer}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: '-60px' }}
+        variants={sectionVariants}
+      >
         <Title className={classes.sectionTitle}>Tech Stack</Title>
         <Text className={classes.sectionDescription} c="dimmed" mb="xl">
           Technologies and tools I use to bring your ideas to life
@@ -237,19 +284,36 @@ export default function WebDevPage() {
             </Tooltip>
           ))}
         </div>
-      </section>
+      </motion.section>
+
+      <div className={classes.accentLine} style={{ margin: '0 auto' }} />
 
       {/* Projects */}
-      <section id="projects" className={classes.sectionContainer}>
+      <motion.section
+        id="projects"
+        className={classes.sectionContainer}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: '-60px' }}
+        variants={sectionVariants}
+      >
         <Title className={classes.sectionTitle}>My Projects</Title>
         <Text className={classes.sectionDescription} c="dimmed" mb="xl">
           Explore some of my recent work and see how I've helped businesses achieve their goals
         </Text>
         <ProjectsSection />
-      </section>
+      </motion.section>
+
+      <div className={classes.accentLine} style={{ margin: '0 auto' }} />
 
       {/* CTA */}
-      <div className={classes.ctaSection}>
+      <motion.div
+        className={classes.ctaSection}
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, margin: '-40px' }}
+        transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
+      >
         <Title order={2} className={classes.ctaTitle}>
           Ready to Launch Your Next Project?
         </Title>
@@ -265,7 +329,7 @@ export default function WebDevPage() {
         >
           Get in Touch
         </Button>
-      </div>
+      </motion.div>
     </Container>
   );
 }

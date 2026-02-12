@@ -1,12 +1,29 @@
-import './Education.css';
-
+import { motion } from 'framer-motion';
 import { Flex, Text, Timeline } from '@mantine/core';
 
 import React from 'react';
+import './Education.css';
+
+const sectionVariants = {
+  hidden: { opacity: 0, y: 24 },
+  visible: {
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] },
+  },
+};
 
 export default function Education() {
   return (
     <Flex className="Education_Container">
+      <motion.div
+        className="EducationMe_Container"
+        style={{ display: 'flex', flexDirection: 'column', width: '100%', alignItems: 'center', padding: '2rem' }}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: '-60px' }}
+        variants={sectionVariants}
+      >
       <Flex className="EducationMe_Container">
         <Text
           className="EducationMe"
@@ -52,7 +69,15 @@ export default function Education() {
           </Timeline.Item>
         </Timeline>
       </Flex>
+      </motion.div>
 
+      <motion.div
+        style={{ display: 'flex', flexDirection: 'column', width: '100%', alignItems: 'center', padding: '2rem' }}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: '-60px' }}
+        variants={sectionVariants}
+      >
       <Flex className="EducationMe_Container">
         <Text
           className="pro_exp"
@@ -100,6 +125,7 @@ export default function Education() {
           </Timeline.Item>
         </Timeline>
       </Flex>
+      </motion.div>
     </Flex>
   );
 }
