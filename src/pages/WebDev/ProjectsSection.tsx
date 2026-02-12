@@ -345,7 +345,7 @@ export default function ProjectsSection() {
 
                 {/* Tech Stack under card */}
                 <Group mt="sm">
-                  {project.techStack?.map((tech) => (
+                  {project.techStack?.map((tech: { name: string; src: string }) => (
                     <Tooltip label={tech.name} key={tech.name} withArrow position="top">
                       <ActionIcon variant="transparent" size={36}>
                         <Image src={tech.src} alt={tech.name} width={24} />
@@ -407,7 +407,7 @@ export default function ProjectsSection() {
                 Tech Stack
               </Title>
               <Group mt="xs">
-                {selectedProject.techStack?.map((tech) => (
+                {selectedProject.techStack?.map((tech: { name: string; src: string }) => (
                   <Tooltip label={tech.name} key={tech.name} withArrow position="top">
                     <ActionIcon size={36} variant="transparent">
                       <Image src={tech.src} alt={tech.name} width={24} />

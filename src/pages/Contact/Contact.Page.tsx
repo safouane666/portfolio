@@ -47,10 +47,10 @@ export function ContactPage() {
       message: '',
     },
     validate: {
-      email: (value) => (/^\S+@\S+$/.test(value) ? null : 'Invalid email'),
-      name: (value) => (value.length < 2 ? 'Name must be at least 2 characters' : null),
-      subject: (value) => (value.length < 5 ? 'Subject must be at least 5 characters' : null),
-      message: (value) => (value.length < 10 ? 'Message must be at least 10 characters' : null),
+      email: (value: string) => (/^\S+@\S+$/.test(value) ? null : 'Invalid email'),
+      name: (value: string) => (value.length < 2 ? 'Name must be at least 2 characters' : null),
+      subject: (value: string) => (value.length < 5 ? 'Subject must be at least 5 characters' : null),
+      message: (value: string) => (value.length < 10 ? 'Message must be at least 10 characters' : null),
     },
   });
 

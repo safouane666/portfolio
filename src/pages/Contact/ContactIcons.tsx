@@ -4,7 +4,7 @@ import { IconAt, IconCheck, IconCopy, IconMapPin, IconPhone, IconSun } from '@ta
 import classes from './ContactIcons.module.css';
 import { useState } from 'react';
 
-interface ContactIconProps extends Omit<React.ComponentPropsWithoutRef<'div'>, 'title'> {
+interface ContactIconProps extends Omit<React.ComponentPropsWithoutRef<'div'>, 'title' | 'onCopy'> {
   icon: typeof IconSun;
   title: React.ReactNode;
   description: React.ReactNode;
