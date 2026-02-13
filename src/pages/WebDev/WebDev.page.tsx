@@ -157,162 +157,185 @@ export default function WebDevPage() {
     },
   ];
 
-  const sectionVariants = {
-    hidden: { opacity: 0, y: 24 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] },
-    },
-  };
-
-  const cardVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: (i: number) => ({
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.5, delay: i * 0.08, ease: [0.25, 0.46, 0.45, 0.94] },
-    }),
-  };
-
   return (
     <Container size="xl">
       {/* HERO */}
       <HeroBullets />
-
-      <div className={classes.accentLine} style={{ margin: '0 auto' }} />
+      
+      <div className={classes.accentLine} style={{ marginTop: 'var(--mantine-spacing-xl)' }} />
 
       {/* What i Create */}
-      <motion.section
-        className={classes.sectionContainer}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, margin: '-60px' }}
-        variants={sectionVariants}
-      >
-        <Title className={classes.sectionTitle}>What I Create</Title>
-        <Text className={classes.sectionDescription} c="dimmed" mb="xl">
-          From sleek portfolios to powerful e-commerce platforms — I design and build digital
-          experiences that match your goals and brand identity.
-        </Text>
+      <section className={classes.sectionContainer}>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-60px' }}
+          transition={{ duration: 0.6 }}
+        >
+          <Title className={classes.sectionTitle}>What I Create</Title>
+          <Text className={classes.sectionDescription} c="dimmed" mb="xl">
+            From sleek portfolios to powerful e-commerce platforms — I design and build digital
+            experiences that match your goals and brand identity.
+          </Text>
+        </motion.div>
 
         <SimpleGrid cols={{ base: 1, sm: 2, md: 4 }} spacing="lg" mt="xl">
           {Creation.map((project, index) => (
-            <motion.div key={index} variants={cardVariants} initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-20px' }} custom={index}>
-            <Card shadow="md" radius="lg" className={classes.card} withBorder>
-              <Card.Section>
-                <Image src={project.image} alt={project.title} height={200} fit="cover" />
-              </Card.Section>
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 24 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: '-40px' }}
+              transition={{ duration: 0.5, delay: index * 0.08 }}
+            >
+              <Card shadow="md" radius="lg" className={classes.card} withBorder>
+                <Card.Section>
+                  <Image src={project.image} alt={project.title} height={200} fit="cover" />
+                </Card.Section>
 
-              <Stack gap="xs" p="md">
-                <Text fw={600} size="lg">
-                  {project.title}
-                </Text>
-                <Text size="sm" c="dimmed" lineClamp={3}>
-                  {project.description}
-                </Text>
-              </Stack>
-            </Card>
+                <Stack gap="xs" p="md">
+                  <Text fw={600} size="lg">
+                    {project.title}
+                  </Text>
+                  <Text size="sm" c="dimmed" lineClamp={3}>
+                    {project.description}
+                  </Text>
+                </Stack>
+              </Card>
             </motion.div>
           ))}
         </SimpleGrid>
-      </motion.section>
+      </section>
 
-      <div className={classes.accentLine} style={{ margin: '0 auto' }} />
+      <Container size="xl">
+        <div className={classes.accentLine} />
+      </Container>
 
       {/* SERVICES */}
-      <motion.section
-        className={classes.sectionContainer}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, margin: '-60px' }}
-        variants={sectionVariants}
-      >
-        <Title className={classes.sectionTitle}>My Services</Title>
-        <Text className={classes.sectionDescription} c="dimmed" mb="xl">
-          Comprehensive web development solutions tailored to your business needs
-        </Text>
+      <section className={classes.sectionContainer}>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-60px' }}
+          transition={{ duration: 0.6 }}
+        >
+          <Title className={classes.sectionTitle}>My Services</Title>
+          <Text className={classes.sectionDescription} c="dimmed" mb="xl">
+            Comprehensive web development solutions tailored to your business needs
+          </Text>
+        </motion.div>
 
         <Grid gutter="lg">
           {services.map((s, i) => (
             <Grid.Col key={i} span={{ base: 12, sm: 6, md: 4 }}>
-              <motion.div variants={cardVariants} initial="hidden" whileInView="visible" viewport={{ once: true, margin: '-20px' }} custom={i}>
-              <Card shadow="md" radius="lg" p="xl" className={classes.serviceCard}>
-                <Stack align="center" gap="md">
-                  <div style={{ 
-                    padding: '16px', 
-                    borderRadius: '12px',
-                    background: 'linear-gradient(135deg, rgba(0, 200, 255, 0.1) 0%, rgba(0, 150, 255, 0.1) 100%)'
-                  }}>
-                    {s.icon}
-                  </div>
-                  <Text fw={700} size="lg" ta="center">
-                    {s.title}
-                  </Text>
-                  <Text size="sm" c="dimmed" ta="center" lineClamp={4}>
-                    {s.desc}
-                  </Text>
-                </Stack>
-              </Card>
+              <motion.div
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-40px' }}
+                transition={{ duration: 0.5, delay: i * 0.08 }}
+              >
+                <Card shadow="md" radius="lg" p="xl" className={classes.serviceCard}>
+                  <Stack align="center" gap="md">
+                    <div style={{ 
+                      padding: '16px', 
+                      borderRadius: '12px',
+                      background: 'linear-gradient(135deg, rgba(0, 200, 255, 0.1) 0%, rgba(0, 150, 255, 0.1) 100%)'
+                    }}>
+                      {s.icon}
+                    </div>
+                    <Text fw={700} size="lg" ta="center">
+                      {s.title}
+                    </Text>
+                    <Text size="sm" c="dimmed" ta="center" lineClamp={4}>
+                      {s.desc}
+                    </Text>
+                  </Stack>
+                </Card>
               </motion.div>
             </Grid.Col>
           ))}
         </Grid>
-      </motion.section>
+      </section>
 
-      <div className={classes.accentLine} style={{ margin: '0 auto' }} />
+      <Container size="xl">
+        <div className={classes.accentLine} />
+      </Container>
 
       {/* TECH STACK */}
-      <motion.section
-        className={classes.sectionContainer}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, margin: '-60px' }}
-        variants={sectionVariants}
-      >
-        <Title className={classes.sectionTitle}>Tech Stack</Title>
-        <Text className={classes.sectionDescription} c="dimmed" mb="xl">
-          Technologies and tools I use to bring your ideas to life
-        </Text>
+      <section className={classes.sectionContainer}>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-60px' }}
+          transition={{ duration: 0.6 }}
+        >
+          <Title className={classes.sectionTitle}>Tech Stack</Title>
+          <Text className={classes.sectionDescription} c="dimmed" mb="xl">
+            Technologies and tools I use to bring your ideas to life
+          </Text>
+        </motion.div>
 
-        <div className={classes.techStackContainer}>
+        <motion.div
+          className={classes.techStackContainer}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: '-40px' }}
+          variants={{
+            visible: {
+              transition: { staggerChildren: 0.05, delayChildren: 0.2 },
+            },
+            hidden: {},
+          }}
+        >
           {stack.map((tech, i) => (
-            <Tooltip key={i} label={tech.name} withArrow transitionProps={{ duration: 200 }}>
-              <div className={classes.techIcon}>
-                <Image src={tech.src} w={48} h={48} fit="contain" alt={tech.name} />
-              </div>
-            </Tooltip>
+            <motion.div
+              key={i}
+              variants={{
+                hidden: { opacity: 0, scale: 0.8 },
+                visible: { opacity: 1, scale: 1, transition: { duration: 0.4 } },
+              }}
+            >
+              <Tooltip label={tech.name} withArrow transitionProps={{ duration: 200 }}>
+                <div className={classes.techIcon}>
+                  <Image src={tech.src} w={48} h={48} fit="contain" alt={tech.name} />
+                </div>
+              </Tooltip>
+            </motion.div>
           ))}
-        </div>
-      </motion.section>
+        </motion.div>
+      </section>
 
-      <div className={classes.accentLine} style={{ margin: '0 auto' }} />
+      <Container size="xl">
+        <div className={classes.accentLine} />
+      </Container>
 
       {/* Projects */}
-      <motion.section
-        id="projects"
-        className={classes.sectionContainer}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true, margin: '-60px' }}
-        variants={sectionVariants}
-      >
-        <Title className={classes.sectionTitle}>My Projects</Title>
-        <Text className={classes.sectionDescription} c="dimmed" mb="xl">
-          Explore some of my recent work and see how I've helped businesses achieve their goals
-        </Text>
+      <section id="projects" className={classes.sectionContainer}>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-60px' }}
+          transition={{ duration: 0.6 }}
+        >
+          <Title className={classes.sectionTitle}>My Projects</Title>
+          <Text className={classes.sectionDescription} c="dimmed" mb="xl">
+            Explore some of my recent work and see how I've helped businesses achieve their goals
+          </Text>
+        </motion.div>
         <ProjectsSection />
-      </motion.section>
+      </section>
 
-      <div className={classes.accentLine} style={{ margin: '0 auto' }} />
+      <Container size="xl">
+        <div className={classes.accentLine} />
+      </Container>
 
       {/* CTA */}
       <motion.div
         className={classes.ctaSection}
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true, margin: '-40px' }}
-        transition={{ duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] }}
+        viewport={{ once: true, margin: '-50px' }}
+        transition={{ duration: 0.6 }}
       >
         <Title order={2} className={classes.ctaTitle}>
           Ready to Launch Your Next Project?

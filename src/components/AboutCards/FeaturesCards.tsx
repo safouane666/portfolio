@@ -1,4 +1,3 @@
-import { motion } from 'framer-motion';
 import {
   Button,
   Card,
@@ -100,28 +99,12 @@ const mockdata = [
   },
 ];
 
-const cardVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: (i: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.5, delay: i * 0.1, ease: [0.25, 0.46, 0.45, 0.94] },
-  }),
-};
-
 export function FeaturesCards() {
   const [opened, { toggle }] = useDisclosure(false);
   const theme = useMantineTheme();
-  const features = mockdata.map((feature, i) => (
-    <motion.div
-      key={feature.title}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true, margin: '-30px' }}
-      variants={cardVariants}
-      custom={i}
-    >
+  const features = mockdata.map((feature) => (
     <Card
+      key={feature.title}
       shadow="md"
       radius="md"
       className={classes.card}
@@ -160,7 +143,6 @@ export function FeaturesCards() {
         </div>
       </Collapse>
     </Card>
-    </motion.div>
   ));
 
   return (

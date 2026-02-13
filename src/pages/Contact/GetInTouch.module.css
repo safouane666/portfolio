@@ -99,3 +99,10 @@
     color: var(--mantine-color-blue-1);
   }
 }
+
+.accentLine {
+  height: 2px;
+  background: linear-gradient(90deg, var(--mantine-color-cyan-6), transparent);
+  margin: var(--mantine-spacing-xl) 0;
+  width: 100%;
+}

@@ -1,3 +1,4 @@
+import { motion } from 'framer-motion';
 import { Button, Container, Group, Image, List, Text, ThemeIcon, Title } from '@mantine/core';
 
 import { IconCheck } from '@tabler/icons-react';
@@ -8,7 +9,12 @@ export function HeroBullets() {
   return (
     <Container size="xl">
       <div className={classes.inner}>
-        <div className={classes.content}>
+        <motion.div
+          className={classes.content}
+          initial={{ opacity: 0, x: -30 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] }}
+        >
           <Title className={classes.title}>
             I build modern & scalable <br /> web
             experiences
@@ -67,8 +73,14 @@ export function HeroBullets() {
               View Projects
             </Button>
           </Group>
-        </div>
-        <Image src={WebDevHeroBg} className={classes.image} />
+        </motion.div>
+        <motion.div
+          initial={{ opacity: 0, x: 30 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.7, delay: 0.2, ease: [0.25, 0.46, 0.45, 0.94] }}
+        >
+          <Image src={WebDevHeroBg} className={classes.image} />
+        </motion.div>
       </div>
     </Container>
   );

@@ -47,13 +47,6 @@
   }
 }
 
-.accentLine {
-  height: 2px;
-  background: linear-gradient(90deg, var(--mantine-color-cyan-6), transparent);
-  margin: 0;
-  max-width: 100%;
-}
-
 .serviceCard {
   height: 100%;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
@@ -165,4 +158,11 @@
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
     background: var(--mantine-color-gray-0);
   }
+}
+
+.accentLine {
+  height: 2px;
+  background: linear-gradient(90deg, var(--mantine-color-cyan-6), transparent);
+  margin: var(--mantine-spacing-xl) 0;
+  width: 100%;
 }

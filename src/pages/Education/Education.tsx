@@ -1,30 +1,21 @@
+import './Education.css';
+
 import { motion } from 'framer-motion';
 import { Flex, Text, Timeline } from '@mantine/core';
 
 import React from 'react';
-import './Education.css';
-
-const sectionVariants = {
-  hidden: { opacity: 0, y: 24 },
-  visible: {
-    opacity: 1,
-    y: 0,
-    transition: { duration: 0.6, ease: [0.25, 0.46, 0.45, 0.94] },
-  },
-};
 
 export default function Education() {
   return (
     <Flex className="Education_Container">
       <motion.div
         className="EducationMe_Container"
-        style={{ display: 'flex', flexDirection: 'column', width: '100%', alignItems: 'center', padding: '2rem' }}
-        initial="hidden"
-        whileInView="visible"
+        initial={{ opacity: 0, x: -30 }}
+        whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true, margin: '-60px' }}
-        variants={sectionVariants}
+        transition={{ duration: 0.7 }}
+        style={{ display: 'flex', flexDirection: 'column' }}
       >
-      <Flex className="EducationMe_Container">
         <Text
           className="EducationMe"
           size="xl"
@@ -68,17 +59,16 @@ export default function Education() {
             </Text>
           </Timeline.Item>
         </Timeline>
-      </Flex>
       </motion.div>
 
       <motion.div
-        style={{ display: 'flex', flexDirection: 'column', width: '100%', alignItems: 'center', padding: '2rem' }}
-        initial="hidden"
-        whileInView="visible"
+        className="EducationMe_Container"
+        initial={{ opacity: 0, x: 30 }}
+        whileInView={{ opacity: 1, x: 0 }}
         viewport={{ once: true, margin: '-60px' }}
-        variants={sectionVariants}
+        transition={{ duration: 0.7, delay: 0.2 }}
+        style={{ display: 'flex', flexDirection: 'column' }}
       >
-      <Flex className="EducationMe_Container">
         <Text
           className="pro_exp"
           variant="gradient"
@@ -124,7 +114,6 @@ export default function Education() {
             </Text>
           </Timeline.Item>
         </Timeline>
-      </Flex>
       </motion.div>
     </Flex>
   );
