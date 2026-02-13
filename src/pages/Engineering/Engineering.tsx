@@ -432,10 +432,8 @@ export default function Engineering() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] }}
           >
-            <Text size="xs" tt="uppercase" fw={600} c="cyan" mb="sm" style={{ fontFamily: 'monospace', letterSpacing: 2 }}>
-              Portfolio
-            </Text>
-            <Title order={1} size="2.5rem" mb="md" style={{ lineHeight: 1.2 }}>
+           
+            <Title order={1} size="3rem" mb="md" style={{ lineHeight: 1.2 }}>
               Embedded & Electrical
               <br />
               <span className={classes.accentGradientText}>Engineering</span>
@@ -448,9 +446,9 @@ export default function Engineering() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.15, ease: [0.25, 0.46, 0.45, 0.94] }}
-            style={{ maxWidth: 768 }}
+            style={{ maxWidth: 1000 }}
           >
-            <Text size="sm" c="dimmed" mb="xs">
+            <Text size="ls" c="dimmed" mb="xs">
               Embedded & Electrical Engineer specialized in real-time systems, digital hardware design, robotics simulation, and industrial communication architectures.
             </Text>
             <Text size="sm" c="dimmed" mb="xs">
