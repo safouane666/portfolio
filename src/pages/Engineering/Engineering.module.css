@@ -281,6 +281,66 @@
   object-fit: cover;
 }
 
+.ctaSection {
+  padding: calc(var(--mantine-spacing-xl) * 3) var(--mantine-spacing-xl);
+  margin: calc(var(--mantine-spacing-xl) * 2) 0;
+  border-radius: var(--mantine-radius-xl);
+  background: linear-gradient(135deg, var(--mantine-color-blue-6) 0%, var(--mantine-color-cyan-6) 100%);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+.ctaSection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 30% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+}
+.ctaTitle {
+  color: white;
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: var(--mantine-spacing-md);
+  position: relative;
+  z-index: 1;
+}
+@media (max-width: 768px) {
+  .ctaTitle {
+    font-size: 28px;
+  }
+}
+.ctaDescription {
+  color: rgba(255, 255, 255, 0.95);
+  font-size: 18px;
+  max-width: 600px;
+  margin: 0 auto var(--mantine-spacing-lg);
+  position: relative;
+  z-index: 1;
+}
+@media (max-width: 768px) {
+  .ctaDescription {
+    font-size: 16px;
+  }
+}
+.ctaButton {
+  position: relative;
+  z-index: 1;
+  background: white;
+  color: var(--mantine-color-blue-7);
+  font-weight: 600;
+  padding: 12px 32px;
+  transition: all 0.3s ease;
+}
+.ctaButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  background: var(--mantine-color-gray-0);
+}
+
 .pageFooter {
   padding: 2rem 0;
   text-align: center;

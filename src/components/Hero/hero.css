@@ -94,7 +94,7 @@
 
 /* Image styles */
 .Hero_Container .image {
-  height: 500px;
+  height: 600px;
   width: auto;
   @media (max-width: 1334px) {
     height: 400px;

@@ -78,6 +78,10 @@ export default function WebDevPage() {
       src: 'https://cdn-icons-png.flaticon.com/128/15484/15484402.png',
     },
     {
+      name: 'Next.js',
+      src: 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nextjs/nextjs-original.svg',
+    },
+    {
       name: 'TypeScript',
       src: 'https://cdn-icons-png.flaticon.com/128/5968/5968381.png',
     },
@@ -100,20 +104,20 @@ export default function WebDevPage() {
     {
       name: 'Vercel',
       src: 'https://static.wikia.nocookie.net/logopedia/images/a/a7/Vercel_favicon.svg',
-  },
- 
-  {
+    },
+
+    {
       name: 'Docker',
       src: 'https://cdn-icons-png.flaticon.com/128/919/919853.png',
-  },
-  {
+    },
+    {
       name: 'AWS',
       src: 'https://logos-world.net/wp-content/uploads/2021/08/Amazon-Web-Services-AWS-Logo.png',
-  },
-  {
+    },
+    {
       name: 'Railway',
       src: 'https://railway.com/brand/logo-light.png',
-  },
+    },
     {
       name: 'Postgres',
       src: 'https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Postgresql_elephant.svg/960px-Postgresql_elephant.svg.png',
@@ -161,7 +165,7 @@ export default function WebDevPage() {
     <Container size="xl">
       {/* HERO */}
       <HeroBullets />
-      
+
       <div className={classes.accentLine} style={{ marginTop: 'var(--mantine-spacing-xl)' }} />
 
       {/* What i Create */}
@@ -236,11 +240,14 @@ export default function WebDevPage() {
               >
                 <Card shadow="md" radius="lg" p="xl" className={classes.serviceCard}>
                   <Stack align="center" gap="md">
-                    <div style={{ 
-                      padding: '16px', 
-                      borderRadius: '12px',
-                      background: 'linear-gradient(135deg, rgba(0, 200, 255, 0.1) 0%, rgba(0, 150, 255, 0.1) 100%)'
-                    }}>
+                    <div
+                      style={{
+                        padding: '16px',
+                        borderRadius: '12px',
+                        background:
+                          'linear-gradient(135deg, rgba(0, 200, 255, 0.1) 0%, rgba(0, 150, 255, 0.1) 100%)',
+                      }}
+                    >
                       {s.icon}
                     </div>
                     <Text fw={700} size="lg" ta="center">
@@ -344,12 +351,7 @@ export default function WebDevPage() {
           Whether you need a modern portfolio, a business website, or a full-stack app — I can make
           it happen. Let's discuss how we can bring your vision to life.
         </Text>
-        <Button 
-          component={Link} 
-          to="/Contact" 
-          className={classes.ctaButton}
-          size="lg"
-        >
+        <Button component={Link} to="/Contact" className={classes.ctaButton} size="lg">
           Get in Touch
         </Button>
       </motion.div>

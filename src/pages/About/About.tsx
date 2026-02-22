@@ -28,8 +28,8 @@ const About = React.forwardRef((props, ref) => {
         </Text>
 
         <Text className="Paragraph" ta="center">
-          I am an Electrical and Electronics Engineering graduate from the National Engineering
-          School of Monastir.
+          I am an Electrical and Electronics Engineer from the National Engineering School of
+          Monastir, with a strong interest in robotics, automation, and software development.
         </Text>
 
         <Text className="Paragraph" ta="center">

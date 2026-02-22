@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 import { Cursor, useTypewriter } from 'react-simple-typewriter';
 import { Flex, Group, Image, Text } from '@mantine/core';
 
-import ProfileImg from '@/imgs/profile.webp';
+import ProfileImg from '@/imgs/profile.jpeg';
 import SocialIcons from '../Social/SocialIcons';
 
 export default function Hero() {

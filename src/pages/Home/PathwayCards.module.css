@@ -1,0 +1,255 @@
+.section {
+  padding: calc(var(--mantine-spacing-xl) * 2) var(--mantine-spacing-xl);
+  position: relative;
+}
+
+.sectionTitle {
+  font-size: 42px;
+  font-weight: 800;
+  text-align: center;
+  margin-bottom: var(--mantine-spacing-xs);
+  background: linear-gradient(135deg, var(--mantine-color-blue-6) 0%, var(--mantine-color-cyan-6) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.sectionSubtitle {
+  text-align: center;
+  max-width: 560px;
+  margin: 0 auto 2.5rem;
+  color: light-dark(var(--mantine-color-gray-7), var(--mantine-color-dark-2));
+  font-size: 18px;
+}
+
+.cardsGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--mantine-spacing-xl);
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+@media (max-width: 768px) {
+  .cardsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .sectionTitle {
+    font-size: 32px;
+  }
+}
+
+.card {
+  position: relative;
+  border-radius: var(--mantine-radius-lg);
+  padding: calc(var(--mantine-spacing-xl) * 1.5);
+  min-height: 280px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+  text-decoration: none;
+  border: 2px solid transparent;
+  transition:
+    transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1),
+    box-shadow 0.4s ease,
+    border-color 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-12px) scale(1.02);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+/* WebDev card - blue/cyan */
+.cardWebDev {
+  background: linear-gradient(145deg, var(--mantine-color-blue-7) 0%, var(--mantine-color-cyan-7) 50%, var(--mantine-color-blue-8) 100%);
+  box-shadow:
+    0 10px 40px rgba(0, 131, 255, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+.cardWebDev:hover {
+  box-shadow:
+    0 24px 48px rgba(0, 131, 255, 0.35),
+    0 0 60px rgba(0, 200, 255, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+/* Engineering card - orange/amber/red variant */
+.cardEngineering {
+  background: linear-gradient(145deg, var(--mantine-color-orange-7) 0%, var(--mantine-color-red-7) 50%, var(--mantine-color-orange-8) 100%);
+  box-shadow:
+    0 10px 40px rgba(232, 89, 12, 0.25),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+}
+
+.cardEngineering:hover {
+  box-shadow:
+    0 24px 48px rgba(232, 89, 12, 0.35),
+    0 0 60px rgba(253, 126, 20, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+.cardGlow {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  filter: blur(80px);
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.cardWebDev .cardGlow {
+  background: rgba(0, 200, 255, 0.5);
+  top: -60px;
+  right: -40px;
+}
+
+.cardEngineering .cardGlow {
+  background: rgba(253, 126, 20, 0.5);
+  bottom: -60px;
+  left: -40px;
+}
+
+.cardContent {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--mantine-spacing-md);
+  flex: 1;
+}
+
+.cardIconWrap {
+  width: 64px;
+  height: 64px;
+  border-radius: var(--mantine-radius-lg);
+  background: rgba(255, 255, 255, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backdrop-filter: blur(8px);
+  transition: transform 0.3s ease;
+}
+
+.card:hover .cardIconWrap {
+  transform: scale(1.1) rotate(-5deg);
+}
+
+.cardTitle {
+  color: white;
+  font-size: 26px;
+  font-weight: 700;
+  margin: 0;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.cardDescription {
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 15px;
+  line-height: 1.5;
+  margin: 0;
+  flex: 1;
+}
+
+.cardCta {
+  color: white;
+  font-weight: 600;
+  font-size: 15px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: auto;
+  transition: gap 0.3s ease, transform 0.2s ease;
+}
+
+.card:hover .cardCta {
+  gap: 12px;
+}
+
+.cardCta span {
+  display: inline-flex;
+  transition: transform 0.3s ease;
+}
+
+.card:hover .cardCta span {
+  transform: translateX(4px);
+}
+
+/* CTA section (shared with home) */
+.ctaSection {
+  padding: calc(var(--mantine-spacing-xl) * 3) var(--mantine-spacing-xl);
+  margin: calc(var(--mantine-spacing-xl) * 2) 0;
+  border-radius: var(--mantine-radius-xl);
+  background: linear-gradient(135deg, var(--mantine-color-blue-6) 0%, var(--mantine-color-cyan-6) 100%);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.ctaSection::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: radial-gradient(circle at 30% 50%, rgba(255, 255, 255, 0.1) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.ctaTitle {
+  color: white;
+  font-size: 36px;
+  font-weight: 700;
+  margin-bottom: var(--mantine-spacing-md);
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 768px) {
+  .ctaTitle {
+    font-size: 28px;
+  }
+}
+
+.ctaDescription {
+  color: rgba(255, 255, 255, 0.95);
+  font-size: 18px;
+  max-width: 600px;
+  margin: 0 auto var(--mantine-spacing-lg);
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 768px) {
+  .ctaDescription {
+    font-size: 16px;
+  }
+}
+
+.ctaButton {
+  position: relative;
+  z-index: 1;
+  background: white;
+  color: var(--mantine-color-blue-7);
+  font-weight: 600;
+  padding: 12px 32px;
+  transition: all 0.3s ease;
+}
+
+.ctaButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+  background: var(--mantine-color-gray-0);
+}
+
+.accentLine {
+  height: 2px;
+  background: linear-gradient(90deg, var(--mantine-color-cyan-6), transparent);
+  margin: var(--mantine-spacing-xl) 0;
+  width: 100%;
+}
