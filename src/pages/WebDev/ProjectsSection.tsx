@@ -23,63 +23,64 @@ import gastleylawScreenShot from './img/GastleyLawScreenShot.webp';
 import gastleylawThumb from './img/GastleyLaw.webp';
 import joyaThumb from './img/joyaThumb.webp';
 import joyaScreenShot from './img/joyaScreenShot.webp';
+import tmata3Thumb from './img/tmata3thumb.webp';
+import tmata3ScreenShot from './img/tmata3screenshot.webp';
 import { useState } from 'react';
 
 // Example icons for tech stack (replace with your logos)
 
 const projects = [
   {
-    id: 4, 
+    id: 4,
     title: 'Joya Energy Solar Solutions Landing Page',
     shortDescription: `The Joya Energy project delivered a high-conversion, professional landing page designed to streamline solar energy adoption for homeowners through interactive energy simulators and multi-functional calculators. My work focused on Design by utilizing a clean, trust-focused visual identity that highlights cost savings and environmental benefits; Development by creating a fast-loading experience featuring custom-coded calculators for ROI and energy savings; and Value by providing a scalable digital asset optimized for paid advertising and high-quality lead generation.`,
     image: joyaThumb, // PLACEHOLDER: Replace with your thumbnail import
     websiteUrl: 'https://joya-energy.com/',
     screenshot: joyaScreenShot, // PLACEHOLDER: Replace with your full-page screenshot import
     techStack: [
-        {
-            name: 'Node.js',
-            src: 'https://cdn-icons-png.flaticon.com/128/5968/5968322.png',
-        },
-        {
-            name: 'Anfgular',
-            src: 'https://cdn-icons-png.flaticon.com/128/15484/15484402.png',
+      {
+        name: 'Node.js',
+        src: 'https://cdn-icons-png.flaticon.com/128/5968/5968322.png',
+      },
+      {
+        name: 'Anfgular',
+        src: 'https://cdn-icons-png.flaticon.com/128/15484/15484402.png',
+      },
+      {
+        name: 'TypeScript',
+        src: 'https://cdn-icons-png.flaticon.com/128/5968/5968381.png',
+      },
+      {
+        name: 'MongoDB',
+        src: 'https://images.seeklogo.com/logo-png/48/2/mongodb-logo-png_seeklogo-481256.png',
+      },
+      {
+        name: 'Express.js',
+        src: 'https://cdn-icons-png.flaticon.com/128/5968/5968322.png',
+      },
+      {
+        name: 'REST API',
+        src: 'https://cdn-icons-png.flaticon.com/128/4166/4166099.png',
+      },
 
-        },
-        {
-            name: 'TypeScript',
-            src: 'https://cdn-icons-png.flaticon.com/128/5968/5968381.png',
-        },
-        {
-            name: 'MongoDB',
-            src: 'https://images.seeklogo.com/logo-png/48/2/mongodb-logo-png_seeklogo-481256.png',
-        },
-        {
-            name: 'Express.js',
-            src: 'https://cdn-icons-png.flaticon.com/128/5968/5968322.png',
-        },
-        {
-            name: 'REST API',
-            src: 'https://cdn-icons-png.flaticon.com/128/4166/4166099.png',
-        },
-     
-        {
-            name: 'GitHub',
-            src: 'https://cdn-icons-png.flaticon.com/128/3291/3291695.png',
-        },
-        {
-            name: 'Vercel',
-            src: 'https://static.wikia.nocookie.net/logopedia/images/a/a7/Vercel_favicon.svg',
-        },
-       
-        {
-            name: 'Docker',
-            src: 'https://cdn-icons-png.flaticon.com/128/919/919853.png',
-        },
-  
-        {
-            name: 'Railway',
-            src: 'https://railway.com/brand/logo-light.png',
-        },
+      {
+        name: 'GitHub',
+        src: 'https://cdn-icons-png.flaticon.com/128/3291/3291695.png',
+      },
+      {
+        name: 'Vercel',
+        src: 'https://static.wikia.nocookie.net/logopedia/images/a/a7/Vercel_favicon.svg',
+      },
+
+      {
+        name: 'Docker',
+        src: 'https://cdn-icons-png.flaticon.com/128/919/919853.png',
+      },
+
+      {
+        name: 'Railway',
+        src: 'https://railway.com/brand/logo-light.png',
+      },
     ],
     fullDescription: `The Joya Energy landing page was developed as a specialized lead generation tool for the renewable energy market, featuring interactive simulations to educate users on the financial impact of transitioning to solar power.
 
@@ -113,7 +114,7 @@ This landing page serves as an automated sales assistant, qualifying leads throu
 - Pre-Qualified Leads: Because prospects must interact with the savings simulators, the leads generated are higher quality and contain more actionable data than standard contact forms.
 - Reduced Sales Cycle: By providing users with ROI and savings data upfront, the website handles the initial education phase, allowing the sales team to focus on closing cases.`,
     clientPrompt: `The client, a provider of residential solar energy solutions, needed a high-performance landing page to drive lead generation; the primary requirements were to integrate multiple interactive calculators and simulators to visualize 40 percent bill reductions and ROI, create a professional user journey that demystifies solar financing, and implement a robust lead capture system that utilizes simulator data to provide the sales team with highly qualified prospects.`,
-},
+  },
   {
     id: 1,
     title: 'Gastley Law Website',
@@ -167,6 +168,67 @@ The website became a high-performing acquisition tool that sustainably drives qu
 - Sustainable Organic Growth: SEO-driven structure ensures long-term cost-efficient traffic growth.
 `,
     clientPrompt: `The client, a specialized law firm focusing on Diminished Value and Property Damage claims, required a completely new, high-performance website to serve as their primary lead generation engine; the project's core objectives were to establish immediate authority and trust with a premium, professional online presence, maximize conversions (ROI) by implementing a clear user journey centered around a proprietary, highly visible interactive tool (Diminished Value Calculator) for data capture, and ensure sustainable growth by building the site on a robust technical foundation that prioritized speed, mobile responsiveness, and foundational Technical SEO to drive long-term, cost-effective organic traffic.`,
+  },
+  {
+    id: 5,
+    title: 'Tmata3 E-Commerce Store',
+    shortDescription: `The Tmata3 project involved the development of a high-conversion e-commerce storefront optimized for the YouCan platform to drive local retail sales. My work focused on Design by creating a clean, product-centric layout that emphasizes visual appeal and ease of navigation; Development by customizing the platform theme for ultra-fast loading speeds and a frictionless mobile checkout experience; and Value by implementing a sales-optimized funnel that prioritizes high-intent actions and local payment preferences to maximize the return on investment.`,
+    image: tmata3Thumb, // PLACEHOLDER: Replace with your thumbnail import
+    websiteUrl: 'https://tmata3.youcan.store/',
+    screenshot: tmata3ScreenShot, // PLACEHOLDER: Replace with your full-page screenshot import
+    techStack: [
+      {
+        name: 'YouCan.shop',
+        src: 'https://static-portal.youcan.shop/images/brand_images/Logo-YouCan-4.png', // E-commerce Platform Icon
+      },
+      {
+        name: 'Payment Integration',
+        src: 'https://cdn-icons-png.flaticon.com/128/1019/1019607.png', // COD/Payment Icon
+      },
+      {
+        name: 'Facebook Pixel',
+        src: 'https://cdn-icons-png.flaticon.com/128/5968/5968764.png', // Marketing/Analytics Icon
+      },
+      {
+        name: 'Mobile Optimization',
+        src: 'https://cdn-icons-png.flaticon.com/128/2586/2586176.png',
+      },
+      {
+        name: 'Google Analytics',
+        src: 'https://cdn-icons-png.flaticon.com/128/732/732204.png',
+      },
+    ],
+    fullDescription: `The Tmata3 e-commerce store was built to provide a seamless shopping experience, specifically tailored for a fast-paced retail environment where mobile performance and checkout simplicity are paramount.
+
+## Content Overview and Page Structure
+The store is organized to reduce the distance between product discovery and successful purchase.
+
+- Homepage: Features dynamic product sliders, featured collections, and high-impact promotional banners to immediately engage visitors.
+- Product Catalog: A categorized browsing system that allows users to filter and find specific items quickly without unnecessary page reloads.
+- Optimized Product Pages: Each page includes high-resolution imagery, clear pricing, and persuasive product descriptions designed to drive immediate add-to-cart actions.
+- One-Page Checkout: A simplified, single-step checkout process designed to reduce cart abandonment, especially for Cash on Delivery (COD) customers.
+
+## ✨ Design & User Experience (UI/UX)
+The design strategy was driven by a mobile-first philosophy, ensuring that the majority of users shopping on smartphones have a flawless experience.
+
+- Conversion-Centered UI: Strategic use of high-contrast call-to-action buttons and a simplified navigation menu to guide the user toward the purchase funnel.
+- Visual Hierarchy: Product photography is prioritized as the primary content, supported by clean typography and generous white space to prevent cognitive overload.
+- Trust Signals: Integration of clear shipping policies, satisfaction guarantees, and easy-to-access support channels to build buyer confidence.
+
+## 💻 Development & Technical Execution
+Technical development focused on platform customization and performance optimization for a smooth, high-speed shopping experience.
+
+- Platform Customization: Tailored the YouCan engine to align with the brand identity, ensuring a unique look and feel while maintaining the core efficiency of the platform.
+- Speed Optimization: Minimized heavy scripts and optimized image delivery to ensure near-instant load times, which is critical for retaining mobile shoppers.
+- Tracking & Analytics: Full integration of marketing pixels and event tracking to allow the client to monitor conversion rates and optimize their advertising spend accurately.
+
+## 💰 Strategic Value for the Client
+The project delivered a robust digital storefront that serves as the client’s primary revenue generator in the local market.
+
+- Lower Acquisition Costs: By optimizing for speed and mobile UX, the store achieves higher conversion rates from social media traffic, lowering the overall cost per acquisition.
+- Streamlined Operations: The integration of an efficient order management system allows the client to handle high volumes of daily orders with minimal manual intervention.
+- Local Market Advantage: By focusing on local preferences like mobile-first design and COD support, the store effectively out-performs competitors who use generic, non-optimized templates.`,
+    clientPrompt: `The client required a professional, high-performance e-commerce store built on the YouCan platform to sell retail products locally; the main requirements were to create a mobile-optimized shopping experience with extremely fast load times, implement a simplified one-page checkout process to boost sales, and integrate advanced tracking for marketing and conversion optimization.`,
   },
   {
     id: 2, // Assuming this is the second project
@@ -272,7 +334,6 @@ The project delivered a fundamental digital identity focused entirely on convert
 - Reservation Funnel: The page's entire design flow culminates in the contact section, maximizing the chance of converting interested visitors into confirmed reservations.`,
     clientPrompt: `The client required a visually appealing, one-page WordPress landing page demo for "Couscous Grillade" to showcase the restaurant's authentic North African cuisine; the main requirements were to use high-quality imagery to immediately convey the food's authenticity, clearly present the signature menu items (couscous and grillades), and provide prominent, easy-to-access contact information and a location map to effectively drive in-person reservations and local foot traffic.`,
   },
-  
 ];
 
 export default function ProjectsSection() {
