@@ -105,7 +105,7 @@
   margin-bottom: 0.375rem;
 }
 .highlightList li::before {
-  content: '\203A';
+  content: '•';
   color: var(--mantine-color-cyan-6);
   font-size: 0.75rem;
   margin-top: 0.2rem;
@@ -172,7 +172,7 @@
 .galleryCaption {
   position: absolute;
   inset: 0;
-  background: light-dark(rgba(255,255,255,0.85), rgba(0,0,0,0.6));
+  background: light-dark(rgba(255, 255, 255, 0.85), rgba(0, 0, 0, 0.6));
   opacity: 0;
   transition: opacity 0.3s;
   display: flex;
@@ -208,19 +208,63 @@
   margin-bottom: 1.5rem;
 }
 
+/* Responsive grid that adapts to 1, 2, or 3+ cards nicely */
 .projectsGrid {
   display: grid;
-  grid-template-columns: 1fr;
-  gap: 1.5rem;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1.75rem;
 }
+
 @media (min-width: 768px) {
   .projectsGrid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 }
+
 @media (min-width: 1024px) {
   .projectsGrid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+/* Single-card sections stay centered and not too wide */
+.singleCardRow {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  justify-content: center;
+  justify-items: center;
+  padding: 0 1rem;
+}
+
+.singleCardRow > .card {
+  max-width: 720px;
+  width: 100%;
+}
+
+@media (min-width: 768px) {
+  .singleCardRow {
+    padding: 0 2rem;
+  }
+
+  .singleCardRow > .card {
+    max-width: 840px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .singleCardRow > .card {
+    max-width: 960px;
+  }
+}
+
+/* Ensure consistent image rhythm across grids */
+.cardImageWrap {
+  max-height: 240px;
+}
+
+@media (min-width: 1024px) {
+  .cardImageWrap {
+    max-height: 260px;
   }
 }
 

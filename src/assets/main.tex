@@ -1,0 +1,177 @@
+\documentclass[a4paper,11pt,oneside]{report}
+
+% --- Preamble - Essential Packages and Configurations ---
+\usepackage[colorlinks=true, linkcolor=black, citecolor=black, filecolor=black, urlcolor=blue]{hyperref}
+% Language setup
+\usepackage[utf8]{inputenc} % For direct UTF-8 input
+\usepackage[T1]{fontenc}    % For proper font encoding (better hyphenation, special characters)
+\usepackage[french, english]{babel} % Order matters: last one loaded is active. If your document is primarily English, put english last. If primarily French, put French last.
+
+% Font package
+\usepackage{palatino} % Palatino font
+
+% Graphics and figures
+\usepackage{graphicx} % For including images
+\usepackage{float}    % For the [H] placement specifier, good for strict figure placement
+\usepackage{subfig} % Recommended replacement for ubfigure, if you intend to use sub-figures.
+
+% Math and Symbols
+\usepackage{amsmath}    % For advanced math environments
+\usepackage{amssymb}    % For additional math symbols
+\usepackage{latexsym}  % For some LaTeX symbols
+
+% Tables
+\usepackage{array}      % For extended column definitions in tables
+\usepackage{booktabs}  % For professional looking tables (toprule, midrule, bottomrule)
+\usepackage{multirow}  % For cells reaanning multiple rows in tables
+\usepackage{longtable} % For tables spanning multiple pages
+\usepackage{tabularx}
+
+% Links and References
+\usepackage{url}        % For better URL handling
+\def\UrlBreaks{\do\/\do-} % Allows URL to break at / and -
+\usepackage{breakurl}    % Allows breaking long URLs
+\usepackage[hidelinks]{hyperref} % For clickable links, hidelinks removes colored boxes
+
+% Glossary and Acronyms
+\usepackage[acronym]{glossaries} % For glossaries and acronyms
+\makeglossaries             % Command to make glossaries
+
+% Bibliography
+\usepackage[backend=biber, style=authoryear]{biblatex} % Modern bibliography management
+\addbibresource{refs.bib} % Your bibliography file
+
+% Document Structure and Formatting
+\usepackage{setspace}    % For adjusting line spacing
+\linespread{1.1}         % Sets overall line spacing to 1.5 (double spacing)
+\usepackage{titlesec}    % For customizing sectioning titles
+\usepackage{verbatim}    % For commenting out blocks of text
+\usepackage{enumitem}    % For customizing lists (itemize, enumerate)
+\usepackage{pifont}      % For special symbols like dingbats (e.g., \ding{...})
+\usepackage{lettrine}    % For dropped capitals (initials)
+
+% Use the correct fancyhdr package
+\usepackage{fancyhdr}
+\usepackage{nccrules}
+
+% Page layout settings
+% NOTE: The geometry package is recommended for page layout.
+% The manual settings below may cause unexpected issues.
+\setlength{\doublerulesep}{\arrayrulewidth} % For tables
+\setlength{\textwidth}{16cm}
+\setlength{\textheight}{24cm}
+\setlength{\marginparwidth}{-4cm} % This seems unusual, usually positive value or zero
+\setlength{\evensidemargin}{-4cm}  % This also seems unusual, might cause issues
+\setlength{\hoffset}{-1.7cm}
+\setlength{\voffset}{-1cm}
+\setlength{\topmargin}{-0.5cm}
+\setlength{\footskip}{27pt}
+\addtolength{\headsep}{10pt}
+
+% Section numbering depth - FIX for \subsubsection not displaying as title
+\setcounter{secnumdepth}{3} % Number subsections up to subsubsection level
+\setcounter{tocdepth}{3}    % Include subsections up to subsubsection in ToC
+
+% User-defined command for contact link
+\newcommand{\contactlink}{\textsuperscript{\hyperref[biblio]{\P}}} % Corrected \P symbol
+
+% --- CUSTOM COMMANDS FROM YOUR FRIEND'S EXAMPLE ---
+
+% Chapter title on its own page
+\makeatletter
+\renewcommand\@makechapterhead[1]{%
+  \thispagestyle{plain}%
+  \vspace*{\fill}%
+  \begin{center}%
+    \Huge\bfseries Chapter \thechapter\ :\par%
+    \vspace{1em}%
+    \Huge\bfseries #1\par%
+  \end{center}%
+  \vspace*{\fill}%
+  \clearpage
+}
+\renewcommand{\chaptermark}[1]{\markboth{Chapter \thechapter\ : #1}{}}
+\renewcommand{\sectionmark}[1]{}
+\makeatother
+
+% Header and Footer Style
+\fancypagestyle{mymain}{%
+  \fancyhf{}%
+  \renewcommand{\headrulewidth}{1pt}%
+  \fancyhead[R]{\small\nouppercase{\leftmark}}%
+  \fancyfoot[C]{\thepage}%
+}
+\pagestyle{mymain}
+
+% --- End of Preamble ---
+
+\begin{document}
+
+%----------------------------------------------------------------------------
+%   Page de garde
+%----------------------------------------------------------------------------
+\thispagestyle{empty}
+%\input{Pages/First_Pages/garde.tex} % Commented out as in your original
+
+\pagenumbering{roman}
+\setcounter{page}{1}
+\newpage
+\thispagestyle{empty}
+%\input{Pages/First_Pages/signature.tex} % Commented out as in your original
+\thispagestyle{empty}
+\input{Pages/First_Pages/abstract.tex}
+\thispagestyle{empty}
+\begin{spacing}{1.3}
+\input{Pages/First_Pages/acknowledgement.tex}
+\end{spacing}
+\newpage
+
+
+%----------------------------------------------------------------------------
+%   La tables des matieres, des figures et la liste des tableaux
+%----------------------------------------------------------------------------
+\begin{spacing}{1.3}
+\tableofcontents
+\end{spacing}
+\newpage
+\newpage
+\begin{spacing}{1.5}
+\listoffigures
+\end{spacing}
+\newpage
+\newpage
+\begin{spacing}{1.5}
+\listoftables
+\end{spacing}
+\newpage
+\newpage
+\input{Pages/First_Pages/abbreviations}
+\newpage
+%---- General Introduction
+\pagenumbering{arabic} % Start arabic numbering for main content
+\begin{spacing}{1.3}
+\input{Pages/First_Pages/introduction.tex}
+\end{spacing}
+\newpage
+
+
+%----chapter1 Overview
+\input{Pages/Chapters/chap1}
+\input{Pages/Chapters/chap2}
+\input{Pages/Chapters/chap3}
+\input{Pages/Chapters/chap4}
+
+\begin{spacing}{1.3}
+\input{Pages/First_Pages/Conclusion}
+\end{spacing}
+\newpage
+
+\input{Pages/First_Pages/Bib}
+\newpage
+\input{Pages/First_Pages/annex}
+% These commands ensure the bibliography is on a new page and added to the ToC.
+\cleardoublepage % Ensures bibliography starts on a right-hand page for 'book' and 'report'
+\phantomsection % Provides an anchor for hyperref to link to this page
+
+\end{document}
+

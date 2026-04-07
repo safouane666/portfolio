@@ -1,3 +1,5 @@
+// This is the engineering page
+// This is the engineering page from Ramzi
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
@@ -8,6 +10,17 @@ import fpgaImg from './img/fpga-board.jpg';
 import ros2Img from './img/ros2-simulation.jpg';
 import hmiImg from './img/hmi-screen.jpg';
 import labImg from './img/lab-setup.jpg';
+import graduationReportPdf from '../../assets/FinalReport.pdf';
+import cell3DViewImg from '../../assets/Images/Chap3/cell_3d_view_annotated.png';
+import connection from '../../assets/Images/Chap3/connection.png';
+import maintenanceScreenImg from '../../assets/Images/Chap3/maintenance_screen.png';
+import commDiagramImg from '../../assets/Images/Chap4/communication_diagram.png';
+import productionScreenImg from '../../assets/Images/Chap3/production_screen.png';
+import graphcetImg from '../../assets/Images/Chap3/graphcet.png';
+import blenderAnimImg from '../../assets/Images/Chap4/Blender_Animation.png';
+import tagsInputsDbImg from '../../assets/Images/Chap3/tags_inputs_db.jpg';
+import statusTextImg from '../../assets/Images/Chap3/status_text.png';
+import onlineDiagnosticsImg from '../../assets/Images/Chap4/Online_Diagnostics.png';
 import zyboImg from '@/imgs/zybo.webp';
 import xbee from '@/imgs/xbee.webp';
 import blockDiagramImg from '@/imgs/blocDiag.webp';
@@ -27,6 +40,7 @@ interface Project {
   technologies: string[];
   highlights: string[];
   image: string;
+  badge?: string;
   modalContent: {
     sections: { title: string; content: string; image?: string }[];
   };
@@ -94,7 +108,8 @@ const sections: EngineeringSection[] = [
         highlights: [
           'Designed ALU, control unit, memory architecture',
           'Implemented using VHDL',
-          'Deployed on ZYBO board',
+          'Deployed on ZYBO board with validated instruction set and control timing',
+          'Enabled full custom 8-bit pipeline from ISA design to FPGA implementation',
         ],
         image: zyboImg,
         modalContent: {
@@ -132,7 +147,8 @@ const sections: EngineeringSection[] = [
         highlights: [
           'STM32 + MAX30102 sensor (I2C)',
           'ZigBee (XBee) wireless transmission',
-          'QT interface visualization',
+          'QT interface visualization for continuous SpO2 and heart-rate trends',
+          'End-to-end wireless link validated for stable bedside-to-station monitoring',
         ],
         image: xbee,
         modalContent: {
@@ -172,7 +188,8 @@ const sections: EngineeringSection[] = [
         highlights: [
           'Hybrid authentication (Face + Password)',
           'Real-time Telegram alert system',
-          'Multithreaded event-driven architecture',
+          'Multithreaded event-driven architecture maintaining responsive user interaction',
+          'Improved access traceability and remote oversight for small secured spaces',
         ],
         image: materielImg,
         modalContent: {
@@ -234,7 +251,8 @@ const sections: EngineeringSection[] = [
           'Real-time scheduling of machine cycles',
           'STM32H7 firmware',
           'TouchGFX HMI',
-          'MQTT connectivity with mobile application',
+          'MQTT connectivity with mobile application for remote supervision and control',
+          'Improved cycle-time visibility and repeatability across machine states',
         ],
         image: spirulinaImg,
         modalContent: {
@@ -272,7 +290,8 @@ const sections: EngineeringSection[] = [
           'Part counting',
           '7-segment visual feedback',
           'Audible alarm',
-          'Timer relay integration',
+          'Timer relay integration for shift and cycle management',
+          'Increased operator awareness of throughput and missed production targets',
         ],
         image: counterImg,
         modalContent: {
@@ -286,6 +305,91 @@ const sections: EngineeringSection[] = [
               title: 'Industrial Feedback Mechanism',
               content:
                 'Real-time production count is displayed on 7-segment displays for operator visibility. The system integrates with timer relays for cycle management and includes audible alarms for deviation alerts and shift completion notifications.',
+            },
+          ],
+        },
+      },
+    ],
+  },
+  {
+    id: 'graduation',
+    title: 'Graduation Project – Automated Robotic Sorting Cell',
+    description:
+      'Flagship end-of-studies project: an automated cube sorting cell with KUKA robot, Siemens PLC/HMI, Raspberry Pi vision, and a full digital twin in TIA Portal and Blender.',
+    technologies: [
+      'Industrial Robotics',
+      'PLC',
+      'TIA Portal',
+      'Digital Twin',
+      'Simulation',
+    ],
+    projects: [
+      {
+        id: 'graduation-robotic-cell',
+        title: 'Automated Robotic Sorting Cell with Digital Twin',
+        description:
+          'Industrial robotic cell for automated part sorting, integrated with a real-time digital twin for monitoring, analysis, and validation.',
+        technologies: [
+          'Industrial Robotics',
+          'PLC',
+          'TIA Portal',
+          'Digital Twin',
+          'Simulation',
+        ],
+        badge: 'Graduation Project',
+        highlights: [
+          'Automated sorting cell with industrial robot and conveyors',
+          'Real-time digital twin mirroring the physical cell state',
+          'PLC-based control and safety logic (TIA Portal)',
+          'Traceability and performance dashboards for production analysis',
+          'Validated sorting logic and safety sequences before physical commissioning',
+          'End-of-studies engineering graduation project assessed by industrial jury',
+          'Validated on a real industrial demonstrator for fairs and training sessions',
+        ],
+        image: cell3DViewImg,
+        modalContent: {
+          sections: [
+            {
+              title: 'Project Overview',
+              content:
+                'Design and implementation of an automated cube sorting cell for industrial fairs at Xpert-Meca. The system combines a KUKA KR Agilus robot, conveyors, Festo pneumatics, Omron sensors, a Siemens S7-1200 PLC, TP1200 Unified HMI, and a Raspberry Pi vision module to detect cube colors and sort them into bins.',
+              image: cell3DViewImg,
+            },
+            {
+              title: 'System Architecture',
+              content:
+                'The architecture integrates a KUKA robot controlled by a KRC4 Compact, a Siemens S7-1212C PLC, TP1200 Unified HMI, and a Raspberry Pi 4 over an industrial PROFINET network. Conveyors and pneumatic actuators are driven from the PLC, while Omron photoelectric sensors and cylinder sensors provide feedback for sequencing and safety.',
+              image: commDiagramImg,
+            },
+            {
+              title: 'Control Logic & HMI',
+              content:
+                'The control logic is implemented in Siemens TIA Portal using ladder and function block diagrams. The TP1200 Unified HMI provides operators with real-time cell status, alarm pages, manual jogging, and recipe selection for different cube sorting patterns. A dedicated production dashboard summarizes part counts, cycle times, and stop causes.',
+              image: productionScreenImg,
+            },
+            {
+              title: 'Sequencing & Safety',
+              content:
+                'Sequencing of robot and conveyor actions is modeled using GRAFCET. Safety interlocks, emergency stop handling, and restart procedures are formalized to guarantee safe recovery after faults. This structured approach simplifies debugging and ensures standard-compliant behavior.',
+              image: graphcetImg,
+            },
+            {
+              title: 'Digital Twin & Animation',
+              content:
+                'A full 3D digital twin of the cell was built and animated in Blender. The virtual model reproduces the kinematics of the robot, conveyors, and cube flows. Animations are synchronized with the PLC sequences, enabling fast validation of trajectories and exhibition scenarios before deployment.',
+              image: blenderAnimImg,
+            },
+            {
+              title: 'Commissioning & Validation',
+              content:
+                'The cell was commissioned through progressive testing: I/O checks, manual jog sequences, dry-runs without parts, then full automatic cycles. Metrics such as cycle time, sorting accuracy and stop causes were monitored to validate behavior before public demos.',
+              image: connection,
+            },
+            {
+              title: 'Industrial Impact & Use Cases',
+              content:
+                'The system is used as a demonstrator during industrial fairs and training sessions to showcase modern robotics, PLC programming, HMI design and digital twin workflows in a single compact cell.',
+              image: maintenanceScreenImg,
             },
           ],
         },
@@ -309,7 +413,8 @@ const sections: EngineeringSection[] = [
           'Autonomous navigation',
           'SLAM-based mapping',
           'Obstacle avoidance',
-          '3D environment reconstruction',
+          '3D environment reconstruction in unknown indoor environments',
+          'Validated navigation stack before hardware integration using full-fidelity simulation',
         ],
         image: gazeboImg,
         modalContent: {
@@ -337,6 +442,7 @@ const sections: EngineeringSection[] = [
           ],
         },
       },
+
     ],
   },
   {
@@ -353,36 +459,86 @@ const sections: EngineeringSection[] = [
       'Production Monitoring',
     ],
     projects: [
-      // {
-      //   id: 'spirulina-industrial',
-      //   title: 'Spirulina Growing Machine - Industrial Context',
-      //   description:
-      //     'End-to-end industrial embedded system with real-time control, HMI interface, and remote monitoring via MQTT for automated spirulina cultivation.',
-      //   technologies: ['STM32H7', 'FreeRTOS', 'TouchGFX', 'MQTT'],
-      //   highlights: [
-      //     'Industrial-grade embedded control',
-      //     'Automated cultivation cycles',
-      //     'Remote monitoring via MQTT',
-      //     'TouchGFX operator interface',
-      //   ],
-      //   image: PLACEHOLDER,
-      //   modalContent: {
-      //     sections: [
-      //       {
-      //         title: 'Industrial Control Architecture',
-      //         content:
-      //           'The system implements industrial-grade control loops for temperature, pH, and lighting management in the spirulina cultivation process. Each control parameter runs as an independent FreeRTOS task with configurable setpoints and safety thresholds.',
-      //         image: PLACEHOLDER,
-      //       },
-      //       {
-      //         title: 'Reliability & Safety',
-      //         content:
-      //           'Watchdog timers, redundant sensor readings, and fail-safe modes ensure continuous operation. The system implements graceful degradation strategies when sensor failures or communication losses are detected.',
-      //         image: PLACEHOLDER,
-      //       },
-      //     ],
-      //   },
-      // },
+      {
+        id: 'spirulina-industrial',
+        title: 'Spirulina Growing Machine – Industrial Automation Context',
+        description:
+          'Industrial embedded machine handling automated spirulina cultivation cycles with real-time control, TouchGFX HMI and MQTT-based supervision.',
+        technologies: ['STM32H7', 'FreeRTOS', 'TouchGFX', 'MQTT'],
+        highlights: [
+          'Industrial-grade embedded control for pumps, heaters and agitators',
+          'Real-time scheduling of cultivation phases using FreeRTOS',
+          'TouchGFX HMI for operators (recipes, alarms, manual mode)',
+          'MQTT connectivity for remote supervision and data logging',
+        ],
+        image: spirulinaImg,
+        modalContent: {
+          sections: [
+            {
+              title: 'Industrial Control Architecture',
+              content:
+                'The spirulina machine runs on an STM32H7 microcontroller with FreeRTOS. Each subsystem (temperature, pH, lighting, agitation, dosing) is mapped to dedicated tasks with well-defined priorities and watchdogs, ensuring deterministic behavior even under load.',
+            },
+            {
+              title: 'Scheduling & Machine States',
+              content:
+                'Cultivation is modeled as a state machine with automatic transitions between filling, cultivation, harvesting and cleaning. Timers, sensor thresholds and safety conditions drive the transitions, ensuring repeatable cycles across batches.',
+            },
+            {
+              title: 'HMI & Operator Workflow',
+              content:
+                'A TouchGFX HMI provides operators with a clear view of current phase, tank values and alarms. Screens include recipe selection, trend views, alarm history and manual control pages for maintenance and debugging.',
+            },
+            {
+              title: 'Remote Monitoring',
+              content:
+                'Process data and alarms are published over MQTT to a remote dashboard / mobile app, enabling remote supervision of cultivation progress, fault notifications and basic control commands within defined safety limits.',
+            },
+          ],
+        },
+      },
+      {
+        id: 'cell-plc-hmi',
+        title: 'PLC & HMI Automation for Robotic Sorting Cell',
+        description:
+          'Siemens TIA Portal program and Unified HMI for a KUKA-based sorting cell, focusing on sequences, safety interlocks and operator ergonomics.',
+        technologies: ['TIA Portal', 'PLC', 'HMI', 'GRAFCET'],
+        highlights: [
+          'Structured PLC program for conveyors, robot handshakes and pneumatic actuators',
+          'GRAFCET-based sequence design for clear, maintainable state logic',
+          'Unified HMI screens for status, recipes, alarms and maintenance',
+          'Diagnostics and watch tables to speed up commissioning and troubleshooting',
+        ],
+        image: maintenanceScreenImg,
+        modalContent: {
+          sections: [
+            {
+              title: 'Program Structure & Tagging',
+              content:
+                'The automation program is organized in TIA Portal with dedicated blocks for I/O management, interlocks, sequences and diagnostics. Tag databases group inputs, outputs and internal variables to keep the project maintainable as the cell evolves.',
+              image: tagsInputsDbImg,
+            },
+            {
+              title: 'Sequence Design with GRAFCET',
+              content:
+                'Sorting logic is modeled using GRAFCET, mapping each step and transition to PLC logic. This formalism simplifies reasoning about simultaneous motions, safe stops and restart procedures.',
+              image: graphcetImg,
+            },
+            {
+              title: 'Operator Screens & Status Feedback',
+              content:
+                'Unified HMI pages cover automatic and manual modes, cube counters, alarm lists and maintenance functions. Clear status texts and value displays help operators understand what the cell is doing at a glance.',
+              image: statusTextImg,
+            },
+            {
+              title: 'Diagnostics & Commissioning Tools',
+              content:
+                'Watch tables, online diagnostics and dedicated maintenance screens in TIA Portal were used during commissioning to validate signals, tune timings and quickly identify configuration issues.',
+              image: onlineDiagnosticsImg,
+            },
+          ],
+        },
+      },
     ],
   },
 ];
@@ -410,6 +566,7 @@ function ProjectCard({
   return (
     <motion.div
       className={classes.card}
+      style={{ height: '100%' }}
       initial="hidden"
       whileInView="visible"
       viewport={{ once: true, margin: '-40px' }}
@@ -424,6 +581,9 @@ function ProjectCard({
         <Title order={3} size="h4" mb="xs">
           {project.title}
         </Title>
+        {project.badge && (
+          <div className={classes.cardBadge}>{project.badge}</div>
+        )}
         <ul className={classes.highlightList}>
           {project.highlights.map((h, i) => (
             <li key={i}>{h}</li>
@@ -502,6 +662,19 @@ function ProjectModal({
           </div>
         ))}
       </div>
+      {project.id === 'graduation-robotic-cell' && (
+        <div style={{ marginTop: 24, textAlign: 'right' }}>
+          <Button
+            component="a"
+            href={graduationReportPdf}
+            download
+            variant="outline"
+            size="sm"
+          >
+            Download full project report (PDF)
+          </Button>
+        </div>
+      )}
     </Modal>
   );
 }
@@ -522,6 +695,8 @@ function SectionBlock({
   section: EngineeringSection;
   onViewDetails: (p: Project) => void;
 }) {
+  const isGraduation = section.id === 'graduation';
+
   return (
     <section id={section.id} className={classes.sectionBlock}>
       <motion.div
@@ -543,11 +718,29 @@ function SectionBlock({
           ))}
         </div>
       </motion.div>
-      <div className={classes.projectsGrid}>
-        {section.projects.map((project, i) => (
-          <ProjectCard key={project.id} project={project} onViewDetails={onViewDetails} index={i} />
-        ))}
-      </div>
+      {isGraduation ? (
+        <div className={classes.singleCardRow}>
+          {section.projects.map((project, i) => (
+            <ProjectCard
+              key={project.id}
+              project={project}
+              onViewDetails={onViewDetails}
+              index={i}
+            />
+          ))}
+        </div>
+      ) : (
+        <div className={classes.projectsGrid}>
+          {section.projects.map((project, i) => (
+            <ProjectCard
+              key={project.id}
+              project={project}
+              onViewDetails={onViewDetails}
+              index={i}
+            />
+          ))}
+        </div>
+      )}
     </section>
   );
 }
@@ -584,7 +777,7 @@ export default function Engineering() {
               <span className={classes.accentGradientText}>Engineering</span>
             </Title>
             <Text size="sm" c="dimmed" mb="lg" style={{ fontFamily: 'monospace' }}>
-              Real-Time Systems · Embedded Architectures · Robotics · Industrial Automation
+              Real-time systems · embedded architectures · robotics · industrial automation
             </Text>
           </motion.div>
           <motion.div
@@ -594,16 +787,16 @@ export default function Engineering() {
             style={{ maxWidth: 768 }}
           >
             <Text size="sm" c="dimmed" mb="xs">
-              Embedded & Electrical Engineer specialized in real-time systems, digital hardware
-              design, robotics simulation, and industrial communication architectures.
+              Embedded & Electrical Engineer focused on real-time firmware, digital hardware
+              design, robotics simulation, and industrial communication.
             </Text>
             <Text size="sm" c="dimmed" mb="xs">
-              I design reliable systems where firmware, hardware, and communication layers operate
-              under timing and performance constraints.
+              I design systems where firmware, hardware, and communication layers stay
+              synchronized under strict timing and performance constraints.
             </Text>
             <Text size="sm" c="dimmed" mb="lg">
-              My work spans embedded development, FPGA architecture, autonomous robotics, and
-              industrial monitoring systems.
+              Recent work covers embedded development, FPGA design, autonomous robotics, and
+              production monitoring for industrial environments.
             </Text>
           </motion.div>
           <motion.ul
@@ -616,37 +809,6 @@ export default function Engineering() {
               <li key={i}>{item}</li>
             ))}
           </motion.ul>
-          <motion.div
-            className={classes.galleryGrid}
-            initial="hidden"
-            animate="visible"
-            variants={{
-              visible: {
-                transition: { staggerChildren: 0.08, delayChildren: 0.4 },
-              },
-              hidden: {},
-            }}
-          >
-            {/* {galleryImages.map((img, i) => (
-              <motion.div
-                key={i}
-                className={classes.galleryItem}
-                variants={{
-                  hidden: { opacity: 0, y: 16 },
-                  visible: {
-                    opacity: 1,
-                    y: 0,
-                    transition: { duration: 0.5, ease: [0.25, 0.46, 0.45, 0.94] },
-                  },
-                }}
-              >
-                <img src={img.src} alt={img.alt} loading="lazy" />
-                <div className={classes.galleryCaption}>
-                  <span>{img.alt}</span>
-                </div>
-              </motion.div>
-            ))} */}
-          </motion.div>
         </Container>
       </section>
 
@@ -673,14 +835,14 @@ export default function Engineering() {
           transition={{ duration: 0.6 }}
         >
           <Title order={2} className={classes.ctaTitle}>
-            Ready to Launch Your Next Project?
+            Need help with an embedded or robotics project?
           </Title>
           <Text className={classes.ctaDescription}>
-            Whether you need a modern portfolio, a business website, or a full-stack app — I can
-            make it happen. Let's discuss how we can bring your vision to life.
+            From real-time firmware and FPGA design to industrial monitoring and robotics
+            simulation, I can help you design, prototype, and ship robust systems.
           </Text>
           <Button component={Link} to="/Contact" className={classes.ctaButton} size="lg">
-            Get in Touch
+            Discuss a project
           </Button>
         </motion.div>
       </Container>
