@@ -160,6 +160,79 @@
   }
 }
 
+.aiCard {
+  height: 100%;
+  background: light-dark(rgba(255, 255, 255, 0.98), rgba(11, 18, 32, 0.94));
+  border: 1px solid light-dark(rgba(6, 182, 212, 0.12), rgba(34, 211, 238, 0.18));
+  transition: transform 260ms ease, box-shadow 260ms ease, border-color 260ms ease;
+}
+
+.aiCard:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 16px 38px light-dark(rgba(14, 116, 144, 0.12), rgba(34, 211, 238, 0.12));
+  border-color: light-dark(rgba(8, 145, 178, 0.32), rgba(34, 211, 238, 0.28));
+}
+
+.aiIconWrap {
+  width: 58px;
+  height: 58px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 18px;
+  background: linear-gradient(135deg, rgba(34, 211, 238, 0.12), rgba(59, 130, 246, 0.14));
+  border: 1px solid light-dark(rgba(6, 182, 212, 0.12), rgba(34, 211, 238, 0.18));
+}
+
+.aiProvidersCard {
+  background: linear-gradient(
+    135deg,
+    light-dark(rgba(248, 250, 252, 0.98), rgba(10, 16, 29, 0.96)) 0%,
+    light-dark(rgba(240, 249, 255, 0.96), rgba(8, 24, 41, 0.96)) 100%
+  );
+  border: 1px solid light-dark(rgba(6, 182, 212, 0.14), rgba(34, 211, 238, 0.2));
+}
+
+.aiInfoTitle {
+  font-size: 18px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  color: light-dark(var(--mantine-color-gray-9), var(--mantine-color-white));
+}
+
+.aiInfoText {
+  font-size: 15px;
+  line-height: 1.8;
+  color: light-dark(var(--mantine-color-gray-7), var(--mantine-color-gray-3));
+}
+
+.logoGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--mantine-spacing-md);
+
+  @media (max-width: $mantine-breakpoint-xs) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.logoTile {
+  min-height: 92px;
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: light-dark(rgba(255, 255, 255, 0.9), rgba(15, 23, 42, 0.92));
+  border: 1px solid light-dark(rgba(148, 163, 184, 0.22), rgba(51, 65, 85, 0.8));
+  transition: transform 220ms ease, border-color 220ms ease, box-shadow 220ms ease;
+}
+
+.logoTile:hover {
+  transform: translateY(-4px);
+  border-color: var(--mantine-color-cyan-6);
+  box-shadow: 0 10px 24px light-dark(rgba(8, 145, 178, 0.12), rgba(34, 211, 238, 0.12));
+}
+
 .templateCard {
   background: linear-gradient(
     135deg,

@@ -17,10 +17,13 @@ import {
   IconApi,
   IconArrowRight,
   IconBrandGithub,
+  IconBrain,
   IconCloudUpload,
   IconCode,
   IconDeviceDesktop,
   IconLayoutGrid,
+  IconRobot,
+  IconSearch,
   IconShoppingBag,
   IconWorldWww,
 } from '@tabler/icons-react';
@@ -50,6 +53,32 @@ export default function WebDevPage() {
       projects: 'My Projects',
       projectsDesc:
         "Explore some of my recent work and see how I've helped businesses achieve their goals",
+      aiTitle: 'AI Integration Inside Web App Workflows',
+      aiDesc:
+        'I design AI-powered experiences directly inside web apps, from smart search and task execution to workflow automation, local agents, and multimodal features.',
+      aiCards: [
+        {
+          title: 'Search & Retrieval',
+          desc: 'Semantic search, RAG flows, document lookup, knowledge assistants, and context-aware user support.',
+          icon: 'search',
+        },
+        {
+          title: 'Tasks & Agents',
+          desc: 'Task runners, assistant panels, local agents with Ollama, tool orchestration, and human-in-the-loop actions.',
+          icon: 'robot',
+        },
+        {
+          title: 'Automation & AI UX',
+          desc: 'Automated workflows, prompt pipelines, VLM-powered image understanding, and cloud AI integrations for production apps.',
+          icon: 'brain',
+        },
+      ],
+      aiLocalTitle: 'Local-first AI stack',
+      aiLocalDesc:
+        'For privacy-focused workflows, I can integrate local models with Ollama, VLM pipelines, and on-device agents for controlled, low-latency experiences.',
+      aiCloudTitle: 'Cloud AI providers',
+      aiCloudDesc:
+        'When the product needs stronger hosted intelligence, I can connect OpenAI, Claude, and Google APIs for generation, reasoning, classification, and multimodal tasks.',
       templateTitle: 'Free Web App Template',
       templateDesc:
         'A production-ready starter for modern web apps, built with Next.js, Express, TypeScript, and clean project architecture. It is fully usable, free for everyone, and ready to speed up your next build.',
@@ -76,6 +105,32 @@ export default function WebDevPage() {
       stackDesc: "Technologies et outils que j'utilise pour vos projets",
       projects: 'Mes Projets',
       projectsDesc: 'Decouvrez quelques projets recents realises pour mes clients',
+      aiTitle: 'Integration IA dans les workflows web app',
+      aiDesc:
+        'J integre des experiences IA directement dans les applications web, de la recherche intelligente a l execution de taches, l automatisation et les fonctions multimodales.',
+      aiCards: [
+        {
+          title: 'Recherche & retrieval',
+          desc: 'Recherche semantique, flux RAG, exploration documentaire, assistants de connaissance et support contextuel.',
+          icon: 'search',
+        },
+        {
+          title: 'Taches & agents',
+          desc: 'Executions de taches, panneaux assistants, agents locaux avec Ollama, orchestration d outils et actions avec validation humaine.',
+          icon: 'robot',
+        },
+        {
+          title: 'Automatisation & UX IA',
+          desc: 'Workflows automatises, pipelines de prompts, analyse d images via VLM et integrations cloud IA pour des apps de production.',
+          icon: 'brain',
+        },
+      ],
+      aiLocalTitle: 'Stack IA locale',
+      aiLocalDesc:
+        'Pour les workflows sensibles a la confidentialite, je peux integrer des modeles locaux avec Ollama, des pipelines VLM et des agents on-device.',
+      aiCloudTitle: 'Fournisseurs IA cloud',
+      aiCloudDesc:
+        'Quand le produit demande plus de puissance, je peux connecter OpenAI, Claude et Google APIs pour generation, raisonnement, classification et taches multimodales.',
       templateTitle: 'Template gratuit pour web app',
       templateDesc:
         'Un starter moderne et pret pour la production, construit avec Next.js, Express, TypeScript et une architecture propre. Il est totalement utilisable, gratuit pour tout le monde, et ideal pour accelerer un nouveau projet.',
@@ -101,6 +156,32 @@ export default function WebDevPage() {
       stackDesc: 'Tecnologias y herramientas que uso para tus ideas',
       projects: 'Mis Proyectos',
       projectsDesc: 'Explora algunos de mis trabajos recientes',
+      aiTitle: 'Integracion de IA en workflows web app',
+      aiDesc:
+        'Integro experiencias con IA directamente dentro de aplicaciones web, desde busqueda inteligente y ejecucion de tareas hasta automatizacion, agentes locales y funciones multimodales.',
+      aiCards: [
+        {
+          title: 'Busqueda y retrieval',
+          desc: 'Busqueda semantica, flujos RAG, consulta de documentos, asistentes de conocimiento y soporte contextual.',
+          icon: 'search',
+        },
+        {
+          title: 'Tareas y agentes',
+          desc: 'Ejecutores de tareas, paneles asistentes, agentes locales con Ollama, orquestacion de herramientas y acciones con supervision humana.',
+          icon: 'robot',
+        },
+        {
+          title: 'Automatizacion y UX IA',
+          desc: 'Workflows automatizados, pipelines de prompts, analisis visual con VLM e integraciones cloud IA para apps en produccion.',
+          icon: 'brain',
+        },
+      ],
+      aiLocalTitle: 'Stack IA local',
+      aiLocalDesc:
+        'Para flujos centrados en privacidad, puedo integrar modelos locales con Ollama, pipelines VLM y agentes on-device para experiencias rapidas y controladas.',
+      aiCloudTitle: 'Proveedores IA cloud',
+      aiCloudDesc:
+        'Cuando el producto necesita mas potencia alojada, puedo conectar OpenAI, Claude y Google APIs para generacion, razonamiento, clasificacion y tareas multimodales.',
       templateTitle: 'Template gratis para web app',
       templateDesc:
         'Un starter moderno y listo para produccion, construido con Next.js, Express, TypeScript y una arquitectura limpia. Es totalmente utilizable, gratis para todos, y perfecto para acelerar tu proximo proyecto.',
@@ -218,6 +299,34 @@ export default function WebDevPage() {
     ],
   } as const;
   const services = servicesByLanguage[language];
+  const aiIcons = {
+    search: <IconSearch size={28} color="var(--mantine-color-cyan-5)" />,
+    robot: <IconRobot size={28} color="var(--mantine-color-cyan-5)" />,
+    brain: <IconBrain size={28} color="var(--mantine-color-cyan-5)" />,
+  } as const;
+
+  const aiProviders = [
+    {
+      name: 'Ollama',
+      src: 'https://ollama.com/public/ollama.png',
+    },
+    {
+      name: 'OpenAI',
+      src: 'https://cdn.simpleicons.org/openai/ffffff',
+    },
+    {
+      name: 'Claude',
+      src: 'https://cdn.simpleicons.org/anthropic/ffffff',
+    },
+    {
+      name: 'Google AI',
+      src: 'https://cdn.simpleicons.org/google/ffffff',
+    },
+    {
+      name: 'VLM',
+      src: 'https://cdn-icons-png.flaticon.com/512/4712/4712027.png',
+    },
+  ];
 
   const stack = [
     {
@@ -515,6 +624,78 @@ export default function WebDevPage() {
             </motion.div>
           ))}
         </motion.div>
+      </section>
+
+      <Container size="xl">
+        <div className={classes.accentLine} />
+      </Container>
+
+      {/* AI Integration */}
+      <section className={classes.sectionContainer}>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-60px' }}
+          transition={{ duration: 0.6 }}
+        >
+          <Title className={classes.sectionTitle}>{t.aiTitle}</Title>
+          <Text className={classes.sectionDescription} c="dimmed" mb="xl">
+            {t.aiDesc}
+          </Text>
+        </motion.div>
+
+        <Grid gutter="lg">
+          {t.aiCards.map((item, index) => (
+            <Grid.Col key={item.title} span={{ base: 12, md: 4 }}>
+              <motion.div
+                initial={{ opacity: 0, y: 24 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: '-40px' }}
+                transition={{ duration: 0.5, delay: index * 0.08 }}
+              >
+                <Card className={classes.aiCard} radius="xl" p="xl" withBorder>
+                  <Stack gap="md">
+                    <div className={classes.aiIconWrap}>{aiIcons[item.icon as keyof typeof aiIcons]}</div>
+                    <Text fw={700} size="lg">
+                      {item.title}
+                    </Text>
+                    <Text size="sm" c="dimmed" style={{ lineHeight: 1.75 }}>
+                      {item.desc}
+                    </Text>
+                  </Stack>
+                </Card>
+              </motion.div>
+            </Grid.Col>
+          ))}
+        </Grid>
+
+        <Card className={classes.aiProvidersCard} radius="xl" p="xl" withBorder mt="xl">
+          <Grid align="center" gutter="xl">
+            <Grid.Col span={{ base: 12, md: 7 }}>
+              <Stack gap="lg">
+                <div>
+                  <Text className={classes.aiInfoTitle}>{t.aiLocalTitle}</Text>
+                  <Text className={classes.aiInfoText}>{t.aiLocalDesc}</Text>
+                </div>
+                <div>
+                  <Text className={classes.aiInfoTitle}>{t.aiCloudTitle}</Text>
+                  <Text className={classes.aiInfoText}>{t.aiCloudDesc}</Text>
+                </div>
+              </Stack>
+            </Grid.Col>
+            <Grid.Col span={{ base: 12, md: 5 }}>
+              <div className={classes.logoGrid}>
+                {aiProviders.map((provider) => (
+                  <Tooltip key={provider.name} label={provider.name} withArrow>
+                    <div className={classes.logoTile}>
+                      <Image src={provider.src} alt={provider.name} w={42} h={42} fit="contain" />
+                    </div>
+                  </Tooltip>
+                ))}
+              </div>
+            </Grid.Col>
+          </Grid>
+        </Card>
       </section>
 
       <Container size="xl">
