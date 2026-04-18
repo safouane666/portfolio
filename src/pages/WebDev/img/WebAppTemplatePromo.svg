@@ -1,0 +1,66 @@
+<svg width="1200" height="900" viewBox="0 0 1200 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="140" y1="80" x2="1080" y2="820" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#071426"/>
+      <stop offset="1" stop-color="#0E7490"/>
+    </linearGradient>
+    <linearGradient id="panel" x1="260" y1="180" x2="930" y2="700" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0F172A"/>
+      <stop offset="1" stop-color="#111827"/>
+    </linearGradient>
+    <linearGradient id="cta" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#22D3EE"/>
+      <stop offset="1" stop-color="#3B82F6"/>
+    </linearGradient>
+    <filter id="shadow" x="160" y="110" width="880" height="620" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feFlood flood-opacity="0" result="BackgroundImageFix"/>
+      <feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+      <feOffset dy="22"/>
+      <feGaussianBlur stdDeviation="28"/>
+      <feComposite in2="hardAlpha" operator="out"/>
+      <feColorMatrix type="matrix" values="0 0 0 0 0.0235294 0 0 0 0 0.0941176 0 0 0 0 0.156863 0 0 0 0.45 0"/>
+      <feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_1_1"/>
+      <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_1_1" result="shape"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="900" rx="40" fill="url(#bg)"/>
+  <circle cx="195" cy="148" r="84" fill="#22D3EE" fill-opacity="0.15"/>
+  <circle cx="1042" cy="184" r="104" fill="#60A5FA" fill-opacity="0.14"/>
+  <circle cx="1008" cy="724" r="132" fill="#22D3EE" fill-opacity="0.12"/>
+  <g filter="url(#shadow)">
+    <rect x="220" y="150" width="760" height="540" rx="28" fill="url(#panel)"/>
+  </g>
+  <rect x="252" y="182" width="696" height="42" rx="14" fill="#0B1220"/>
+  <circle cx="285" cy="203" r="7" fill="#F87171"/>
+  <circle cx="309" cy="203" r="7" fill="#FBBF24"/>
+  <circle cx="333" cy="203" r="7" fill="#34D399"/>
+  <rect x="372" y="191" width="232" height="24" rx="8" fill="#1E293B"/>
+  <rect x="270" y="258" width="260" height="272" rx="20" fill="#111827" stroke="#1F2937"/>
+  <rect x="286" y="278" width="112" height="16" rx="8" fill="#22D3EE" fill-opacity="0.9"/>
+  <rect x="286" y="314" width="196" height="14" rx="7" fill="#334155"/>
+  <rect x="286" y="338" width="178" height="14" rx="7" fill="#334155"/>
+  <rect x="286" y="362" width="210" height="14" rx="7" fill="#334155"/>
+  <rect x="286" y="410" width="228" height="88" rx="16" fill="#0F172A" stroke="#1E293B"/>
+  <path d="M316 464L354 430L389 454L435 396L482 456" stroke="#22D3EE" stroke-width="10" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="435" cy="396" r="10" fill="#3B82F6"/>
+  <rect x="562" y="258" width="356" height="110" rx="20" fill="#111827" stroke="#1F2937"/>
+  <rect x="586" y="284" width="136" height="18" rx="9" fill="#E2E8F0"/>
+  <rect x="586" y="316" width="296" height="14" rx="7" fill="#475569"/>
+  <rect x="586" y="340" width="262" height="14" rx="7" fill="#334155"/>
+  <rect x="562" y="392" width="168" height="138" rx="20" fill="#111827" stroke="#1F2937"/>
+  <path d="M590 432H702" stroke="#22D3EE" stroke-width="10" stroke-linecap="round"/>
+  <path d="M590 462H676" stroke="#334155" stroke-width="10" stroke-linecap="round"/>
+  <path d="M590 492H660" stroke="#334155" stroke-width="10" stroke-linecap="round"/>
+  <rect x="750" y="392" width="168" height="138" rx="20" fill="#111827" stroke="#1F2937"/>
+  <path d="M777 443L809 475L891 411" stroke="#22D3EE" stroke-width="12" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="270" y="560" width="648" height="98" rx="20" fill="#0B1220" stroke="#1E293B"/>
+  <rect x="294" y="585" width="228" height="18" rx="9" fill="#E2E8F0"/>
+  <rect x="294" y="615" width="390" height="14" rx="7" fill="#334155"/>
+  <rect x="718" y="582" width="172" height="44" rx="22" fill="url(#cta)"/>
+  <text x="804" y="610" text-anchor="middle" fill="white" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700">Use Template</text>
+  <g opacity="0.94">
+    <rect x="124" y="704" width="312" height="96" rx="24" fill="#0F172A"/>
+    <text x="156" y="748" fill="#E2E8F0" font-family="Arial, Helvetica, sans-serif" font-size="30" font-weight="700">Web App Template</text>
+    <text x="156" y="780" fill="#94A3B8" font-family="Arial, Helvetica, sans-serif" font-size="20">React, Next.js, Express, TypeScript</text>
+  </g>
+</svg>

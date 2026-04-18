@@ -160,6 +160,60 @@
   }
 }
 
+.templateCard {
+  background: linear-gradient(
+    135deg,
+    light-dark(rgba(248, 250, 252, 0.98), rgba(12, 18, 32, 0.96)) 0%,
+    light-dark(rgba(240, 249, 255, 0.95), rgba(8, 24, 41, 0.96)) 100%
+  );
+  border: 1px solid light-dark(rgba(6, 182, 212, 0.16), rgba(34, 211, 238, 0.2));
+  overflow: hidden;
+  position: relative;
+}
+
+.templateCard::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at top right, rgba(34, 211, 238, 0.12), transparent 38%);
+  pointer-events: none;
+}
+
+.templateBadge {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--mantine-color-cyan-6);
+}
+
+.templateTitle {
+  font-size: 42px;
+  line-height: 1.1;
+  font-weight: 800;
+
+  @media (max-width: $mantine-breakpoint-sm) {
+    font-size: 32px;
+  }
+}
+
+.templateDescription {
+  font-size: 17px;
+  line-height: 1.75;
+  color: light-dark(var(--mantine-color-gray-7), var(--mantine-color-gray-3));
+}
+
+.templateImageWrap {
+  padding: var(--mantine-spacing-md);
+  border-radius: calc(var(--mantine-radius-xl) + 4px);
+  background: linear-gradient(180deg, rgba(34, 211, 238, 0.08), rgba(59, 130, 246, 0.12));
+  border: 1px solid light-dark(rgba(6, 182, 212, 0.15), rgba(34, 211, 238, 0.2));
+}
+
+.templateImage {
+  border-radius: var(--mantine-radius-lg);
+}
+
 .accentLine {
   height: 2px;
   background: linear-gradient(90deg, var(--mantine-color-cyan-6), transparent);

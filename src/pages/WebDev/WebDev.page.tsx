@@ -15,6 +15,8 @@ import {
 } from '@mantine/core';
 import {
   IconApi,
+  IconArrowRight,
+  IconBrandGithub,
   IconCloudUpload,
   IconCode,
   IconDeviceDesktop,
@@ -25,16 +27,99 @@ import {
 
 import BusinessLandingImg from './img/BusinessLanding.webp';
 import CompetitionWebsiteImg from './img/CompetitionWebsite.webp';
-import FormsWebsiteImg from './img/FormsWebsite.webp';
 import { HeroBullets } from './HeroBullets';
 import { Link } from 'react-router-dom';
 import OnlineStoreImg from './img/OnlineStore.webp';
 import PortfolioImg from './img/PortfolioWebsite.webp';
 import ProjectsSection from './ProjectsSection';
+import WebAppTemplatePromoImg from './img/WebAppTemplatePromo.svg';
 import classes from './WebDevPage.module.css';
+import { useLanguage } from '@/i18n/language';
 
 export default function WebDevPage() {
-  const services = [
+  const { language } = useLanguage();
+  const copy = {
+    en: {
+      whatCreate: 'What I Create',
+      whatCreateDesc:
+        'From sleek portfolios to powerful e-commerce platforms - I design and build digital experiences that match your goals and brand identity.',
+      services: 'My Services',
+      servicesDesc: 'Comprehensive web development solutions tailored to your business needs',
+      stack: 'Tech Stack',
+      stackDesc: 'Technologies and tools I use to bring your ideas to life',
+      projects: 'My Projects',
+      projectsDesc:
+        "Explore some of my recent work and see how I've helped businesses achieve their goals",
+      templateTitle: 'Free Web App Template',
+      templateDesc:
+        'A production-ready starter for modern web apps, built with Next.js, Express, TypeScript, and clean project architecture. It is fully usable, free for everyone, and ready to speed up your next build.',
+      templateBadge: 'Open source starter',
+      templateHighlights: [
+        'Free to use for personal and commercial projects',
+        'Monorepo setup with frontend, backend, and shared package',
+        'Production-minded stack with Docker, CI/CD, and API docs',
+      ],
+      templatePrimary: 'View on GitHub',
+      templateSecondary: 'See projects first',
+      ctaTitle: 'Ready to Launch Your Next Project?',
+      ctaDesc:
+        "Whether you need a modern portfolio, a business website, or a full-stack app - I can make it happen. Let's discuss how we can bring your vision to life.",
+      cta: 'Get in Touch',
+    },
+    fr: {
+      whatCreate: 'Ce que je cree',
+      whatCreateDesc:
+        'Du portfolio elegant a la plateforme e-commerce, je cree des experiences digitales alignees a vos objectifs.',
+      services: 'Mes Services',
+      servicesDesc: 'Des solutions web completes adaptees a vos besoins',
+      stack: 'Stack Technique',
+      stackDesc: "Technologies et outils que j'utilise pour vos projets",
+      projects: 'Mes Projets',
+      projectsDesc: 'Decouvrez quelques projets recents realises pour mes clients',
+      templateTitle: 'Template gratuit pour web app',
+      templateDesc:
+        'Un starter moderne et pret pour la production, construit avec Next.js, Express, TypeScript et une architecture propre. Il est totalement utilisable, gratuit pour tout le monde, et ideal pour accelerer un nouveau projet.',
+      templateBadge: 'Starter open source',
+      templateHighlights: [
+        'Gratuit pour usage personnel et commercial',
+        'Monorepo avec frontend, backend et package partage',
+        'Stack pensee production avec Docker, CI/CD et documentation API',
+      ],
+      templatePrimary: 'Voir sur GitHub',
+      templateSecondary: 'Voir les projets',
+      ctaTitle: 'Pret a lancer votre prochain projet ?',
+      ctaDesc: "Parlons de votre idee et construisons une solution web moderne ensemble.",
+      cta: 'Me contacter',
+    },
+    es: {
+      whatCreate: 'Lo que creo',
+      whatCreateDesc:
+        'Desde portafolios elegantes hasta e-commerce potentes, creo experiencias digitales alineadas con tus objetivos.',
+      services: 'Mis Servicios',
+      servicesDesc: 'Soluciones web completas adaptadas a tu negocio',
+      stack: 'Stack Tecnologico',
+      stackDesc: 'Tecnologias y herramientas que uso para tus ideas',
+      projects: 'Mis Proyectos',
+      projectsDesc: 'Explora algunos de mis trabajos recientes',
+      templateTitle: 'Template gratis para web app',
+      templateDesc:
+        'Un starter moderno y listo para produccion, construido con Next.js, Express, TypeScript y una arquitectura limpia. Es totalmente utilizable, gratis para todos, y perfecto para acelerar tu proximo proyecto.',
+      templateBadge: 'Starter open source',
+      templateHighlights: [
+        'Gratis para proyectos personales y comerciales',
+        'Monorepo con frontend, backend y paquete compartido',
+        'Stack orientado a produccion con Docker, CI/CD y documentacion API',
+      ],
+      templatePrimary: 'Ver en GitHub',
+      templateSecondary: 'Ver proyectos',
+      ctaTitle: 'Listo para lanzar tu proximo proyecto?',
+      ctaDesc: 'Hablemos de tu idea y construyamos una solucion web moderna.',
+      cta: 'Contactar',
+    },
+  } as const;
+  const t = copy[language];
+  const servicesByLanguage = {
+    en: [
     {
       title: 'Custom Website Development',
       desc: 'From modern portfolios to landing pages and full business websites, I build responsive, fast, and SEO-friendly platforms tailored to your goals.',
@@ -66,7 +151,73 @@ export default function WebDevPage() {
       desc: 'I handle the complete deployment process, setting up hosting on platforms like Vercel, GitHub Pages, or custom servers, configuring domains, SSL certificates, and ensuring your site goes live smoothly.',
       icon: <IconCloudUpload size={40} color="cyan" />,
     },
-  ];
+    ],
+    fr: [
+      {
+        title: 'Developpement de sites sur mesure',
+        desc: 'Du portfolio moderne au site business complet, je cree des plateformes rapides, responsives et optimisees SEO.',
+        icon: <IconDeviceDesktop size={40} color="cyan" />,
+      },
+      {
+        title: 'E-commerce & boutiques en ligne',
+        desc: 'Je cree des boutiques elegantes et securisees avec React, YouCan ou WordPress, optimisees pour les ventes.',
+        icon: <IconShoppingBag size={40} color="cyan" />,
+      },
+      {
+        title: 'Integration API & automatisation',
+        desc: "Connexion de votre site a des services externes, CRM et outils d'automatisation via API REST/GraphQL.",
+        icon: <IconApi size={40} color="cyan" />,
+      },
+      {
+        title: 'Solutions CMS & builders',
+        desc: 'Mise en place et personnalisation de Wix, WordPress ou YouCan selon votre marque et votre workflow.',
+        icon: <IconLayoutGrid size={40} color="cyan" />,
+      },
+      {
+        title: 'Performance & SEO',
+        desc: 'Optimisation vitesse, securite, analytics et referencement pour rendre votre site visible et efficace.',
+        icon: <IconWorldWww size={40} color="cyan" />,
+      },
+      {
+        title: 'Deploiement & hebergement',
+        desc: 'Je gere le deploiement complet: hebergement, domaine, SSL et mise en ligne stable.',
+        icon: <IconCloudUpload size={40} color="cyan" />,
+      },
+    ],
+    es: [
+      {
+        title: 'Desarrollo web a medida',
+        desc: 'Desde portafolios modernos hasta sitios de negocio completos, creo plataformas rapidas, responsivas y optimizadas para SEO.',
+        icon: <IconDeviceDesktop size={40} color="cyan" />,
+      },
+      {
+        title: 'E-commerce y tiendas online',
+        desc: 'Creo tiendas elegantes y seguras con React, YouCan o WordPress, optimizadas para vender.',
+        icon: <IconShoppingBag size={40} color="cyan" />,
+      },
+      {
+        title: 'Integracion API y automatizacion',
+        desc: 'Conecto tu web con servicios externos, CRM y herramientas de automatizacion mediante APIs REST o GraphQL.',
+        icon: <IconApi size={40} color="cyan" />,
+      },
+      {
+        title: 'Constructores web y CMS',
+        desc: 'Configuro y personalizo Wix, WordPress o YouCan para que se adapten a tu marca.',
+        icon: <IconLayoutGrid size={40} color="cyan" />,
+      },
+      {
+        title: 'Rendimiento y SEO',
+        desc: 'Optimizo velocidad, seguridad, analitica y SEO para mejorar visibilidad y conversion.',
+        icon: <IconWorldWww size={40} color="cyan" />,
+      },
+      {
+        title: 'Despliegue y hosting',
+        desc: 'Me encargo del despliegue completo: hosting, dominio, SSL y lanzamiento estable.',
+        icon: <IconCloudUpload size={40} color="cyan" />,
+      },
+    ],
+  } as const;
+  const services = servicesByLanguage[language];
 
   const stack = [
     {
@@ -134,7 +285,8 @@ export default function WebDevPage() {
     },
     { name: 'API Integration', src: 'https://cdn-icons-png.flaticon.com/512/2165/2165004.png' },
   ];
-  const Creation = [
+  const creationsByLanguage = {
+    en: [
     {
       title: 'Portfolio Websites',
       image: PortfolioImg,
@@ -159,7 +311,61 @@ export default function WebDevPage() {
       description:
         'Interactive competition or giveaway websites with dynamic forms, leaderboards, and automated submissions — perfect for marketing campaigns.',
     },
-  ];
+    ],
+    fr: [
+      {
+        title: 'Sites Portfolio',
+        image: PortfolioImg,
+        description:
+          'Sites portfolio elegants et rapides pour mettre en valeur vos projets, competences et votre image professionnelle.',
+      },
+      {
+        title: 'Boutiques en ligne',
+        image: OnlineStoreImg,
+        description:
+          'E-commerce complet avec paiement securise, gestion produits et experience responsive.',
+      },
+      {
+        title: 'Landing pages business',
+        image: BusinessLandingImg,
+        description:
+          "Landing pages claires et optimisees conversion pour promouvoir votre activite avec des CTA efficaces.",
+      },
+      {
+        title: 'Sites de concours',
+        image: CompetitionWebsiteImg,
+        description:
+          'Sites interactifs de concours avec formulaires dynamiques, classements et soumissions automatisees.',
+      },
+    ],
+    es: [
+      {
+        title: 'Sitios de Portfolio',
+        image: PortfolioImg,
+        description:
+          'Sitios portfolio elegantes y rapidos para mostrar tu trabajo, habilidades y marca personal.',
+      },
+      {
+        title: 'Tiendas online',
+        image: OnlineStoreImg,
+        description:
+          'E-commerce completo y atractivo con pago seguro, gestion de productos y diseno responsive.',
+      },
+      {
+        title: 'Landing pages de negocio',
+        image: BusinessLandingImg,
+        description:
+          'Landing pages limpias y optimizadas para conversion, con mensajes claros y CTA efectivos.',
+      },
+      {
+        title: 'Sitios para concursos',
+        image: CompetitionWebsiteImg,
+        description:
+          'Sitios interactivos para sorteos o concursos con formularios dinamicos y envios automatizados.',
+      },
+    ],
+  } as const;
+  const Creation = creationsByLanguage[language];
 
   return (
     <Container size="xl">
@@ -176,10 +382,9 @@ export default function WebDevPage() {
           viewport={{ once: true, margin: '-60px' }}
           transition={{ duration: 0.6 }}
         >
-          <Title className={classes.sectionTitle}>What I Create</Title>
+          <Title className={classes.sectionTitle}>{t.whatCreate}</Title>
           <Text className={classes.sectionDescription} c="dimmed" mb="xl">
-            From sleek portfolios to powerful e-commerce platforms — I design and build digital
-            experiences that match your goals and brand identity.
+            {t.whatCreateDesc}
           </Text>
         </motion.div>
 
@@ -223,9 +428,9 @@ export default function WebDevPage() {
           viewport={{ once: true, margin: '-60px' }}
           transition={{ duration: 0.6 }}
         >
-          <Title className={classes.sectionTitle}>My Services</Title>
+          <Title className={classes.sectionTitle}>{t.services}</Title>
           <Text className={classes.sectionDescription} c="dimmed" mb="xl">
-            Comprehensive web development solutions tailored to your business needs
+            {t.servicesDesc}
           </Text>
         </motion.div>
 
@@ -276,9 +481,9 @@ export default function WebDevPage() {
           viewport={{ once: true, margin: '-60px' }}
           transition={{ duration: 0.6 }}
         >
-          <Title className={classes.sectionTitle}>Tech Stack</Title>
+          <Title className={classes.sectionTitle}>{t.stack}</Title>
           <Text className={classes.sectionDescription} c="dimmed" mb="xl">
-            Technologies and tools I use to bring your ideas to life
+            {t.stackDesc}
           </Text>
         </motion.div>
 
@@ -324,12 +529,80 @@ export default function WebDevPage() {
           viewport={{ once: true, margin: '-60px' }}
           transition={{ duration: 0.6 }}
         >
-          <Title className={classes.sectionTitle}>My Projects</Title>
+          <Title className={classes.sectionTitle}>{t.projects}</Title>
           <Text className={classes.sectionDescription} c="dimmed" mb="xl">
-            Explore some of my recent work and see how I've helped businesses achieve their goals
+            {t.projectsDesc}
           </Text>
         </motion.div>
         <ProjectsSection />
+      </section>
+
+      <Container size="xl">
+        <div className={classes.accentLine} />
+      </Container>
+
+      {/* Free template */}
+      <section className={classes.sectionContainer}>
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, margin: '-60px' }}
+          transition={{ duration: 0.6 }}
+        >
+          <Card className={classes.templateCard} radius="xl" p="xl" withBorder>
+            <Grid align="center" gutter="xl">
+              <Grid.Col span={{ base: 12, md: 6 }}>
+                <Stack gap="md">
+                  <Group gap="xs">
+                    <IconCode size={18} color="var(--mantine-color-cyan-5)" />
+                    <Text className={classes.templateBadge}>{t.templateBadge}</Text>
+                  </Group>
+
+                  <Title className={classes.templateTitle}>{t.templateTitle}</Title>
+                  <Text className={classes.templateDescription}>{t.templateDesc}</Text>
+
+                  <Stack gap="xs">
+                    {t.templateHighlights.map((highlight) => (
+                      <Group key={highlight} align="flex-start" gap="sm" wrap="nowrap">
+                        <IconArrowRight size={18} color="var(--mantine-color-cyan-5)" />
+                        <Text size="sm" c="dimmed">
+                          {highlight}
+                        </Text>
+                      </Group>
+                    ))}
+                  </Stack>
+
+                  <Group mt="sm">
+                    <Button
+                      component="a"
+                      href="https://github.com/safouane666/WebAppTemplate"
+                      target="_blank"
+                      rel="noreferrer"
+                      leftSection={<IconBrandGithub size={18} />}
+                      color="cyan"
+                      size="md"
+                    >
+                      {t.templatePrimary}
+                    </Button>
+                    <Button variant="light" color="cyan" component="a" href="#projects" size="md">
+                      {t.templateSecondary}
+                    </Button>
+                  </Group>
+                </Stack>
+              </Grid.Col>
+
+              <Grid.Col span={{ base: 12, md: 6 }}>
+                <div className={classes.templateImageWrap}>
+                  <Image
+                    src={WebAppTemplatePromoImg}
+                    alt={t.templateTitle}
+                    className={classes.templateImage}
+                  />
+                </div>
+              </Grid.Col>
+            </Grid>
+          </Card>
+        </motion.div>
       </section>
 
       <Container size="xl">
@@ -345,14 +618,11 @@ export default function WebDevPage() {
         transition={{ duration: 0.6 }}
       >
         <Title order={2} className={classes.ctaTitle}>
-          Ready to Launch Your Next Project?
+          {t.ctaTitle}
         </Title>
-        <Text className={classes.ctaDescription}>
-          Whether you need a modern portfolio, a business website, or a full-stack app — I can make
-          it happen. Let's discuss how we can bring your vision to life.
-        </Text>
+        <Text className={classes.ctaDescription}>{t.ctaDesc}</Text>
         <Button component={Link} to="/Contact" className={classes.ctaButton} size="lg">
-          Get in Touch
+          {t.cta}
         </Button>
       </motion.div>
     </Container>
