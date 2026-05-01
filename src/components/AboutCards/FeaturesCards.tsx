@@ -21,6 +21,7 @@ import {
 import QT from '@/imgs/ct.png';
 import classes from './FeaturesCards.module.css';
 import { useDisclosure } from '@mantine/hooks';
+import { useLanguage } from '@/i18n/language';
 
 type ToolItem = { name: string; src: string };
 
@@ -146,9 +147,51 @@ const mockdata = [
 ];
 
 export function FeaturesCards() {
+  const { language } = useLanguage();
   const [opened, { toggle }] = useDisclosure(false);
   const theme = useMantineTheme();
-  const features = mockdata.map((feature) => (
+  const translations = {
+    fr: {
+      titles: [
+        'Developpeur Front-end',
+        'Developpeur Back-end',
+        'Constructeurs de sites',
+        'Ingenierie robotique',
+        'Developpeur systemes embarques',
+        'Specialiste developpement logiciel',
+      ],
+      descriptions: [
+        'Je construis des interfaces web modernes, responsives et performantes avec un code propre et maintenable.',
+        'Je developpe des applications serveur robustes, evolutives et securisees pour des besoins metier reels.',
+        'Je cree et personnalise des sites avec Wix, WordPress et YouCan selon les besoins client.',
+        "Je conçois des systemes robotiques combinant controle materiel, embarque et automatisation intelligente.",
+        "Je developpe des systemes embarques fiables avec Arduino, STM32 et Raspberry Pi pour des applications variees.",
+        "Je realise des applications logicielles robustes avec Qt, LabVIEW et Delphi selon les contraintes projet.",
+      ],
+      toolsUsed: 'Outils utilises',
+    },
+    es: {
+      titles: [
+        'Desarrollador Front-end',
+        'Desarrollador Back-end',
+        'Constructores de sitios',
+        'Ingenieria robotica',
+        'Desarrollador de sistemas embebidos',
+        'Especialista en desarrollo de software',
+      ],
+      descriptions: [
+        'Construyo interfaces web modernas, responsivas y de alto rendimiento con codigo limpio y mantenible.',
+        'Desarrollo aplicaciones de servidor robustas, escalables y seguras para necesidades reales.',
+        'Creo y personalizo sitios con Wix, WordPress y YouCan segun las necesidades del cliente.',
+        'Diseno sistemas roboticos que combinan control de hardware, embebidos y automatizacion inteligente.',
+        'Desarrollo sistemas embebidos confiables con Arduino, STM32 y Raspberry Pi para multiples usos.',
+        'Desarrollo aplicaciones robustas con Qt, LabVIEW y Delphi segun los requisitos del proyecto.',
+      ],
+      toolsUsed: 'Herramientas usadas',
+    },
+  } as const;
+
+  const features = mockdata.map((feature, index) => (
     <Card
       key={feature.title}
       shadow="md"
@@ -163,10 +206,10 @@ export function FeaturesCards() {
         color={theme.colors.blue[6]}
       />
       <Text fz="lg" fw={500} className={classes.cardTitle} mt="md">
-        {feature.title}
+        {language === 'en' ? feature.title : translations[language].titles[index]}
       </Text>
       <Text fz="sm" mt="sm" style={{ marginBottom: '1rem' }}>
-        {feature.description}
+        {language === 'en' ? feature.description : translations[language].descriptions[index]}
       </Text>
       <Button
         variant="outline"
@@ -175,7 +218,7 @@ export function FeaturesCards() {
         style={{ marginTop: 'auto' }}
         onClick={toggle}
       >
-        Tools used
+        {language === 'en' ? 'Tools used' : translations[language].toolsUsed}
       </Button>
       <Collapse in={opened}>
         <div style={{ display: 'flex', gap: '0.5rem', marginTop: '0.5rem', flexWrap: 'wrap' }}>

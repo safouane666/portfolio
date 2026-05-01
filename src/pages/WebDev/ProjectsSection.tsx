@@ -26,6 +26,7 @@ import joyaScreenShot from './img/joyaScreenShot.webp';
 import tmata3Thumb from './img/tmata3thumb.webp';
 import tmata3ScreenShot from './img/tmata3screenshot.webp';
 import { useState } from 'react';
+import { useLanguage } from '@/i18n/language';
 
 // Example icons for tech stack (replace with your logos)
 
@@ -337,6 +338,32 @@ The project delivered a fundamental digital identity focused entirely on convert
 ];
 
 export default function ProjectsSection() {
+  const { language } = useLanguage();
+  const copy = {
+    en: {
+      visit: 'Visit',
+      learnMore: 'Learn More',
+      clientRequest: 'Client Request',
+      techStack: 'Tech Stack',
+      visitWebsite: 'Visit Website',
+    },
+    fr: {
+      visit: 'Visiter',
+      learnMore: 'Voir plus',
+      clientRequest: 'Demande client',
+      techStack: 'Stack Technique',
+      visitWebsite: 'Visiter le site',
+    },
+    es: {
+      visit: 'Visitar',
+      learnMore: 'Saber mas',
+      clientRequest: 'Solicitud del cliente',
+      techStack: 'Stack Tecnologico',
+      visitWebsite: 'Visitar sitio web',
+    },
+  } as const;
+  const t = copy[language];
+
   const [opened, setOpened] = useState(false);
   const [selectedProject, setSelectedProject] = useState<any>(null);
 
@@ -422,10 +449,10 @@ export default function ProjectsSection() {
                   color="cyan"
                   onClick={() => window.open(project.websiteUrl, '_blank')}
                 >
-                  Visit
+                  {t.visit}
                 </Button>
                 <Button color="cyan" onClick={() => openModal(project)}>
-                  Learn More
+                  {t.learnMore}
                 </Button>
               </Group>
             </Card>
@@ -451,7 +478,7 @@ export default function ProjectsSection() {
             {/* Client Request */}
             <Stack mt="md">
               <Title order={4} c="cyan">
-                Client Request
+                {t.clientRequest}
               </Title>
               <Text size="sm" style={{ lineHeight: 1.7 }}>
                 {selectedProject.clientPrompt}
@@ -465,7 +492,7 @@ export default function ProjectsSection() {
             {/* Tech Stack inside modal */}
             <Stack mt="md">
               <Title order={4} c="cyan">
-                Tech Stack
+                {t.techStack}
               </Title>
               <Group mt="xs">
                 {selectedProject.techStack?.map((tech: { name: string; src: string }) => (
@@ -484,7 +511,7 @@ export default function ProjectsSection() {
               color="cyan"
               onClick={() => window.open(selectedProject.websiteUrl, '_blank')}
             >
-              Visit Website
+              {t.visitWebsite}
             </Button>
           </>
         )}

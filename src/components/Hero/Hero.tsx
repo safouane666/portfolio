@@ -6,15 +6,46 @@ import { Flex, Group, Image, Text } from '@mantine/core';
 
 import ProfileImg from '@/imgs/profile.jpeg';
 import SocialIcons from '../Social/SocialIcons';
+import { useLanguage } from '@/i18n/language';
 
 export default function Hero() {
+  const { language } = useLanguage();
+  const copy = {
+    en: {
+      greeting: "Hi, I'm ",
+      prefix: "I'm ",
+      words: [
+        'an Electrical Engineer',
+        'a Web Developer',
+        'an Embedded Developer',
+        'a Game Developer',
+      ],
+    },
+    fr: {
+      greeting: 'Bonjour, je suis ',
+      prefix: 'Je suis ',
+      words: [
+        'un ingenieur electrique',
+        'un developpeur web',
+        'un developpeur embarque',
+        'un developpeur de jeux',
+      ],
+    },
+    es: {
+      greeting: 'Hola, soy ',
+      prefix: 'Soy ',
+      words: [
+        'un ingeniero electrico',
+        'un desarrollador web',
+        'un desarrollador embebido',
+        'un desarrollador de videojuegos',
+      ],
+    },
+  } as const;
+
+  const t = copy[language];
   const [text, helper] = useTypewriter({
-    words: [
-      'an Elecrical Engineer',
-      'a Web Developer',
-      'an Embedded Developer',
-      'a Game Developer',
-    ],
+    words: [...t.words],
     loop: true,
     delaySpeed: 80,
     typeSpeed: 100,
@@ -29,7 +60,7 @@ export default function Hero() {
         transition={{ duration: 0.7, ease: [0.25, 0.46, 0.45, 0.94] }}
         style={{ display: 'flex', flexDirection: 'column' }}
       >
-        <Text className="greating">Hi, I'm </Text>
+        <Text className="greating">{t.greeting}</Text>
         <Text
           className="Name"
           size="xl"
@@ -39,7 +70,8 @@ export default function Hero() {
           Safouane Regaieg{' '}
         </Text>
         <Text className="typeWrite">
-          I'm <span>{text}</span>
+          {t.prefix}
+          <span>{text}</span>
           <span>
             <Cursor cursorColor="cyan" />
           </span>

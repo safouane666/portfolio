@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
 import classes from './PathwayCards.module.css';
+import { useLanguage } from '@/i18n/language';
 
 const container = {
   hidden: { opacity: 0 },
@@ -28,26 +29,81 @@ const cardVariants = {
   },
 };
 
-const cards = [
-  {
-    to: '/WebDev',
-    title: 'Web Development',
-    description:
-      'Portfolios, business sites, and full-stack apps. I build fast, responsive, and modern web experiences with React, TypeScript, and clean code.',
-    icon: IconCode,
-    className: classes.cardWebDev,
-  },
-  {
-    to: '/Engineering',
-    title: 'Engineering & Robotics',
-    description:
-      'From ROS2 and embedded systems to industrial automation and hardware projects. Explore my engineering work and technical solutions.',
-    icon: IconRobot,
-    className: classes.cardEngineering,
-  },
-];
-
 export function PathwayCards() {
+  const { language } = useLanguage();
+  const copy = {
+    en: {
+      sectionTitle: 'Explore My Work',
+      sectionSubtitle: 'Choose a path and discover projects, skills, and how I can help you.',
+      explore: 'Explore',
+      cards: [
+        {
+          to: '/WebDev',
+          title: 'Web Development',
+          description:
+            'Portfolios, business sites, and full-stack apps. I build fast, responsive, and modern web experiences with React, TypeScript, and clean code.',
+          icon: IconCode,
+          className: classes.cardWebDev,
+        },
+        {
+          to: '/Engineering',
+          title: 'Engineering & Robotics',
+          description:
+            'From ROS2 and embedded systems to industrial automation and hardware projects. Explore my engineering work and technical solutions.',
+          icon: IconRobot,
+          className: classes.cardEngineering,
+        },
+      ],
+    },
+    fr: {
+      sectionTitle: 'Explorez Mon Travail',
+      sectionSubtitle: 'Choisissez une voie et decouvrez mes projets, competences et services.',
+      explore: 'Explorer',
+      cards: [
+        {
+          to: '/WebDev',
+          title: 'Developpement Web',
+          description:
+            'Portfolios, sites business et applications full-stack. Je cree des experiences web modernes, rapides et responsives.',
+          icon: IconCode,
+          className: classes.cardWebDev,
+        },
+        {
+          to: '/Engineering',
+          title: 'Ingenierie & Robotique',
+          description:
+            "De ROS2 et les systemes embarques a l'automatisation industrielle. Decouvrez mes solutions techniques.",
+          icon: IconRobot,
+          className: classes.cardEngineering,
+        },
+      ],
+    },
+    es: {
+      sectionTitle: 'Explora Mi Trabajo',
+      sectionSubtitle: 'Elige un camino y descubre proyectos, habilidades y como puedo ayudarte.',
+      explore: 'Explorar',
+      cards: [
+        {
+          to: '/WebDev',
+          title: 'Desarrollo Web',
+          description:
+            'Portafolios, sitios de negocio y apps full-stack. Creo experiencias web modernas, rapidas y responsivas.',
+          icon: IconCode,
+          className: classes.cardWebDev,
+        },
+        {
+          to: '/Engineering',
+          title: 'Ingenieria y Robotica',
+          description:
+            'Desde ROS2 y sistemas embebidos hasta automatizacion industrial. Descubre mis soluciones tecnicas.',
+          icon: IconRobot,
+          className: classes.cardEngineering,
+        },
+      ],
+    },
+  } as const;
+  const t = copy[language];
+
   return (
     <section className={classes.section}>
       <Container size="lg">
@@ -59,10 +115,10 @@ export function PathwayCards() {
           style={{ textAlign: 'center', marginBottom: 'var(--mantine-spacing-xl)' }}
         >
           <Title order={2} className={classes.sectionTitle}>
-            Explore My Work
+            {t.sectionTitle}
           </Title>
           <Text className={classes.sectionSubtitle}>
-            Choose a path and discover projects, skills, and how I can help you.
+            {t.sectionSubtitle}
           </Text>
         </motion.div>
 
@@ -73,7 +129,7 @@ export function PathwayCards() {
           whileInView="visible"
           viewport={{ once: true, margin: '-40px' }}
         >
-          {cards.map((item) => {
+          {t.cards.map((item) => {
             const Icon = item.icon;
             return (
               <motion.div key={item.to} variants={cardVariants}>
@@ -93,7 +149,7 @@ export function PathwayCards() {
                       {item.description}
                     </Text>
                     <span className={classes.cardCta}>
-                      Explore
+                      {t.explore}
                       <span aria-hidden>→</span>
                     </span>
                   </div>

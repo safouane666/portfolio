@@ -30,6 +30,7 @@ import spirulinaImg from '@/imgs/spiraw.webp';
 import gazeboImg from '@/imgs/gazebo.webp';
 import counterImg from '@/imgs/counter.webp';
 import classes from './Engineering.module.css';
+import { useLanguage } from '@/i18n/language';
 
 // ─── Types ────────────────────────────────────────────────────────────────────
 
@@ -557,10 +558,12 @@ const cardVariants = {
 function ProjectCard({
   project,
   onViewDetails,
+  viewDetailsLabel,
   index = 0,
 }: {
   project: Project;
   onViewDetails: (p: Project) => void;
+  viewDetailsLabel: string;
   index?: number;
 }) {
   return (
@@ -601,7 +604,7 @@ function ProjectCard({
           onClick={() => onViewDetails(project)}
           className={classes.viewDetailsBtn}
         >
-          View Details
+          {viewDetailsLabel}
         </button>
       </div>
     </motion.div>
@@ -612,10 +615,12 @@ function ProjectModal({
   project,
   open,
   onClose,
+  downloadReportLabel,
 }: {
   project: Project | null;
   open: boolean;
   onClose: () => void;
+  downloadReportLabel: string;
 }) {
   if (!project) return null;
 
@@ -671,7 +676,7 @@ function ProjectModal({
             variant="outline"
             size="sm"
           >
-            Download full project report (PDF)
+            {downloadReportLabel}
           </Button>
         </div>
       )}
@@ -691,9 +696,11 @@ const sectionHeaderVariants = {
 function SectionBlock({
   section,
   onViewDetails,
+  viewDetailsLabel,
 }: {
   section: EngineeringSection;
   onViewDetails: (p: Project) => void;
+  viewDetailsLabel: string;
 }) {
   const isGraduation = section.id === 'graduation';
 
@@ -725,6 +732,7 @@ function SectionBlock({
               key={project.id}
               project={project}
               onViewDetails={onViewDetails}
+              viewDetailsLabel={viewDetailsLabel}
               index={i}
             />
           ))}
@@ -736,6 +744,7 @@ function SectionBlock({
               key={project.id}
               project={project}
               onViewDetails={onViewDetails}
+              viewDetailsLabel={viewDetailsLabel}
               index={i}
             />
           ))}
@@ -748,7 +757,59 @@ function SectionBlock({
 // ─── Page ─────────────────────────────────────────────────────────────────────
 
 export default function Engineering() {
+  const { language } = useLanguage();
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const copy = {
+    en: {
+      portfolio: 'Portfolio',
+      titleLine1: 'Embedded & Electrical',
+      titleLine2: 'Engineering',
+      tagline: 'Real-time systems · embedded architectures · robotics · industrial automation',
+      p1: 'Embedded & Electrical Engineer focused on real-time firmware, digital hardware design, robotics simulation, and industrial communication.',
+      p2: 'I design systems where firmware, hardware, and communication layers stay synchronized under strict timing and performance constraints.',
+      p3: 'Recent work covers embedded development, FPGA design, autonomous robotics, and production monitoring for industrial environments.',
+      viewDetails: 'View Details',
+      downloadReport: 'Download full project report (PDF)',
+      ctaTitle: 'Need help with an embedded or robotics project?',
+      ctaDesc:
+        'From real-time firmware and FPGA design to industrial monitoring and robotics simulation, I can help you design, prototype, and ship robust systems.',
+      ctaBtn: 'Discuss a project',
+      footer: 'Embedded & Electrical Engineering Portfolio',
+    },
+    fr: {
+      portfolio: 'Portfolio',
+      titleLine1: 'Ingenierie embarquee & electrique',
+      titleLine2: 'Ingenierie',
+      tagline: 'Systemes temps reel · architectures embarquees · robotique · automatisation industrielle',
+      p1: "Ingenieur embarque et electrique specialise en firmware temps reel, materiel numerique, simulation robotique et communication industrielle.",
+      p2: 'Je conçois des systemes ou firmware, materiel et communication restent synchronises sous fortes contraintes.',
+      p3: "Mes travaux recents couvrent l'embarque, le FPGA, la robotique autonome et le suivi de production industrielle.",
+      viewDetails: 'Voir details',
+      downloadReport: 'Telecharger le rapport complet (PDF)',
+      ctaTitle: "Besoin d'aide sur un projet embarque ou robotique ?",
+      ctaDesc:
+        "Du firmware temps reel au FPGA, en passant par le monitoring industriel et la simulation robotique, je peux vous accompagner.",
+      ctaBtn: 'Discuter du projet',
+      footer: 'Portfolio Ingenierie Embarquee & Electrique',
+    },
+    es: {
+      portfolio: 'Portafolio',
+      titleLine1: 'Ingenieria embebida y electrica',
+      titleLine2: 'Ingenieria',
+      tagline: 'Sistemas en tiempo real · arquitecturas embebidas · robotica · automatizacion industrial',
+      p1: 'Ingeniero embebido y electrico enfocado en firmware en tiempo real, hardware digital, simulacion robotica y comunicacion industrial.',
+      p2: 'Diseno sistemas donde firmware, hardware y comunicacion se mantienen sincronizados bajo restricciones estrictas.',
+      p3: 'El trabajo reciente cubre embebidos, FPGA, robotica autonoma y monitoreo de produccion industrial.',
+      viewDetails: 'Ver detalles',
+      downloadReport: 'Descargar informe completo (PDF)',
+      ctaTitle: 'Necesitas ayuda con un proyecto embebido o robotico?',
+      ctaDesc:
+        'Desde firmware en tiempo real y diseno FPGA hasta monitoreo industrial y simulacion robotica, puedo ayudarte.',
+      ctaBtn: 'Hablar de un proyecto',
+      footer: 'Portafolio de Ingenieria Embebida y Electrica',
+    },
+  } as const;
+  const t = copy[language];
 
   return (
     <div className={classes.root}>
@@ -769,15 +830,15 @@ export default function Engineering() {
               mb="sm"
               style={{ fontFamily: 'monospace', letterSpacing: 2 }}
             >
-              Portfolio
+              {t.portfolio}
             </Text>
             <Title order={1} size="2.5rem" mb="md" style={{ lineHeight: 1.2 }}>
-              Embedded & Electrical
+              {t.titleLine1}
               <br />
-              <span className={classes.accentGradientText}>Engineering</span>
+              <span className={classes.accentGradientText}>{t.titleLine2}</span>
             </Title>
             <Text size="sm" c="dimmed" mb="lg" style={{ fontFamily: 'monospace' }}>
-              Real-time systems · embedded architectures · robotics · industrial automation
+              {t.tagline}
             </Text>
           </motion.div>
           <motion.div
@@ -787,16 +848,13 @@ export default function Engineering() {
             style={{ maxWidth: 768 }}
           >
             <Text size="sm" c="dimmed" mb="xs">
-              Embedded & Electrical Engineer focused on real-time firmware, digital hardware
-              design, robotics simulation, and industrial communication.
+              {t.p1}
             </Text>
             <Text size="sm" c="dimmed" mb="xs">
-              I design systems where firmware, hardware, and communication layers stay
-              synchronized under strict timing and performance constraints.
+              {t.p2}
             </Text>
             <Text size="sm" c="dimmed" mb="lg">
-              Recent work covers embedded development, FPGA design, autonomous robotics, and
-              production monitoring for industrial environments.
+              {t.p3}
             </Text>
           </motion.div>
           <motion.ul
@@ -820,7 +878,11 @@ export default function Engineering() {
       <Container size="lg">
         {sections.map((section) => (
           <div key={section.id}>
-            <SectionBlock section={section} onViewDetails={setSelectedProject} />
+            <SectionBlock
+              section={section}
+              onViewDetails={setSelectedProject}
+              viewDetailsLabel={t.viewDetails}
+            />
             <div className={classes.accentLine} />
           </div>
         ))}
@@ -835,14 +897,11 @@ export default function Engineering() {
           transition={{ duration: 0.6 }}
         >
           <Title order={2} className={classes.ctaTitle}>
-            Need help with an embedded or robotics project?
+            {t.ctaTitle}
           </Title>
-          <Text className={classes.ctaDescription}>
-            From real-time firmware and FPGA design to industrial monitoring and robotics
-            simulation, I can help you design, prototype, and ship robust systems.
-          </Text>
+          <Text className={classes.ctaDescription}>{t.ctaDesc}</Text>
           <Button component={Link} to="/Contact" className={classes.ctaButton} size="lg">
-            Discuss a project
+            {t.ctaBtn}
           </Button>
         </motion.div>
       </Container>
@@ -854,13 +913,14 @@ export default function Engineering() {
         viewport={{ once: true, margin: '-50px' }}
         transition={{ duration: 0.5 }}
       >
-        <p>Embedded & Electrical Engineering Portfolio</p>
+        <p>{t.footer}</p>
       </motion.footer>
 
       <ProjectModal
         project={selectedProject}
         open={!!selectedProject}
         onClose={() => setSelectedProject(null)}
+        downloadReportLabel={t.downloadReport}
       />
     </div>
   );

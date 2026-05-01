@@ -1,13 +1,21 @@
 import { Container, Flex, Group, Popover, Text } from '@mantine/core';
 import classes from './Footer.module.css';
+import { useLanguage } from '@/i18n/language';
 
 export function Footer() {
+  const { language } = useLanguage();
+  const copy = {
+    en: 'Made by',
+    fr: 'Cree par',
+    es: 'Creado por',
+  } as const;
+
   return (
     <footer className={classes.footer}>
       <Container size="lg">
         <Group justify="space-between" align="center" wrap="wrap" gap="md">
           <Text size="sm" c="dimmed">
-            Made by <strong>SAFOUANE REGAIEG</strong>
+            {copy[language]} <strong>SAFOUANE REGAIEG</strong>
           </Text>
           
           <Flex gap="1.5rem" align="center">

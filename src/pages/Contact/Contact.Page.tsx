@@ -26,9 +26,68 @@ import classes from './GetInTouch.module.css';
 import emailjs from '@emailjs/browser';
 import { useForm } from '@mantine/form';
 import { useState } from 'react';
+import { useLanguage } from '@/i18n/language';
 
 export function ContactPage() {
   const { colorScheme } = useMantineColorScheme();
+  const { language } = useLanguage();
+  const copy = {
+    en: {
+      invalidEmail: 'Invalid email',
+      nameMin: 'Name must be at least 2 characters',
+      subjectMin: 'Subject must be at least 5 characters',
+      messageMin: 'Message must be at least 10 characters',
+      success: 'Message sent successfully! I will get back to you soon.',
+      failed: 'Failed to send message. Please try again later.',
+      successTitle: 'Success!',
+      errorTitle: 'Error!',
+      contactInfo: 'Contact information',
+      getInTouch: 'Get in touch',
+      yourName: 'Your name',
+      yourEmail: 'Your email',
+      subject: 'Subject',
+      yourMessage: 'Your message',
+      messagePlaceholder: 'Please include all relevant information',
+      send: 'Send message',
+    },
+    fr: {
+      invalidEmail: 'Email invalide',
+      nameMin: 'Le nom doit contenir au moins 2 caracteres',
+      subjectMin: 'Le sujet doit contenir au moins 5 caracteres',
+      messageMin: 'Le message doit contenir au moins 10 caracteres',
+      success: 'Message envoye avec succes ! Je vous repondrai bientot.',
+      failed: "Echec de l'envoi du message. Veuillez reessayer.",
+      successTitle: 'Succes !',
+      errorTitle: 'Erreur !',
+      contactInfo: 'Informations de contact',
+      getInTouch: 'Contactez-moi',
+      yourName: 'Votre nom',
+      yourEmail: 'Votre email',
+      subject: 'Sujet',
+      yourMessage: 'Votre message',
+      messagePlaceholder: 'Veuillez inclure toutes les informations utiles',
+      send: 'Envoyer',
+    },
+    es: {
+      invalidEmail: 'Correo invalido',
+      nameMin: 'El nombre debe tener al menos 2 caracteres',
+      subjectMin: 'El asunto debe tener al menos 5 caracteres',
+      messageMin: 'El mensaje debe tener al menos 10 caracteres',
+      success: 'Mensaje enviado con exito. Te respondere pronto.',
+      failed: 'No se pudo enviar el mensaje. Intentalo mas tarde.',
+      successTitle: 'Exito!',
+      errorTitle: 'Error!',
+      contactInfo: 'Informacion de contacto',
+      getInTouch: 'Hablemos',
+      yourName: 'Tu nombre',
+      yourEmail: 'Tu correo',
+      subject: 'Asunto',
+      yourMessage: 'Tu mensaje',
+      messagePlaceholder: 'Incluye toda la informacion relevante',
+      send: 'Enviar mensaje',
+    },
+  } as const;
+  const t = copy[language];
   const [loading, setLoading] = useState(false);
   const [notification, setNotification] = useState<{
     show: boolean;
@@ -48,10 +107,10 @@ export function ContactPage() {
       message: '',
     },
     validate: {
-      email: (value: string) => (/^\S+@\S+$/.test(value) ? null : 'Invalid email'),
-      name: (value: string) => (value.length < 2 ? 'Name must be at least 2 characters' : null),
-      subject: (value: string) => (value.length < 5 ? 'Subject must be at least 5 characters' : null),
-      message: (value: string) => (value.length < 10 ? 'Message must be at least 10 characters' : null),
+      email: (value: string) => (/^\S+@\S+$/.test(value) ? null : t.invalidEmail),
+      name: (value: string) => (value.length < 2 ? t.nameMin : null),
+      subject: (value: string) => (value.length < 5 ? t.subjectMin : null),
+      message: (value: string) => (value.length < 10 ? t.messageMin : null),
     },
   });
 
@@ -81,11 +140,11 @@ export function ContactPage() {
         'JiXDynVX8YNzjTfDK' // Replace with your EmailJS public key
       );
 
-      showNotification('success', 'Message sent successfully! I will get back to you soon.');
+      showNotification('success', t.success);
       form.reset();
     } catch (error) {
       console.error('Failed to send email:', error);
-      showNotification('error', 'Failed to send message. Please try again later.');
+      showNotification('error', t.failed);
     } finally {
       setLoading(false);
     }
@@ -107,7 +166,7 @@ export function ContactPage() {
         <Notification
           icon={notification.type === 'success' ? checkIcon : xIcon}
           color={notification.type === 'success' ? 'teal' : 'red'}
-          title={notification.type === 'success' ? 'Success!' : 'Error!'}
+          title={notification.type === 'success' ? t.successTitle : t.errorTitle}
           onClose={() => setNotification({ ...notification, show: false })}
           style={{
             position: 'fixed',
@@ -136,7 +195,7 @@ export function ContactPage() {
                 c={colorScheme === 'dark' ? 'gray.0' : 'white'}
                 mb="xl"
               >
-                Contact information
+                {t.contactInfo}
               </Text>
 
               <ContactIconsList />
@@ -151,19 +210,19 @@ export function ContactPage() {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <Text fz="xl" fw={700} className={classes.title} mb="xl">
-              Get in touch
+              {t.getInTouch}
             </Text>
 
             <div className={classes.fields}>
               <SimpleGrid cols={{ base: 1, sm: 2 }}>
                 <TextInput
-                  label="Your name"
-                  placeholder="Your name"
+                  label={t.yourName}
+                  placeholder={t.yourName}
                   required
                   {...form.getInputProps('name')}
                 />
                 <TextInput
-                  label="Your email"
+                  label={t.yourEmail}
                   placeholder="hello@mantine.dev"
                   required
                   {...form.getInputProps('email')}
@@ -172,16 +231,16 @@ export function ContactPage() {
 
               <TextInput
                 mt="md"
-                label="Subject"
-                placeholder="Subject"
+                label={t.subject}
+                placeholder={t.subject}
                 required
                 {...form.getInputProps('subject')}
               />
 
               <Textarea
                 mt="md"
-                label="Your message"
-                placeholder="Please include all relevant information"
+                label={t.yourMessage}
+                placeholder={t.messagePlaceholder}
                 minRows={3}
                 required
                 {...form.getInputProps('message')}
@@ -196,7 +255,7 @@ export function ContactPage() {
                   size="md"
                   variant="filled"
                 >
-                  Send message
+                  {t.send}
                 </Button>
               </Group>
             </div>

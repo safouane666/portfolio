@@ -1,18 +1,33 @@
 import { ActionIcon, Box, Stack, Text, Tooltip } from '@mantine/core';
-import { IconAt, IconCheck, IconCopy, IconMapPin, IconPhone, IconSun } from '@tabler/icons-react';
+import { IconAt, IconCheck, IconCopy, IconPhone, IconSun } from '@tabler/icons-react';
 
 import classes from './ContactIcons.module.css';
 import { useState } from 'react';
+import { useLanguage } from '@/i18n/language';
 
 interface ContactIconProps extends Omit<React.ComponentPropsWithoutRef<'div'>, 'title' | 'onCopy'> {
   icon: typeof IconSun;
   title: React.ReactNode;
   description: React.ReactNode;
   onCopy?: (text: string) => void;
+  copyable?: boolean;
 }
 
-function ContactIcon({ icon: Icon, title, description, onCopy, ...others }: ContactIconProps) {
+function ContactIcon({
+  icon: Icon,
+  title,
+  description,
+  onCopy,
+  copyable = false,
+  ...others
+}: ContactIconProps) {
+  const { language } = useLanguage();
   const [copied, setCopied] = useState(false);
+  const tooltipCopy = {
+    en: { copy: 'Copy', copied: 'Copied!' },
+    fr: { copy: 'Copier', copied: 'Copie !' },
+    es: { copy: 'Copiar', copied: 'Copiado!' },
+  } as const;
 
   const handleCopy = async () => {
     try {
@@ -51,8 +66,11 @@ function ContactIcon({ icon: Icon, title, description, onCopy, ...others }: Cont
         </Text>
       </div>
 
-      {(title === 'Email' || title === 'Phone') && (
-        <Tooltip label={copied ? 'Copied!' : 'Copy'} position="left">
+      {copyable && (
+        <Tooltip
+          label={copied ? tooltipCopy[language].copied : tooltipCopy[language].copy}
+          position="left"
+        >
           <ActionIcon
             onClick={handleCopy}
             variant="subtle"
@@ -71,18 +89,25 @@ function ContactIcon({ icon: Icon, title, description, onCopy, ...others }: Cont
 }
 
 const MOCKDATA = [
-  { title: 'Email', description: 'safouaneregaieg8@gmail.com', icon: IconAt },
-  { title: 'Phone', description: '+216 50508213', icon: IconPhone },
+  { title: 'Email', description: 'safouaneregaieg8@gmail.com', icon: IconAt, copyable: true },
+  { title: 'Phone', description: '+216 50508213', icon: IconPhone, copyable: true },
 ];
 
 export function ContactIconsList() {
+  const { language } = useLanguage();
+  const titles = {
+    en: ['Email', 'Phone'],
+    fr: ['Email', 'Telephone'],
+    es: ['Email', 'Telefono'],
+  } as const;
+
   const handleCopy = (text: string) => {
     console.log('Copied:', text);
     // You can add toast notification here if needed
   };
 
   const items = MOCKDATA.map((item, index) => (
-    <ContactIcon key={index} {...item} onCopy={handleCopy} />
+    <ContactIcon key={index} {...item} title={titles[language][index]} onCopy={handleCopy} />
   ));
 
   return <Stack>{items}</Stack>;

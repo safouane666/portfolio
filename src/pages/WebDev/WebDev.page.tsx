@@ -143,7 +143,7 @@ export default function WebDevPage() {
       templatePrimary: 'Voir sur GitHub',
       templateSecondary: 'Voir les projets',
       ctaTitle: 'Pret a lancer votre prochain projet ?',
-      ctaDesc: "Parlons de votre idee et construisons une solution web moderne ensemble.",
+      ctaDesc: 'Parlons de votre idee et construisons une solution web moderne ensemble.',
       cta: 'Me contacter',
     },
     es: {
@@ -201,37 +201,37 @@ export default function WebDevPage() {
   const t = copy[language];
   const servicesByLanguage = {
     en: [
-    {
-      title: 'Custom Website Development',
-      desc: 'From modern portfolios to landing pages and full business websites, I build responsive, fast, and SEO-friendly platforms tailored to your goals.',
-      icon: <IconDeviceDesktop size={40} color="cyan" />,
-    },
-    {
-      title: 'E-commerce & Online Stores',
-      desc: 'I create elegant and secure online shops using React or website builders like YouCan and WordPress, optimized for sales and easy product management.',
-      icon: <IconShoppingBag size={40} color="cyan" />,
-    },
-    {
-      title: 'API Integration & Automation',
-      desc: 'Seamlessly connect your website with external services, CRMs, or automation tools using REST or GraphQL APIs for smoother business operations.',
-      icon: <IconApi size={40} color="cyan" />,
-    },
-    {
-      title: 'Website Builders & CMS Solutions',
-      desc: 'Need a website without coding? I can set up and customize Wix, WordPress, or YouCan sites to match your brand and workflow perfectly.',
-      icon: <IconLayoutGrid size={40} color="cyan" />,
-    },
+      {
+        title: 'Custom Website Development',
+        desc: 'From modern portfolios to landing pages and full business websites, I build responsive, fast, and SEO-friendly platforms tailored to your goals.',
+        icon: <IconDeviceDesktop size={40} color="cyan" />,
+      },
+      {
+        title: 'E-commerce & Online Stores',
+        desc: 'I create elegant and secure online shops using React or website builders like YouCan and WordPress, optimized for sales and easy product management.',
+        icon: <IconShoppingBag size={40} color="cyan" />,
+      },
+      {
+        title: 'API Integration & Automation',
+        desc: 'Seamlessly connect your website with external services, CRMs, or automation tools using REST or GraphQL APIs for smoother business operations.',
+        icon: <IconApi size={40} color="cyan" />,
+      },
+      {
+        title: 'Website Builders & CMS Solutions',
+        desc: 'Need a website without coding? I can set up and customize Wix, WordPress, or YouCan sites to match your brand and workflow perfectly.',
+        icon: <IconLayoutGrid size={40} color="cyan" />,
+      },
 
-    {
-      title: 'Performance & SEO Optimization',
-      desc: 'Make your website lightning-fast, secure, and discoverable with optimized code, analytics setup, and smart SEO techniques.',
-      icon: <IconWorldWww size={40} color="cyan" />,
-    },
-    {
-      title: 'Deployment & Hosting',
-      desc: 'I handle the complete deployment process, setting up hosting on platforms like Vercel, GitHub Pages, or custom servers, configuring domains, SSL certificates, and ensuring your site goes live smoothly.',
-      icon: <IconCloudUpload size={40} color="cyan" />,
-    },
+      {
+        title: 'Performance & SEO Optimization',
+        desc: 'Make your website lightning-fast, secure, and discoverable with optimized code, analytics setup, and smart SEO techniques.',
+        icon: <IconWorldWww size={40} color="cyan" />,
+      },
+      {
+        title: 'Deployment & Hosting',
+        desc: 'I handle the complete deployment process, setting up hosting on platforms like Vercel, GitHub Pages, or custom servers, configuring domains, SSL certificates, and ensuring your site goes live smoothly.',
+        icon: <IconCloudUpload size={40} color="cyan" />,
+      },
     ],
     fr: [
       {
@@ -308,23 +308,23 @@ export default function WebDevPage() {
   const aiProviders = [
     {
       name: 'Ollama',
-      src: 'https://ollama.com/public/ollama.png',
+      src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRFVZ9JJ3PrF8m-lYW-rPzJpZJVMzq3CwpdsQ&s',
     },
     {
       name: 'OpenAI',
-      src: 'https://cdn.simpleicons.org/openai/ffffff',
+      src: 'https://cdn-icons-png.flaticon.com/128/12222/12222560.png',
     },
     {
       name: 'Claude',
-      src: 'https://cdn.simpleicons.org/anthropic/ffffff',
+      src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRnM91o7r1wba01xcHW15PLqbe-ONaTIjOO3g&s',
     },
     {
       name: 'Google AI',
       src: 'https://cdn.simpleicons.org/google/ffffff',
     },
     {
-      name: 'VLM',
-      src: 'https://cdn-icons-png.flaticon.com/512/4712/4712027.png',
+      name: 'VLLM',
+      src: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT5VFscDMrJeE01Pjg3I1l2wfmNCYtD_pnLvg&s',
     },
   ];
 
@@ -396,30 +396,30 @@ export default function WebDevPage() {
   ];
   const creationsByLanguage = {
     en: [
-    {
-      title: 'Portfolio Websites',
-      image: PortfolioImg,
-      description:
-        'Elegant and fast-loading portfolio websites to showcase your work, skills, and personal brand — designed for freelancers, creatives, and professionals.',
-    },
-    {
-      title: 'Online Stores',
-      image: OnlineStoreImg,
-      description:
-        'Fully functional and visually appealing e-commerce websites with secure checkout, product management, and responsive design for all devices.',
-    },
-    {
-      title: 'Business Landing Pages',
-      image: BusinessLandingImg,
-      description:
-        'Clean, conversion-optimized landing pages to promote your business, product, or service with clear messaging and call-to-action elements.',
-    },
-    {
-      title: 'Competition Websites',
-      image: CompetitionWebsiteImg,
-      description:
-        'Interactive competition or giveaway websites with dynamic forms, leaderboards, and automated submissions — perfect for marketing campaigns.',
-    },
+      {
+        title: 'Portfolio Websites',
+        image: PortfolioImg,
+        description:
+          'Elegant and fast-loading portfolio websites to showcase your work, skills, and personal brand — designed for freelancers, creatives, and professionals.',
+      },
+      {
+        title: 'Online Stores',
+        image: OnlineStoreImg,
+        description:
+          'Fully functional and visually appealing e-commerce websites with secure checkout, product management, and responsive design for all devices.',
+      },
+      {
+        title: 'Business Landing Pages',
+        image: BusinessLandingImg,
+        description:
+          'Clean, conversion-optimized landing pages to promote your business, product, or service with clear messaging and call-to-action elements.',
+      },
+      {
+        title: 'Competition Websites',
+        image: CompetitionWebsiteImg,
+        description:
+          'Interactive competition or giveaway websites with dynamic forms, leaderboards, and automated submissions — perfect for marketing campaigns.',
+      },
     ],
     fr: [
       {
@@ -438,7 +438,7 @@ export default function WebDevPage() {
         title: 'Landing pages business',
         image: BusinessLandingImg,
         description:
-          "Landing pages claires et optimisees conversion pour promouvoir votre activite avec des CTA efficaces.",
+          'Landing pages claires et optimisees conversion pour promouvoir votre activite avec des CTA efficaces.',
       },
       {
         title: 'Sites de concours',
@@ -655,7 +655,9 @@ export default function WebDevPage() {
               >
                 <Card className={classes.aiCard} radius="xl" p="xl" withBorder>
                   <Stack gap="md">
-                    <div className={classes.aiIconWrap}>{aiIcons[item.icon as keyof typeof aiIcons]}</div>
+                    <div className={classes.aiIconWrap}>
+                      {aiIcons[item.icon as keyof typeof aiIcons]}
+                    </div>
                     <Text fw={700} size="lg">
                       {item.title}
                     </Text>

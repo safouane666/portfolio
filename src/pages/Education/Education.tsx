@@ -3,9 +3,18 @@ import './Education.css';
 import { motion } from 'framer-motion';
 import { Flex, Text, Timeline } from '@mantine/core';
 
+import { useLanguage } from '@/i18n/language';
 import React from 'react';
 
 export default function Education() {
+  const { language } = useLanguage();
+  const copy = {
+    en: { education: 'Education', experience: 'Professional Experience' },
+    fr: { education: 'Education', experience: 'Experience Professionnelle' },
+    es: { education: 'Educacion', experience: 'Experiencia Profesional' },
+  } as const;
+  const t = copy[language];
+
   return (
     <Flex className="Education_Container">
       <motion.div
@@ -22,7 +31,7 @@ export default function Education() {
           variant="gradient"
           gradient={{ from: 'cyan', to: 'blue', deg: 90 }}
         >
-          Education
+          {t.education}
         </Text>
         <Timeline active={3} bulletSize={25}>
           <Timeline.Item title="TECHNICAL BACCALAUREATE">
@@ -74,7 +83,7 @@ export default function Education() {
           variant="gradient"
           gradient={{ from: 'blue', to: 'grape', deg: 90 }}
         >
-          Professional Experience
+          {t.experience}
         </Text>
         <Timeline active={2} bulletSize={25} align="right" color="grape">
           <Timeline.Item title="WS TUNISIA Internship (WIRE SYSTEM TUNISIA) ">
