@@ -1,0 +1,6 @@
+.svg {
+  width: 100%;
+  max-width: 420px;
+  height: auto;
+  filter: drop-shadow(0 24px 48px light-dark(rgba(6, 182, 212, 0.2), rgba(34, 211, 238, 0.15)));
+}

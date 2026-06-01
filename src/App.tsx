@@ -10,6 +10,8 @@ import { HeaderMegaMenu } from './components/header/HeaderMegaMenu';
 import { HomePage } from './pages/Home.page';
 import { MantineProvider } from '@mantine/core';
 import WebDevPage from './pages/WebDev/WebDev.page';
+import LocalAIPage from './pages/LocalAI/LocalAI.page';
+import { ScrollToTop } from './components/ScrollToTop';
 import { LanguageProvider } from './i18n/language';
 import { theme } from './theme';
 
@@ -60,6 +62,11 @@ function SeoManager() {
         description:
           'Get in touch with Safouane RG for collaboration, opportunities, and technical project discussions.',
       },
+      '/LocalAI': {
+        title: 'Local AI Sovereignty | Safouane RG',
+        description:
+          'On-premise AI infrastructure with vLLM, private models, dashboards, and full lifecycle support—own your data and compute.',
+      },
     };
 
     const pageMeta = routeConfig[route] || routeConfig['/'];
@@ -104,12 +111,14 @@ function AppRouter() {
     <LanguageProvider>
       <MantineProvider theme={theme}>
         <Router basename="/portfolio">
+          <ScrollToTop />
           <SeoManager />
           <Routes>
             <Route path="/" element={<AppLayout />}>
               <Route index element={<HomePage />} />
               <Route path="Contact" element={<ContactPage />} />
               <Route path="WebDev" element={<WebDevPage />} />
+              <Route path="LocalAI" element={<LocalAIPage />} />
               <Route path="Engineering" element={<Engineering />} />
               <Route path="*" element={<div>Not Found</div>} />
             </Route>

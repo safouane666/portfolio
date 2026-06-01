@@ -1,0 +1,70 @@
+.wrap {
+  width: 100%;
+  border-radius: var(--mantine-radius-md);
+  overflow: hidden;
+  border: 1px solid light-dark(rgba(6, 182, 212, 0.2), rgba(34, 211, 238, 0.22));
+  background: linear-gradient(180deg, #1c2733 0%, #0e1621 100%);
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 11px;
+  line-height: 1.45;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  background: #17212b;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 14px;
+  color: white;
+  background: linear-gradient(135deg, var(--mantine-color-cyan-6), var(--mantine-color-blue-6));
+}
+
+.botName {
+  color: #e8edf2;
+  font-weight: 600;
+  font-size: 12px;
+}
+
+.status {
+  color: var(--mantine-color-cyan-4);
+  font-size: 10px;
+}
+
+.messages {
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-height: 120px;
+}
+
+.bubble {
+  max-width: 88%;
+  padding: 8px 10px;
+  border-radius: 12px;
+  color: #e8edf2;
+}
+
+.incoming {
+  align-self: flex-start;
+  background: #182533;
+  border-bottom-left-radius: 4px;
+}
+
+.outgoing {
+  align-self: flex-end;
+  background: #2b5278;
+  border-bottom-right-radius: 4px;
+}

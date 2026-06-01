@@ -19,6 +19,7 @@ import {
   IconBrandGithub,
   IconBrain,
   IconCloudUpload,
+  IconServer,
   IconCode,
   IconDeviceDesktop,
   IconLayoutGrid,
@@ -79,6 +80,10 @@ export default function WebDevPage() {
       aiCloudTitle: 'Cloud AI providers',
       aiCloudDesc:
         'When the product needs stronger hosted intelligence, I can connect OpenAI, Claude, and Google APIs for generation, reasoning, classification, and multimodal tasks.',
+      aiLocalCtaTitle: 'Need full on-premise AI infrastructure?',
+      aiLocalCtaDesc:
+        'Explore dedicated local servers, hardware tiers, vLLM stacks, and lifecycle support—not only integrations inside your web apps.',
+      aiLocalCtaButton: 'Explore Local AI Sovereignty',
       templateTitle: 'Free Web App Template',
       templateDesc:
         'A production-ready starter for modern web apps, built with Next.js, Express, TypeScript, and clean project architecture. It is fully usable, free for everyone, and ready to speed up your next build.',
@@ -131,6 +136,10 @@ export default function WebDevPage() {
       aiCloudTitle: 'Fournisseurs IA cloud',
       aiCloudDesc:
         'Quand le produit demande plus de puissance, je peux connecter OpenAI, Claude et Google APIs pour generation, raisonnement, classification et taches multimodales.',
+      aiLocalCtaTitle: 'Besoin d une infrastructure IA on-premise complete ?',
+      aiLocalCtaDesc:
+        'Decouvrez serveurs locaux, paliers materiel, stack vLLM et support cycle de vie—pas seulement l integration dans vos apps web.',
+      aiLocalCtaButton: 'Voir la souverainete IA locale',
       templateTitle: 'Template gratuit pour web app',
       templateDesc:
         'Un starter moderne et pret pour la production, construit avec Next.js, Express, TypeScript et une architecture propre. Il est totalement utilisable, gratuit pour tout le monde, et ideal pour accelerer un nouveau projet.',
@@ -182,6 +191,10 @@ export default function WebDevPage() {
       aiCloudTitle: 'Proveedores IA cloud',
       aiCloudDesc:
         'Cuando el producto necesita mas potencia alojada, puedo conectar OpenAI, Claude y Google APIs para generacion, razonamiento, clasificacion y tareas multimodales.',
+      aiLocalCtaTitle: 'Necesitas infraestructura IA on-premise completa?',
+      aiLocalCtaDesc:
+        'Explora servidores locales, niveles de hardware, stack vLLM y soporte de ciclo de vida—no solo integraciones en tus apps web.',
+      aiLocalCtaButton: 'Explorar soberania IA local',
       templateTitle: 'Template gratis para web app',
       templateDesc:
         'Un starter moderno y listo para produccion, construido con Next.js, Express, TypeScript y una arquitectura limpia. Es totalmente utilizable, gratis para todos, y perfecto para acelerar tu proximo proyecto.',
@@ -697,6 +710,33 @@ export default function WebDevPage() {
               </div>
             </Grid.Col>
           </Grid>
+        </Card>
+
+        <Card className={classes.aiLocalCtaCard} radius="xl" p="xl" withBorder mt="xl">
+          <Group justify="space-between" align="center" wrap="wrap" gap="lg">
+            <Stack gap="sm" style={{ flex: 1, minWidth: 260 }}>
+              <Group gap="xs">
+                <IconServer size={22} color="var(--mantine-color-cyan-5)" />
+                <Text fw={700} size="lg">
+                  {t.aiLocalCtaTitle}
+                </Text>
+              </Group>
+              <Text size="sm" c="dimmed" style={{ lineHeight: 1.75, maxWidth: 560 }}>
+                {t.aiLocalCtaDesc}
+              </Text>
+            </Stack>
+            <Button
+              component={Link}
+              to="/LocalAI"
+              color="cyan"
+              size="md"
+              radius="xl"
+              rightSection={<IconArrowRight size={18} />}
+              className={classes.aiLocalCtaButton}
+            >
+              {t.aiLocalCtaButton}
+            </Button>
+          </Group>
         </Card>
       </section>
 

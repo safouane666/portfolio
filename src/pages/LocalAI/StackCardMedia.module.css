@@ -1,0 +1,73 @@
+.media {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mediaScreenshot {
+  height: 100%;
+}
+
+.screenshot {
+  width: 100%;
+  max-height: 260px;
+  min-height: 180px;
+  object-fit: cover;
+  object-position: top center;
+  border-radius: var(--mantine-radius-md);
+  border: 1px solid light-dark(rgba(6, 182, 212, 0.15), rgba(34, 211, 238, 0.2));
+  box-shadow: 0 12px 32px light-dark(rgba(6, 182, 212, 0.12), rgba(0, 0, 0, 0.35));
+  transition: transform 0.45s ease, box-shadow 0.45s ease;
+}
+
+.mediaScreenshot:hover .screenshot {
+  transform: scale(1.015);
+  box-shadow: 0 16px 40px light-dark(rgba(6, 182, 212, 0.18), rgba(34, 211, 238, 0.15));
+}
+
+.mediaSplit {
+  display: grid;
+  grid-template-columns: 72px 1fr;
+  gap: var(--mantine-spacing-sm);
+  align-items: stretch;
+  width: 100%;
+  max-width: 420px;
+
+  @media (max-width: $mantine-breakpoint-xs) {
+    grid-template-columns: 1fr;
+    max-width: 100%;
+  }
+}
+
+.hermesBrand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: var(--mantine-spacing-sm);
+  border-radius: var(--mantine-radius-md);
+  background: light-dark(rgba(255, 255, 255, 0.85), rgba(15, 23, 42, 0.9));
+  border: 1px solid light-dark(rgba(6, 182, 212, 0.12), rgba(34, 211, 238, 0.18));
+}
+
+.hermesLogo {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.hermesLabel {
+  font-size: 9px;
+  font-weight: 700;
+  text-align: center;
+  line-height: 1.3;
+  color: light-dark(var(--mantine-color-gray-7), var(--mantine-color-gray-3));
+}
+
+.hermesChat {
+  min-width: 0;
+}

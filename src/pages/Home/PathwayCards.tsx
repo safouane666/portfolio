@@ -1,5 +1,5 @@
 import { Container, Text, Title } from '@mantine/core';
-import { IconCode, IconRobot } from '@tabler/icons-react';
+import { IconBrain, IconCode, IconRobot } from '@tabler/icons-react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
@@ -53,6 +53,14 @@ export function PathwayCards() {
           icon: IconRobot,
           className: classes.cardEngineering,
         },
+        {
+          to: '/LocalAI',
+          title: 'Local AI Sovereignty',
+          description:
+            'On-premise AI servers, private models, and full-stack local intelligence—own your data, own your compute, with vLLM and lifecycle support.',
+          icon: IconBrain,
+          className: classes.cardLocalAI,
+        },
       ],
     },
     fr: {
@@ -76,6 +84,14 @@ export function PathwayCards() {
           icon: IconRobot,
           className: classes.cardEngineering,
         },
+        {
+          to: '/LocalAI',
+          title: 'Souverainete IA locale',
+          description:
+            'Serveurs IA on-premise, modeles prives et intelligence locale complete—controlez vos donnees et votre calcul.',
+          icon: IconBrain,
+          className: classes.cardLocalAI,
+        },
       ],
     },
     es: {
@@ -98,6 +114,14 @@ export function PathwayCards() {
             'Desde ROS2 y sistemas embebidos hasta automatizacion industrial. Descubre mis soluciones tecnicas.',
           icon: IconRobot,
           className: classes.cardEngineering,
+        },
+        {
+          to: '/LocalAI',
+          title: 'Soberania IA local',
+          description:
+            'Servidores IA on-premise, modelos privados e inteligencia local completa—controla tus datos y tu computo.',
+          icon: IconBrain,
+          className: classes.cardLocalAI,
         },
       ],
     },
@@ -132,7 +156,7 @@ export function PathwayCards() {
           {t.cards.map((item) => {
             const Icon = item.icon;
             return (
-              <motion.div key={item.to} variants={cardVariants}>
+              <motion.div key={item.to} variants={cardVariants} className={classes.cardWrapper}>
                 <Link
                   to={item.to}
                   className={`${classes.card} ${item.className}`}

@@ -1,0 +1,90 @@
+.wrap {
+  display: flex;
+  flex-direction: column;
+  gap: var(--mantine-spacing-sm);
+  width: 100%;
+  max-width: 400px;
+}
+
+.terminal {
+  border-radius: var(--mantine-radius-md);
+  overflow: hidden;
+  border: 1px solid light-dark(rgba(6, 182, 212, 0.2), rgba(34, 211, 238, 0.2));
+  background: light-dark(#0f172a, #020617);
+}
+
+.terminalBar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 10px;
+  background: light-dark(#1e293b, #0f172a);
+  border-bottom: 1px solid light-dark(rgba(148, 163, 184, 0.15), rgba(51, 65, 85, 0.5));
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #64748b;
+}
+
+.dot[data-c='r'] {
+  background: #f87171;
+}
+
+.dot[data-c='y'] {
+  background: #fbbf24;
+}
+
+.dot[data-c='g'] {
+  background: #4ade80;
+}
+
+.log {
+  margin: 0;
+  padding: 12px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 10px;
+  line-height: 1.6;
+  color: #94a3b8;
+  white-space: pre-wrap;
+}
+
+.ok {
+  color: #34d399;
+}
+
+.dim {
+  color: #64748b;
+}
+
+.logos {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 8px;
+}
+
+.logoTile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 8px 4px;
+  border-radius: var(--mantine-radius-sm);
+  background: light-dark(rgba(240, 249, 255, 0.8), rgba(15, 23, 42, 0.8));
+  border: 1px solid light-dark(rgba(6, 182, 212, 0.12), rgba(34, 211, 238, 0.15));
+}
+
+.iconBadge {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background-color: light-dark(#fff, #1e293b) !important;
+}
+
+.vllmText {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--mantine-color-cyan-6);
+}
