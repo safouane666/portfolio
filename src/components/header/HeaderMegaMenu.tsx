@@ -36,6 +36,7 @@ export function HeaderMegaMenu() {
       engineering: 'Engineering',
       webDev: 'Web Development',
       localAI: 'Local AI',
+      blog: 'Blog',
       contact: 'Contact',
       navigation: 'Navigation',
     },
@@ -44,6 +45,7 @@ export function HeaderMegaMenu() {
       engineering: 'Ingenierie',
       webDev: 'Developpement Web',
       localAI: 'IA locale',
+      blog: 'Blog',
       contact: 'Contact',
       navigation: 'Navigation',
     },
@@ -52,6 +54,7 @@ export function HeaderMegaMenu() {
       engineering: 'Ingenieria',
       webDev: 'Desarrollo Web',
       localAI: 'IA local',
+      blog: 'Blog',
       contact: 'Contacto',
       navigation: 'Navegacion',
     },
@@ -78,6 +81,9 @@ export function HeaderMegaMenu() {
             </Link>
             <Link to="/LocalAI" className={classes.link}>
               {t.localAI}
+            </Link>
+            <Link to="/Blog" className={classes.link}>
+              {t.blog}
             </Link>
             <Link to="/Contact" className={classes.link}>
               {t.contact}
@@ -123,6 +129,9 @@ export function HeaderMegaMenu() {
           </Link>
           <Link to="/LocalAI" className={classes.link}>
             {t.localAI}
+          </Link>
+          <Link to="/Blog" className={classes.link}>
+            {t.blog}
           </Link>
           <Link to="/Contact" className={classes.link}>
             {t.contact}

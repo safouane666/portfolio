@@ -11,6 +11,8 @@ import { HomePage } from './pages/Home.page';
 import { MantineProvider } from '@mantine/core';
 import WebDevPage from './pages/WebDev/WebDev.page';
 import LocalAIPage from './pages/LocalAI/LocalAI.page';
+import BlogListPage from './pages/Blog/BlogList.page';
+import BlogPostPage from './pages/Blog/BlogPost.page';
 import { ScrollToTop } from './components/ScrollToTop';
 import { LanguageProvider } from './i18n/language';
 import { theme } from './theme';
@@ -67,13 +69,24 @@ function SeoManager() {
         description:
           'On-premise AI infrastructure with vLLM, private models, dashboards, and full lifecycle support—own your data and compute.',
       },
+      '/Blog': {
+        title: 'Blog | Insights on Local AI & Engineering | Safouane RG',
+        description:
+          'Articles on on-premise AI, data sovereignty, web development, and building secure local LLM infrastructure for businesses.',
+      },
     };
+
+    const blogSlugMatch = route.match(/^\/Blog\/([^/]+)$/);
+    if (blogSlugMatch) {
+      return;
+    }
 
     const pageMeta = routeConfig[route] || routeConfig['/'];
     const pageUrl = `${baseUrl}${route === '/' ? '/' : route}`;
 
     document.title = pageMeta.title;
     updateMetaTagByName('description', pageMeta.description);
+    updateMetaTagByProperty('og:type', 'website');
     updateMetaTagByProperty('og:title', pageMeta.title);
     updateMetaTagByProperty('og:description', pageMeta.description);
     updateMetaTagByProperty('og:url', pageUrl);
@@ -119,6 +132,8 @@ function AppRouter() {
               <Route path="Contact" element={<ContactPage />} />
               <Route path="WebDev" element={<WebDevPage />} />
               <Route path="LocalAI" element={<LocalAIPage />} />
+              <Route path="Blog" element={<BlogListPage />} />
+              <Route path="Blog/:slug" element={<BlogPostPage />} />
               <Route path="Engineering" element={<Engineering />} />
               <Route path="*" element={<div>Not Found</div>} />
             </Route>

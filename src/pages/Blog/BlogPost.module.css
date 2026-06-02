@@ -1,0 +1,98 @@
+.page {
+  padding: calc(var(--mantine-spacing-xl) * 2) var(--mantine-spacing-md);
+  padding-bottom: calc(var(--mantine-spacing-xl) * 3);
+}
+
+.back {
+  @mixin hover {
+    transform: translateX(-2px);
+  }
+}
+
+.title {
+  font-size: clamp(1.75rem, 4vw, 2.5rem);
+  font-weight: 800;
+  line-height: 1.2;
+  color: light-dark(var(--mantine-color-gray-9), var(--mantine-color-white));
+}
+
+.meta {
+  flex-wrap: wrap;
+}
+
+.heroWrap {
+  border-radius: var(--mantine-radius-lg);
+  overflow: hidden;
+  border: 1px solid light-dark(rgba(6, 182, 212, 0.15), rgba(34, 211, 238, 0.2));
+  box-shadow: 0 16px 40px light-dark(rgba(6, 182, 212, 0.1), rgba(0, 0, 0, 0.35));
+}
+
+.heroImage {
+  width: 100%;
+  max-height: 420px;
+  object-fit: cover;
+}
+
+.tags {
+  flex-wrap: wrap;
+}
+
+.article {
+  max-width: 720px;
+}
+
+.paragraph {
+  font-size: 1.0625rem;
+  line-height: 1.85;
+  color: light-dark(var(--mantine-color-gray-8), var(--mantine-color-gray-3));
+  margin-bottom: var(--mantine-spacing-lg);
+}
+
+.h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-top: var(--mantine-spacing-xl);
+  margin-bottom: var(--mantine-spacing-md);
+  color: light-dark(var(--mantine-color-gray-9), var(--mantine-color-white));
+}
+
+.h3 {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-top: var(--mantine-spacing-lg);
+  margin-bottom: var(--mantine-spacing-sm);
+}
+
+.figure {
+  margin: var(--mantine-spacing-xl) 0;
+}
+
+.contentImage {
+  width: 100%;
+  border: 1px solid light-dark(rgba(6, 182, 212, 0.12), rgba(34, 211, 238, 0.18));
+}
+
+.list {
+  margin-bottom: var(--mantine-spacing-lg);
+  padding-left: var(--mantine-spacing-md);
+}
+
+.quote {
+  margin: var(--mantine-spacing-xl) 0;
+  padding: var(--mantine-spacing-lg) var(--mantine-spacing-xl);
+  border-left: 4px solid var(--mantine-color-cyan-6);
+  border-radius: 0 var(--mantine-radius-md) var(--mantine-radius-md) 0;
+  background: light-dark(rgba(236, 254, 255, 0.6), rgba(8, 47, 73, 0.35));
+}
+
+.quoteText {
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1.7;
+  font-style: italic;
+  color: light-dark(var(--mantine-color-gray-8), var(--mantine-color-gray-2));
+}
+
+.footerCta {
+  border-top: 1px solid light-dark(var(--mantine-color-gray-2), var(--mantine-color-dark-5));
+}
