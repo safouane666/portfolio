@@ -5,6 +5,7 @@ import { Outlet, Route, BrowserRouter as Router, Routes, useLocation } from 'rea
 
 import { ContactPage } from './pages/Contact/Contact.Page';
 import Engineering from './pages/Engineering/Engineering';
+import { RecentBlogsSection } from './components/blog/RecentBlogsSection';
 import { Footer } from './components/Footer/Footer';
 import { HeaderMegaMenu } from './components/header/HeaderMegaMenu';
 import { HomePage } from './pages/Home.page';
@@ -114,6 +115,7 @@ function AppLayout() {
       <div style={{ zIndex: 1, flex: 1 }}>
         <Outlet />
       </div>
+      <RecentBlogsSection />
       <Footer />
     </div>
   );
