@@ -13,6 +13,7 @@ import {
 import { IconClock } from '@tabler/icons-react';
 import { Link } from 'react-router-dom';
 
+import { publicUrl } from '@/lib/publicUrl';
 import { getAllPosts, toPostMeta } from '@/content/blogs';
 import classes from './BlogList.module.css';
 import { useLanguage } from '@/i18n/language';
@@ -94,7 +95,7 @@ export default function BlogListPage() {
                 withBorder
               >
                 <div className={classes.cardImageWrap}>
-                  <Image src={meta.coverImageUrl} alt={meta.title} className={classes.cardImage} />
+                  <Image src={publicUrl(meta.coverImageUrl)} alt={meta.title} className={classes.cardImage} />
                   <Badge className={classes.cardCategory} variant="filled" color="cyan" size="sm">
                     {meta.category}
                   </Badge>

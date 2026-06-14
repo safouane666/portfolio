@@ -1,5 +1,6 @@
 import { Image, List, Text, Title } from '@mantine/core';
 
+import { publicUrl } from '@/lib/publicUrl';
 import type { BlogContentBlock } from '@/content/blogs';
 import classes from './BlogPost.module.css';
 
@@ -36,7 +37,7 @@ export function BlogContent({ blocks }: BlogContentProps) {
             return (
               <figure key={key} className={classes.figure}>
                 <Image
-                  src={block.url}
+                  src={publicUrl(block.url)}
                   alt={block.alt}
                   className={classes.contentImage}
                   radius="md"

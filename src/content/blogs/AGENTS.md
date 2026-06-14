@@ -57,7 +57,9 @@ export const blogPosts: BlogPost[] = [
 
 ## Images
 
-- Use **full HTTPS URLs** (Imgur, GitHub raw, CDN). No local paths required.
+- **External:** full HTTPS URLs (Imgur, CDN, etc.) — used as-is.
+- **Local:** put files in `public/blog-images/` and reference as `/blog-images/your-file.jpg`.
+  The app auto-prefixes `/portfolio` for GitHub Pages (via `publicUrl()`).
 - Put the hero image in `coverImageUrl` and repeat in `content` where the article should show it.
 - Always set meaningful `alt` text.
 

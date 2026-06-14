@@ -12,6 +12,7 @@ import {
 import { IconArrowLeft, IconClock, IconTag } from '@tabler/icons-react';
 import { Link, Navigate, useParams } from 'react-router-dom';
 
+import { publicUrl } from '@/lib/publicUrl';
 import { BlogSeo } from '@/components/blog/BlogSeo';
 import { estimateReadingTimeMinutes, getPostBySlug } from '@/content/blogs';
 import { BlogContent } from './BlogContent';
@@ -79,10 +80,11 @@ export default function BlogPostPage() {
 
         <div className={classes.heroWrap}>
           <Image
-            src={post.coverImageUrl}
+            src={publicUrl(post.coverImageUrl)}
             alt={post.title}
             className={classes.heroImage}
             radius="lg"
+            fit="cover"
           />
         </div>
 

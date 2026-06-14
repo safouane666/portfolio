@@ -1,6 +1,7 @@
 import { useEffect } from 'react';
 
 import { getPostUrl, type BlogPost } from '@/content/blogs';
+import { publicAbsoluteUrl } from '@/lib/publicUrl';
 
 const SITE_NAME = 'Safouane RG';
 
@@ -31,6 +32,7 @@ interface BlogSeoProps {
 
 export function BlogSeo({ post, readingTimeMinutes }: BlogSeoProps) {
   const url = getPostUrl(post.slug);
+  const coverImage = publicAbsoluteUrl(post.coverImageUrl);
   const title = `${post.title} | ${SITE_NAME}`;
   const keywords = [...post.keywords, ...post.tags].join(', ');
 
@@ -50,14 +52,14 @@ export function BlogSeo({ post, readingTimeMinutes }: BlogSeoProps) {
     setMeta('og:title', post.title, 'property');
     setMeta('og:description', post.description, 'property');
     setMeta('og:url', url, 'property');
-    setMeta('og:image', post.coverImageUrl, 'property');
+    setMeta('og:image', coverImage, 'property');
     setMeta('og:image:alt', post.title, 'property');
     setMeta('og:site_name', `${SITE_NAME} Portfolio`, 'property');
 
     setMeta('twitter:card', 'summary_large_image');
     setMeta('twitter:title', post.title);
     setMeta('twitter:description', post.description);
-    setMeta('twitter:image', post.coverImageUrl);
+    setMeta('twitter:image', coverImage);
 
     setCanonical(url);
 
@@ -75,7 +77,7 @@ export function BlogSeo({ post, readingTimeMinutes }: BlogSeoProps) {
       '@type': 'BlogPosting',
       headline: post.title,
       description: post.description,
-      image: [post.coverImageUrl],
+      image: [coverImage],
       datePublished: post.publishedAt,
       dateModified: post.updatedAt ?? post.publishedAt,
       author: {
@@ -99,7 +101,7 @@ export function BlogSeo({ post, readingTimeMinutes }: BlogSeoProps) {
     return () => {
       document.getElementById(scriptId)?.remove();
     };
-  }, [post, title, url, keywords, readingTimeMinutes]);
+  }, [post, title, url, keywords, readingTimeMinutes, coverImage]);
 
   return null;
 }

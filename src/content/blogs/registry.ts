@@ -7,8 +7,9 @@
  */
 
 import { post as whyBusinessDataLocal } from './posts/why-your-business-data-should-stay-local';
+import { post as odysseusOnAnRtx5060Ti } from './posts/odysseus-on-an-rtx-5060-ti';
 
 import type { BlogPost } from './types';
 
 /** Newest first */
-export const blogPosts: BlogPost[] = [whyBusinessDataLocal];
+export const blogPosts: BlogPost[] = [odysseusOnAnRtx5060Ti, whyBusinessDataLocal];

@@ -25,12 +25,16 @@
   overflow: hidden;
   border: 1px solid light-dark(rgba(6, 182, 212, 0.15), rgba(34, 211, 238, 0.2));
   box-shadow: 0 16px 40px light-dark(rgba(6, 182, 212, 0.1), rgba(0, 0, 0, 0.35));
+  aspect-ratio: 16 / 9;
+  max-height: 420px;
 }
 
 .heroImage {
   width: 100%;
-  max-height: 420px;
+  height: 100%;
+  min-height: 200px;
   object-fit: cover;
+  display: block;
 }
 
 .tags {

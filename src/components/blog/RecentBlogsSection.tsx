@@ -14,6 +14,7 @@ import {
 import { IconClock } from '@tabler/icons-react';
 import { Link, useLocation } from 'react-router-dom';
 
+import { publicUrl } from '@/lib/publicUrl';
 import { getAllPosts, toPostMeta } from '@/content/blogs';
 import { useLanguage } from '@/i18n/language';
 import classes from './RecentBlogsSection.module.css';
@@ -119,7 +120,7 @@ export function RecentBlogsSection() {
                 >
                   <div className={classes.cardImageWrap}>
                     <Image
-                      src={meta.coverImageUrl}
+                      src={publicUrl(meta.coverImageUrl)}
                       alt={meta.title}
                       className={classes.cardImage}
                     />
