@@ -1,0 +1,93 @@
+.wrap {
+  width: 100%;
+  border-radius: calc(var(--mantine-radius-xl) - 2px);
+  overflow: hidden;
+  border: 1px solid rgba(37, 211, 102, 0.28);
+  background: #0b141a;
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 12px;
+  line-height: 1.45;
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.28);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 12px 14px;
+  background: #1f2c34;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.avatar {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #25d366, #128c7e);
+  color: white;
+  flex-shrink: 0;
+}
+
+.botName {
+  color: #e9edef;
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.status {
+  color: #25d366;
+  font-size: 11px;
+}
+
+.badge {
+  margin-left: auto;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #0b141a;
+  background: #25d366;
+  border-radius: 999px;
+  padding: 4px 8px;
+}
+
+.messages {
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  min-height: 168px;
+  background:
+    radial-gradient(circle at 20% 0%, rgba(37, 211, 102, 0.08), transparent 40%),
+    #0b141a;
+}
+
+.bubble {
+  max-width: 88%;
+  padding: 9px 11px;
+  border-radius: 12px;
+  color: #e9edef;
+}
+
+.incoming {
+  align-self: flex-start;
+  background: #202c33;
+  border-bottom-left-radius: 4px;
+}
+
+.outgoing {
+  align-self: flex-end;
+  background: #005c4b;
+  border-bottom-right-radius: 4px;
+}
+
+.meta {
+  display: block;
+  margin-top: 4px;
+  font-size: 10px;
+  color: rgba(233, 237, 239, 0.55);
+  text-align: right;
+}

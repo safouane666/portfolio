@@ -17,6 +17,7 @@ import {
   IconApi,
   IconArrowRight,
   IconBrandGithub,
+  IconBrandWhatsapp,
   IconBrain,
   IconCloudUpload,
   IconServer,
@@ -37,6 +38,7 @@ import OnlineStoreImg from './img/OnlineStore.webp';
 import PortfolioImg from './img/PortfolioWebsite.webp';
 import ProjectsSection from './ProjectsSection';
 import WebAppTemplatePromoImg from './img/WebAppTemplatePromo.svg';
+import { WhatsAppAgentVisual } from './img/WhatsAppAgentVisual';
 import classes from './WebDevPage.module.css';
 import { useLanguage } from '@/i18n/language';
 
@@ -80,6 +82,14 @@ export default function WebDevPage() {
       aiCloudTitle: 'Cloud AI providers',
       aiCloudDesc:
         'When the product needs stronger hosted intelligence, I can connect OpenAI, Claude, and Google APIs for generation, reasoning, classification, and multimodal tasks.',
+      aiWhatsappTitle: 'WhatsApp Business agent',
+      aiWhatsappDesc:
+        'Connect a WhatsApp Business agent that stays online 24/7, answers every inbound message, and replies using your provided business data—catalog, FAQs, pricing, and policies—so customers get consistent support without waiting for a human.',
+      aiWhatsappPoints: [
+        '24/7 auto-replies on WhatsApp Business',
+        'Answers grounded in your product and company data',
+        'Handles FAQs, pricing, and lead capture at scale',
+      ],
       aiLocalCtaTitle: 'Need full on-premise AI infrastructure?',
       aiLocalCtaDesc:
         'Explore dedicated local servers, hardware tiers, vLLM stacks, and lifecycle support—not only integrations inside your web apps.',
@@ -136,6 +146,14 @@ export default function WebDevPage() {
       aiCloudTitle: 'Fournisseurs IA cloud',
       aiCloudDesc:
         'Quand le produit demande plus de puissance, je peux connecter OpenAI, Claude et Google APIs pour generation, raisonnement, classification et taches multimodales.',
+      aiWhatsappTitle: 'Agent WhatsApp Business',
+      aiWhatsappDesc:
+        'Connectez un agent WhatsApp Business disponible 24h/24, qui repond a chaque message entrant a partir de vos donnees metier—catalogue, FAQ, tarifs et politiques—pour un support client constant sans attente.',
+      aiWhatsappPoints: [
+        'Reponses automatiques 24h/24 sur WhatsApp Business',
+        'Reponses basees sur vos donnees produit et entreprise',
+        'FAQ, tarifs et capture de leads a grande echelle',
+      ],
       aiLocalCtaTitle: 'Besoin d une infrastructure IA on-premise complete ?',
       aiLocalCtaDesc:
         'Decouvrez serveurs locaux, paliers materiel, stack vLLM et support cycle de vie—pas seulement l integration dans vos apps web.',
@@ -191,6 +209,14 @@ export default function WebDevPage() {
       aiCloudTitle: 'Proveedores IA cloud',
       aiCloudDesc:
         'Cuando el producto necesita mas potencia alojada, puedo conectar OpenAI, Claude y Google APIs para generacion, razonamiento, clasificacion y tareas multimodales.',
+      aiWhatsappTitle: 'Agente WhatsApp Business',
+      aiWhatsappDesc:
+        'Conecta un agente de WhatsApp Business disponible 24/7, que responde a cada mensaje entrante usando tus datos de negocio—catalogo, FAQ, precios y politicas—para un soporte constante sin esperar a una persona.',
+      aiWhatsappPoints: [
+        'Respuestas automaticas 24/7 en WhatsApp Business',
+        'Respuestas basadas en tus datos de producto y empresa',
+        'FAQ, precios y captacion de leads a escala',
+      ],
       aiLocalCtaTitle: 'Necesitas infraestructura IA on-premise completa?',
       aiLocalCtaDesc:
         'Explora servidores locales, niveles de hardware, stack vLLM y soporte de ciclo de vida—no solo integraciones en tus apps web.',
@@ -683,6 +709,39 @@ export default function WebDevPage() {
             </Grid.Col>
           ))}
         </Grid>
+
+        <Card className={classes.aiWhatsappCard} radius="xl" p="xl" withBorder mt="xl">
+          <Grid align="center" gutter="xl">
+            <Grid.Col span={{ base: 12, md: 7 }}>
+              <Stack gap="md">
+                <Group gap="sm">
+                  <div className={classes.aiWhatsappIconWrap}>
+                    <IconBrandWhatsapp size={26} color="#25D366" />
+                  </div>
+                  <Text className={classes.aiInfoTitle} mb={0}>
+                    {t.aiWhatsappTitle}
+                  </Text>
+                </Group>
+                <Text className={classes.aiInfoText}>{t.aiWhatsappDesc}</Text>
+                <Stack gap="xs">
+                  {t.aiWhatsappPoints.map((point) => (
+                    <Group key={point} align="flex-start" gap="sm" wrap="nowrap">
+                      <IconArrowRight size={16} color="#25D366" style={{ marginTop: 4 }} />
+                      <Text size="sm" c="dimmed" style={{ lineHeight: 1.7 }}>
+                        {point}
+                      </Text>
+                    </Group>
+                  ))}
+                </Stack>
+              </Stack>
+            </Grid.Col>
+            <Grid.Col span={{ base: 12, md: 5 }}>
+              <div className={classes.aiWhatsappVisualWrap}>
+                <WhatsAppAgentVisual />
+              </div>
+            </Grid.Col>
+          </Grid>
+        </Card>
 
         <Card className={classes.aiProvidersCard} radius="xl" p="xl" withBorder mt="xl">
           <Grid align="center" gutter="xl">

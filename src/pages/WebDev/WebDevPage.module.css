@@ -193,6 +193,43 @@
   border: 1px solid light-dark(rgba(6, 182, 212, 0.14), rgba(34, 211, 238, 0.2));
 }
 
+.aiWhatsappCard {
+  background: linear-gradient(
+    135deg,
+    light-dark(rgba(240, 253, 244, 0.96), rgba(8, 28, 22, 0.96)) 0%,
+    light-dark(rgba(248, 250, 252, 0.98), rgba(10, 16, 29, 0.96)) 100%
+  );
+  border: 1px solid light-dark(rgba(37, 211, 102, 0.22), rgba(37, 211, 102, 0.28));
+  overflow: hidden;
+  position: relative;
+}
+
+.aiWhatsappCard::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 100% 0%, rgba(37, 211, 102, 0.14), transparent 42%);
+  pointer-events: none;
+}
+
+.aiWhatsappIconWrap {
+  width: 48px;
+  height: 48px;
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: light-dark(rgba(37, 211, 102, 0.12), rgba(37, 211, 102, 0.16));
+  border: 1px solid light-dark(rgba(37, 211, 102, 0.22), rgba(37, 211, 102, 0.3));
+  position: relative;
+  z-index: 1;
+}
+
+.aiWhatsappVisualWrap {
+  position: relative;
+  z-index: 1;
+}
+
 .aiLocalCtaCard {
   background: linear-gradient(
     135deg,
